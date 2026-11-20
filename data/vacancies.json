@@ -38,6 +38,84 @@
     }
   },
   {
+    "id": "vac-djinni-856931",
+    "roleCategory": "ai-creative",
+    "roleName": "AI Creative Producer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B1",
+    "englishLabel": "B1 – Intermediate",
+    "title": "AI Video Creator / AI Filmmaker",
+    "company": "Amon Trade",
+    "location": "Remote (Весь світ / Worldwide)",
+    "salary": "$1,000 – $1,700 / міс",
+    "type": "Full-time (Remote)",
+    "postedDate": "18 листопада (Djinni)",
+    "link": "https://djinni.co/jobs/856931-ai-video-creator-ai-filmmaker/",
+    "matchScore": 98,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "AI Video Generation",
+      "Runway Gen-3",
+      "Midjourney",
+      "Kling",
+      "DaVinci Resolve",
+      "Topaz AI"
+    ],
+    "description": "Повний цикл продакшну рекламних комерційних ШІ-відео, синематиків та вірусних Reels/Shorts від концепту до фінального монтажу. Робота з генеративними нейромережами та монтаж у DaVinci Resolve.",
+    "matchAnalysis": {
+      "strengths": [
+        "100% твій профіль: генерація відео (Runway Gen-3, Midjourney, Kling, Luma) + монтаж у DaVinci Resolve",
+        "Вилка $1,000–$1,700 ідеально лягає у твої зарплатні очікування ($1,000)",
+        "Вимога до англійської B1 (у тебе B2 — повний запас), локація Worldwide (Грузія підходить без попереджень Djinni)"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-djinni-847027",
+    "roleCategory": "video-motion",
+    "roleName": "Video & Motion Designer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B1",
+    "englishLabel": "A2 – B1 (Комфортно для тебе)",
+    "title": "Режисер монтажу → AI Director",
+    "company": "United Studios of America",
+    "location": "Remote (Весь світ / Worldwide)",
+    "salary": "$1,200 – $2,000+ / міс",
+    "type": "Full-time (Remote)",
+    "postedDate": "Оновлено сьогодні (Djinni)",
+    "link": "https://djinni.co/jobs/847027-rezhiser-montazhu-ai-director/",
+    "matchScore": 97,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "DaVinci Resolve",
+      "AI Director",
+      "Video Editing",
+      "Sound Design",
+      "YouTube Production",
+      "Prompting"
+    ],
+    "description": "Режисура та монтаж довгого і короткого відеоконтенту для YouTube та соцмереж на базі AI-воркфлоу. Керування ритмом, утриманням уваги глядача, саунд-дизайном та промптингом візуальних асетів.",
+    "matchAnalysis": {
+      "strengths": [
+        "Пряма вимога DaVinci Resolve та розуміння ШІ-інструментів генерації",
+        "Досвід побудови аудіоатмосфери та саунд-дизайну (FL Studio / Audacity)",
+        "Рівень англійської не блокує подачу, географія — повний Remote"
+      ],
+      "gaps": []
+    }
+  },
+  {
     "id": "vac-djinni-858414",
     "roleCategory": "ai-creative",
     "roleName": "AI Creative Producer",
@@ -76,6 +154,46 @@
     }
   },
   {
+    "id": "vac-djinni-859013",
+    "roleCategory": "video-motion",
+    "roleName": "Video & Motion Designer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B2",
+    "englishLabel": "B2 (Вище середнього)",
+    "title": "AI-first Motion Designer",
+    "company": "Авеб (Aweb)",
+    "location": "Remote (Весь світ / Worldwide)",
+    "salary": "$1,000 – $1,500 / міс",
+    "type": "Full-time (Remote)",
+    "postedDate": "19 листопада (Djinni)",
+    "link": "https://djinni.co/jobs/859013-ai-first-motion-designer/",
+    "matchScore": 96,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "Motion Design",
+      "Figma",
+      "After Effects",
+      "Midjourney",
+      "Runway",
+      "Kling",
+      "AI Video"
+    ],
+    "description": "Створення динамічних анімацій, рекламних креативів та промо-відео нового покоління: поєднання традиційного моушн-пайплайну (Figma, After Effects) з генеративними інструментами ШІ.",
+    "matchAnalysis": {
+      "strengths": [
+        "Синтез UI/UX та моушн-дизайну у Figma з генеративним відео (Runway, Kling)",
+        "Пряма відповідність англійської (B2) та зарплатної вилки ($1,000–$1,500)",
+        "Розглядають кандидатів по всьому світу"
+      ],
+      "gaps": []
+    }
+  },
+  {
     "id": "vac-djinni-807016",
     "roleCategory": "product-design",
     "roleName": "Product Designer (UI/UX)",
@@ -109,6 +227,167 @@
         "Прямий збіг із твоїм кейсом: редизайн e-commerce платформи why-not.com.ua",
         "Проєктування адаптивних макетів (Mobile + Desktop) у Figma",
         "Розглядають кандидатів з будь-якої локації (у т.ч. Грузія) та з рівнем B1-B2"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-djinni-850423",
+    "roleCategory": "product-design",
+    "roleName": "Product Designer (UI/UX)",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B1",
+    "englishLabel": "B1 – Intermediate",
+    "title": "Web & UI/UX Designer (High-converting Funnels & Figma)",
+    "company": "LABVAY",
+    "location": "Remote (Весь світ / Worldwide)",
+    "salary": "$1,000 – $1,500 / міс",
+    "type": "Full-time (Remote)",
+    "postedDate": "14 листопада (Djinni)",
+    "link": "https://djinni.co/jobs/850423-web-dizajner/",
+    "matchScore": 95,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "Figma",
+      "UI/UX Design",
+      "Web Design",
+      "Responsive Layouts",
+      "AI Creative Tools",
+      "Landing Pages"
+    ],
+    "description": "Проєктування веб-інтерфейсів, лендингів із високою конверсією та маркетингових воронок у Figma. Використання ШІ-інструментів для прискорення прототипування та генерації візуальних елементів.",
+    "matchAnalysis": {
+      "strengths": [
+        "Досвід створення сучасних веб-вітрин у Figma (кейс Why Not?)",
+        "Вимога B1 англійської та зарплата $1,000–$1,500 — точний збіг",
+        "Немає регіональних блоків на Djinni для кандидатів з Грузії"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-djinni-856614",
+    "roleCategory": "ai-creative",
+    "roleName": "AI Creative Producer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B2",
+    "englishLabel": "B2 (Вище середнього)",
+    "title": "AI Video & Media Manager (IGaming & Social Content)",
+    "company": "TrueGroup",
+    "location": "Remote (Весь світ / Worldwide)",
+    "salary": "$1,200 – $2,000 / міс",
+    "type": "Full-time (Remote)",
+    "postedDate": "17 листопада (Djinni)",
+    "link": "https://djinni.co/jobs/856614-ai-video-media-manager-igaming/",
+    "matchScore": 92,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "AI Video Generation",
+      "Midjourney",
+      "Runway",
+      "Kling",
+      "HeyGen",
+      "Social Media",
+      "Prompting"
+    ],
+    "description": "Масштабування відео-присутності бренду в TikTok, Reels, Shorts. Генерація вірусних ідей, створення сценаріїв та виробництво конверсійного відеоконтенту за допомогою провідних ШІ-моделей.",
+    "matchAnalysis": {
+      "strengths": [
+        "Робота з вірусними форматами та генеративними аватарами/відео (HeyGen, Runway, Kling)",
+        "Повний remote, розглядають кандидатів без прив'язки до однієї країни",
+        "Рівень B2 відповідає вимогам"
+      ],
+      "gaps": [
+        "Ніша iGaming має свою специфіку рекламних форматів"
+      ]
+    }
+  },
+  {
+    "id": "vac-djinni-847583",
+    "roleCategory": "product-design",
+    "roleName": "Product Designer (UI/UX)",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "eu",
+    "candidateCountryLabel": "Польща, Сербія, Remote",
+    "englishLevel": "B2",
+    "englishLabel": "B2 (Вище середнього)",
+    "title": "Product Designer (AI-native & E-commerce)",
+    "company": "PAR Retail",
+    "location": "Remote (Польща / Сербія / Ukraine)",
+    "salary": "$1,800 – $3,000 / міс",
+    "type": "Full-time (Remote)",
+    "postedDate": "Оновлено нещодавно (Djinni)",
+    "link": "https://djinni.co/jobs/847583-product-designer-ai-native/",
+    "matchScore": 91,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "Figma",
+      "AI Design Workflows",
+      "E-commerce Platforms",
+      "Design Systems",
+      "User Journey"
+    ],
+    "description": "Проєктування e-commerce платформ лояльності та купівельного досвіду. Інтеграція новітніх ШІ-інструментів у щоденний дизайнерський пайплайн, розвиток дизайн-систем.",
+    "matchAnalysis": {
+      "strengths": [
+        "Досвід e-commerce інтерфейсів (Why Not?)",
+        "Поєднання традиційного UX у Figma з AI-воркфлоу",
+        "Англійська B2 повністю відповідає вимогам"
+      ],
+      "gaps": [
+        "Можлива прив'язка до країн (Польща/Сербія)"
+      ]
+    }
+  },
+  {
+    "id": "vac-djinni-857818",
+    "roleCategory": "video-motion",
+    "roleName": "Video & Motion Designer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B2",
+    "englishLabel": "B2 (Вище середнього)",
+    "title": "Video Editor (AI UGC & Dynamic Performance Ads)",
+    "company": "Mine Marketing",
+    "location": "Remote (Весь світ / Worldwide)",
+    "salary": "$1,000 – $1,800 / міс",
+    "type": "Full-time (Remote)",
+    "postedDate": "11 листопада (Djinni)",
+    "link": "https://djinni.co/jobs/857818-video-editor/",
+    "matchScore": 91,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "AI UGC",
+      "HeyGen",
+      "Higgsfield",
+      "ElevenLabs",
+      "Video Production",
+      "Sound Design",
+      "Performance Ads"
+    ],
+    "description": "Виробництво динамічної відеореклами для соціальних мереж із використанням новітніх AI UGC платформ (HeyGen, Higgsfield, ElevenLabs) у поєднанні з професійним монтажем та зведенням звуку.",
+    "matchAnalysis": {
+      "strengths": [
+        "Робота зі синтезом голосу ElevenLabs та генеративними відео-пайплайнами",
+        "Саунд-дизайн та динамічний монтаж під хуки",
+        "Дистанційна робота по всьому світу, B2 рівень мови"
       ],
       "gaps": []
     }
@@ -230,46 +509,6 @@
       "gaps": [
         "Djinni попередження: Вимагають англійську C1 (у вас B2)",
         "Djinni попередження: Пріоритет на резидентів ЄС"
-      ]
-    }
-  },
-  {
-    "id": "vac-djinni-847583",
-    "roleCategory": "product-design",
-    "roleName": "Product Designer (UI/UX)",
-    "workplaceType": "remote",
-    "workplaceLabel": "Дистанційно (Remote)",
-    "candidateCountry": "eu",
-    "candidateCountryLabel": "Польща, Сербія, Remote",
-    "englishLevel": "B2",
-    "englishLabel": "B2 (Вище середнього)",
-    "title": "Product Designer (AI-native & E-commerce)",
-    "company": "PAR Retail",
-    "location": "Remote (Польща / Сербія / Ukraine)",
-    "salary": "$1,800 – $3,000 / міс",
-    "type": "Full-time (Remote)",
-    "postedDate": "Оновлено нещодавно (Djinni)",
-    "link": "https://djinni.co/jobs/847583-product-designer-ai-native/",
-    "matchScore": 91,
-    "status": "not_applied",
-    "appliedAt": null,
-    "isSaved": false,
-    "tags": [
-      "Figma",
-      "AI Design Workflows",
-      "E-commerce Platforms",
-      "Design Systems",
-      "User Journey"
-    ],
-    "description": "Проєктування e-commerce платформ лояльності та купівельного досвіду. Інтеграція новітніх ШІ-інструментів у щоденний дизайнерський пайплайн, розвиток дизайн-систем.",
-    "matchAnalysis": {
-      "strengths": [
-        "Досвід e-commerce інтерфейсів (Why Not?)",
-        "Поєднання традиційного UX у Figma з AI-воркфлоу",
-        "Англійська B2 повністю відповідає вимогам"
-      ],
-      "gaps": [
-        "Можлива прив'язка до країн (Польща/Сербія)"
       ]
     }
   },
