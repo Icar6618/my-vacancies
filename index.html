@@ -157,11 +157,20 @@
             </button>
           </div>
 
-          <!-- Add Button -->
-          <button id="openAddModalBtn" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-md shadow-purple-600/30 cursor-pointer shrink-0">
-            <i data-lucide="plus" class="w-4 h-4"></i>
-            <span>Додати вакансію</span>
-          </button>
+          <!-- Action Buttons Group -->
+          <div class="flex items-center gap-2 shrink-0">
+            <!-- Download / Sync JSON Button -->
+            <button onclick="downloadVacanciesJson()" title="Завантажити актуальний файл vacancies.json для збереження" class="px-3 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer">
+              <i data-lucide="download" class="w-3.5 h-3.5 text-purple-400"></i>
+              <span class="hidden sm:inline">Експорт JSON</span>
+            </button>
+
+            <!-- Add Button -->
+            <button id="openAddModalBtn" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-md shadow-purple-600/30 cursor-pointer">
+              <i data-lucide="plus" class="w-4 h-4"></i>
+              <span>Додати вакансію</span>
+            </button>
+          </div>
 
         </div>
 

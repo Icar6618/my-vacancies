@@ -43,8 +43,9 @@
     "postedDate": "Сьогодні (20 лист.)",
     "link": "https://djinni.co/jobs/",
     "matchScore": 98,
-    "status": "not_applied",
-    "appliedAt": null,
+    "status": "applied",
+    "appliedAt": "20 лис",
+    "isSaved": true,
     "tags": ["Midjourney v6", "Runway Gen-3", "Luma", "ElevenLabs", "DaVinci Resolve"],
     "description": "Створення вірусних промо-роликів, генерація AI-відео для брендів, монтаж та саунд-дизайн на стику новітніх нейромереж.",
     "matchAnalysis": {

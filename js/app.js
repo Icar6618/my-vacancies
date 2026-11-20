@@ -44,7 +44,40 @@ async function initVacanciesData() {
 
 function saveData() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(vacancies));
+  
+  // Auto-save directly to disk if running on local server!
+  try {
+    fetch('/api/save', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(vacancies)
+    }).then(res => {
+      if (res.ok) console.log('✅ Автоматично збережено у файл data/vacancies.json!');
+    }).catch(() => {});
+  } catch (e) {}
 }
+
+// Download data file directly
+window.downloadVacanciesJson = function() {
+  const jsonStr = JSON.stringify(vacancies, null, 2);
+  const blob = new Blob([jsonStr], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'vacancies.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+};
+
+// Copy JSON to clipboard
+window.copyVacanciesJson = function() {
+  const jsonStr = JSON.stringify(vacancies, null, 2);
+  navigator.clipboard.writeText(jsonStr).then(() => {
+    alert('Дані вакансій скопійовано в буфер обміну! Можна надіслати їх у чат.');
+  });
+};
 
 // Setup Event Listeners
 function setupEventListeners() {
