@@ -1,0 +1,18 @@
+{
+  "name": "my-vacancies",
+  "version": "1.0.0",
+  "description": "Мої вакансії — вебсайт для пошуку, відбору та моніторингу вакансій за персональними навичками",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "vacancies",
+    "portfolio",
+    "jobs",
+    "career",
+    "ai-skills"
+  ],
+  "author": "Viktor Maleiev",
+  "license": "MIT"
+}

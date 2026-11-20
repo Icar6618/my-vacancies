@@ -1,0 +1,86 @@
+[
+  {
+    "id": "vac-001",
+    "title": "Generative AI Video & Media Creator",
+    "company": "NextGen Media Lab",
+    "location": "Віддалено (Remote)",
+    "type": "Повна зайнятість",
+    "salary": "$2,000 - $3,500",
+    "postedDate": "2026-11-18",
+    "category": "ai-media",
+    "tags": ["Midjourney", "Runway Gen-3", "Luma", "ElevenLabs", "Suno"],
+    "description": "Пошук креативного спеціаліста для генерації AI-відео, комерційних промо-матеріалів, персонажів та музичного супроводу для міжнародних брендів.",
+    "requirements": [
+      "Впевнений досвід роботи з Midjourney, Runway (Gen-2/Gen-3), Luma Dream Machine",
+      "Створення аудіо та озвучки через ElevenLabs / Suno",
+      "Базовий монтаж та кольорокорекція в DaVinci Resolve",
+      "Портфоліо з готовими генеративними кейсами"
+    ],
+    "link": "https://example.com/jobs/1",
+    "status": "new",
+    "matchScore": 98
+  },
+  {
+    "id": "vac-002",
+    "title": "UI/UX & Visual Designer (Figma / Pixso)",
+    "company": "Creative Tech Studio",
+    "location": "Київ / Віддалено",
+    "type": "Проєктна зайнятість / Full-time",
+    "salary": "70,000 - 95,000 грн",
+    "postedDate": "2026-11-19",
+    "category": "design",
+    "tags": ["Figma", "Pixso", "UI/UX", "Брендинг", "Мерч"],
+    "description": "Розробка концепцій інтерфейсів, лендингів, дизайн-систем, мерчу та фірмової поліграфії для цифрових та фізичних продуктів.",
+    "requirements": [
+      "Глибоке володіння Figma та Pixso (компоненти, autolayout, прототипування)",
+      "Розуміння UX-патернів та сучасних трендів дизайну",
+      "Досвід створення макетів мерчу та переддрукарської підготовки",
+      "Увага до типографіки, сіток та деталей"
+    ],
+    "link": "https://example.com/jobs/2",
+    "status": "saved",
+    "matchScore": 94
+  },
+  {
+    "id": "vac-003",
+    "title": "Motion Designer & Video Editor (DaVinci Resolve)",
+    "company": "WhyNot Video Production",
+    "location": "Віддалено",
+    "type": "Part-time / Гнучкий графік",
+    "salary": "$1,500 - $2,500",
+    "postedDate": "2026-11-15",
+    "category": "video",
+    "tags": ["DaVinci Resolve", "Sound Design", "Auto-subs", "Motion"],
+    "description": "Монтаж динамічних промо-роликів, Reels/Shorts, поєднання згенерованих AI-кадрів з реальною зйомкою, саунд-дизайн.",
+    "requirements": [
+      "Професійне володіння DaVinci Resolve (Cut, Edit, Color, Fairlight)",
+      "Робота зі звуком (FL Studio або Audacity буде плюсом)",
+      "Вміння монтувати в темпі під музику та додавати кінетичну типографіку",
+      "Розуміння формату вертикальних відео високої конверсії"
+    ],
+    "link": "https://example.com/jobs/3",
+    "status": "applied",
+    "matchScore": 91
+  },
+  {
+    "id": "vac-004",
+    "title": "AI Integration & Telegram Bot Specialist",
+    "company": "Smart Flow Solutions",
+    "location": "Віддалено",
+    "type": "Контракт",
+    "salary": "$1,800 - $3,000",
+    "postedDate": "2026-11-17",
+    "category": "automation",
+    "tags": ["Telegram Bot API", "Gemini", "Claude", "ChatGPT", "Automation"],
+    "description": "Створення та інтеграція розумних Telegram-ботів на базі LLM моделей для автоматизації взаємодії з клієнтами та контент-пайплайнів.",
+    "requirements": [
+      "Практичний досвід роботи з Telegram Bot API",
+      "Промпт-інжиніринг та налаштування агентів (Claude, Gemini, OpenAI)",
+      "Створення сценаріїв автоматизації",
+      "Базове розуміння JavaScript / Node.js"
+    ],
+    "link": "https://example.com/jobs/4",
+    "status": "new",
+    "matchScore": 89
+  }
+]
