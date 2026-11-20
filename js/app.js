@@ -533,10 +533,22 @@ function renderCardsGrid() {
             </div>
           </div>
 
-          <!-- Title -->
-          <h4 class="text-lg font-bold text-white mb-1 hover:text-purple-300 transition-colors font-display leading-snug">
-            ${escapeHtml(vac.title)}
+          <!-- Title with Direct Link -->
+          <h4 class="text-lg font-bold text-white mb-1.5 font-display leading-snug">
+            <a href="${escapeHtml(vac.link)}" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition-colors inline-flex items-center gap-1.5 group/title">
+              <span>${escapeHtml(vac.title)}</span>
+              <i data-lucide="external-link" class="w-4 h-4 text-slate-500 group-hover/title:text-purple-400 opacity-80 shrink-0"></i>
+            </a>
           </h4>
+
+          <!-- Direct URL Link Pill Right Under the Position Title -->
+          <div class="mb-3">
+            <a href="${escapeHtml(vac.link)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/25 text-purple-300 hover:text-white text-[11px] font-medium transition-all group/directlink">
+              <i data-lucide="link" class="w-3 h-3 text-purple-400 shrink-0"></i>
+              <span class="truncate max-w-[220px] sm:max-w-[320px]">${escapeHtml(vac.link)}</span>
+              <i data-lucide="arrow-up-right" class="w-3 h-3 text-purple-400 group-hover/directlink:translate-x-0.5 group-hover/directlink:-translate-y-0.5 transition-transform shrink-0"></i>
+            </a>
+          </div>
 
           <!-- Company, Location & Date -->
           <div class="text-xs text-slate-400 mb-3 flex flex-wrap items-center gap-2">
