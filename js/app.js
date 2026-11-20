@@ -1,137 +1,203 @@
 let vacancies = [];
-let activeCategory = 'all';
+let activeRole = 'all';
 let activeStatus = 'all';
 let searchQuery = '';
 
-const STORAGE_KEY = 'my_vacancies_data';
+const STORAGE_KEY = 'my_vacancies_data_v2';
 
-// Initial Load
 document.addEventListener('DOMContentLoaded', async () => {
-  await loadVacancies();
-  setupEventListeners();
-  renderApp();
+  await initVacanciesData();
+  setupUIEventListeners();
+  renderTracker();
 });
 
-// Load vacancies from localStorage or fallback to JSON
-async function loadVacancies() {
-  const localData = localStorage.getItem(STORAGE_KEY);
-  if (localData) {
+// Load vacancies
+async function initVacanciesData() {
+  const local = localStorage.getItem(STORAGE_KEY);
+  if (local) {
     try {
-      vacancies = JSON.parse(localData);
+      vacancies = JSON.parse(local);
       return;
     } catch (e) {
-      console.warn('Failed to parse localStorage data, loading defaults.');
+      console.warn('Storage parsing error, loading defaults');
     }
   }
 
   try {
     const res = await fetch('./data/vacancies.json');
     vacancies = await res.json();
-    saveToStorage();
+    saveData();
   } catch (err) {
-    console.error('Error loading vacancies.json:', err);
+    console.error('Error fetching data/vacancies.json:', err);
     vacancies = [];
   }
 }
 
-function saveToStorage() {
+function saveData() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(vacancies));
 }
 
 // Event Listeners
-function setupEventListeners() {
-  // Category tabs
-  document.querySelectorAll('[data-category]').forEach(btn => {
+function setupUIEventListeners() {
+  // Role category filter tabs
+  document.querySelectorAll('[data-role-filter]').forEach(btn => {
     btn.addEventListener('click', (e) => {
-      document.querySelectorAll('[data-category]').forEach(b => {
-        b.classList.remove('bg-purple-600', 'text-white');
+      document.querySelectorAll('[data-role-filter]').forEach(b => {
+        b.classList.remove('bg-purple-600', 'text-white', 'shadow-lg', 'shadow-purple-600/30');
         b.classList.add('bg-white/5', 'text-slate-300');
       });
-      const target = e.currentTarget;
-      target.classList.remove('bg-white/5', 'text-slate-300');
-      target.classList.add('bg-purple-600', 'text-white');
-      activeCategory = target.getAttribute('data-category');
-      renderApp();
+      const el = e.currentTarget;
+      el.classList.remove('bg-white/5', 'text-slate-300');
+      el.classList.add('bg-purple-600', 'text-white', 'shadow-lg', 'shadow-purple-600/30');
+      activeRole = el.getAttribute('data-role-filter');
+      renderTracker();
     });
   });
 
-  // Status filter
-  const statusSelect = document.getElementById('statusFilter');
-  if (statusSelect) {
-    statusSelect.addEventListener('change', (e) => {
-      activeStatus = e.target.value;
-      renderApp();
+  // Status pills
+  document.querySelectorAll('[data-status-filter]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      document.querySelectorAll('[data-status-filter]').forEach(b => {
+        b.classList.remove('border-purple-500', 'text-purple-300', 'bg-purple-500/15');
+        b.classList.add('border-white/10', 'text-slate-400', 'bg-white/5');
+      });
+      const el = e.currentTarget;
+      el.classList.remove('border-white/10', 'text-slate-400', 'bg-white/5');
+      el.classList.add('border-purple-500', 'text-purple-300', 'bg-purple-500/15');
+      activeStatus = el.getAttribute('data-status-filter');
+      renderTracker();
     });
-  }
+  });
 
   // Search input
-  const searchInput = document.getElementById('searchInput');
+  const searchInput = document.getElementById('searchVacanciesInput');
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
       searchQuery = e.target.value.toLowerCase().trim();
-      renderApp();
+      renderTracker();
     });
   }
 
-  // Modal close
-  const modalCloseBtn = document.getElementById('closeModal');
-  const modalOverlay = document.getElementById('detailsModal');
-  if (modalCloseBtn && modalOverlay) {
-    modalCloseBtn.addEventListener('click', closeModal);
-    modalOverlay.addEventListener('click', (e) => {
-      if (e.target === modalOverlay) closeModal();
+  // Quick Add Modal Form
+  const addModal = document.getElementById('addVacancyModal');
+  const openAddBtn = document.getElementById('openAddModalBtn');
+  const closeAddBtn = document.getElementById('closeAddModalBtn');
+  const addForm = document.getElementById('addVacancyForm');
+
+  if (openAddBtn && addModal) {
+    openAddBtn.addEventListener('click', () => {
+      addModal.classList.remove('hidden');
+      addModal.classList.add('flex');
+    });
+  }
+  if (closeAddBtn && addModal) {
+    closeAddBtn.addEventListener('click', () => {
+      addModal.classList.add('hidden');
+      addModal.classList.remove('flex');
+    });
+  }
+
+  if (addForm) {
+    addForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const title = document.getElementById('newTitle').value.trim();
+      const company = document.getElementById('newCompany').value.trim();
+      const roleCategory = document.getElementById('newRole').value;
+      const link = document.getElementById('newLink').value.trim() || '#';
+      const salary = document.getElementById('newSalary').value.trim() || 'За домовленістю';
+      const tagsInput = document.getElementById('newTags').value.trim();
+      const description = document.getElementById('newDescription').value.trim();
+
+      const roleNames = {
+        'ai-creative': 'AI Creative Producer',
+        'product-design': 'Product Designer (UI/UX)',
+        'creative-lead': 'Creative Lead / Art Director',
+        'video-motion': 'Video & Motion Designer',
+        'ai-bots': 'AI Bot & Automation Specialist',
+        'brand-merch': 'Brand & Merch Art Director'
+      };
+
+      const newVac = {
+        id: 'vac-' + Date.now(),
+        roleCategory: roleCategory,
+        roleName: roleNames[roleCategory] || 'Інше',
+        title: title,
+        company: company,
+        location: 'Remote',
+        salary: salary,
+        type: 'Remote',
+        postedDate: 'Щойно',
+        link: link,
+        matchScore: 92,
+        status: 'not_applied',
+        appliedAt: null,
+        tags: tagsInput ? tagsInput.split(',').map(t => t.trim()).filter(Boolean) : ['Remote'],
+        description: description || 'Опис вакансії додано користувачем.'
+      };
+
+      vacancies.unshift(newVac);
+      saveData();
+      addForm.reset();
+      addModal.classList.add('hidden');
+      addModal.classList.remove('flex');
+      renderTracker();
     });
   }
 }
 
-// Render Main App
-function renderApp() {
-  updateStats();
-  renderVacancyCards();
+// Render main tracker
+function renderTracker() {
+  updateDashboardCounters();
+  renderCardsGrid();
   if (window.lucide) {
     lucide.createIcons();
   }
 }
 
-// Update Dashboard Statistics
-function updateStats() {
-  const totalEl = document.getElementById('statTotal');
-  const highMatchEl = document.getElementById('statHighMatch');
-  const savedEl = document.getElementById('statSaved');
-  const appliedEl = document.getElementById('statApplied');
+// Update counters
+function updateDashboardCounters() {
+  const totalEl = document.getElementById('countTotal');
+  const notAppliedEl = document.getElementById('countNotApplied');
+  const appliedEl = document.getElementById('countApplied');
+  const savedEl = document.getElementById('countSaved');
 
   if (!totalEl) return;
 
   const total = vacancies.length;
-  const highMatch = vacancies.filter(v => (v.matchScore || 0) >= 90).length;
-  const saved = vacancies.filter(v => v.status === 'saved').length;
   const applied = vacancies.filter(v => v.status === 'applied').length;
+  const saved = vacancies.filter(v => v.isSaved).length;
+  const notApplied = total - applied;
 
   totalEl.textContent = total;
-  highMatchEl.textContent = highMatch;
-  savedEl.textContent = saved;
+  notAppliedEl.textContent = notApplied;
   appliedEl.textContent = applied;
+  savedEl.textContent = saved;
 }
 
-// Filter and render cards
-function renderVacancyCards() {
-  const container = document.getElementById('vacanciesGrid');
-  const emptyState = document.getElementById('emptyState');
+// Filter and render list
+function renderCardsGrid() {
+  const container = document.getElementById('vacanciesContainer');
+  const emptyState = document.getElementById('vacanciesEmpty');
   if (!container) return;
 
   const filtered = vacancies.filter(v => {
-    // Category match
-    const matchCategory = (activeCategory === 'all') || (v.category === activeCategory);
-    // Status match
-    const matchStatus = (activeStatus === 'all') || (v.status === activeStatus);
-    // Search query match
-    const matchSearch = !searchQuery || 
+    // Role filter
+    const matchRole = (activeRole === 'all') || (v.roleCategory === activeRole);
+
+    // Status filter
+    let matchStatus = true;
+    if (activeStatus === 'applied') matchStatus = (v.status === 'applied');
+    else if (activeStatus === 'not_applied') matchStatus = (v.status !== 'applied');
+    else if (activeStatus === 'saved') matchStatus = !!v.isSaved;
+
+    // Search query
+    const matchSearch = !searchQuery ||
       v.title.toLowerCase().includes(searchQuery) ||
       v.company.toLowerCase().includes(searchQuery) ||
       (v.tags && v.tags.some(t => t.toLowerCase().includes(searchQuery))) ||
-      (v.description && v.description.toLowerCase().includes(searchQuery));
+      (v.roleName && v.roleName.toLowerCase().includes(searchQuery));
 
-    return matchCategory && matchStatus && matchSearch;
+    return matchRole && matchStatus && matchSearch;
   });
 
   if (filtered.length === 0) {
@@ -143,47 +209,67 @@ function renderVacancyCards() {
   if (emptyState) emptyState.classList.add('hidden');
 
   container.innerHTML = filtered.map(vac => {
-    const statusLabels = {
-      new: { label: 'Нова', class: 'badge-new' },
-      saved: { label: 'Збережено', class: 'badge-saved' },
-      applied: { label: 'Відгукнувся', class: 'badge-applied' }
-    };
-    const currentStatus = statusLabels[vac.status] || statusLabels.new;
+    const isApplied = (vac.status === 'applied');
+    const isSaved = !!vac.isSaved;
 
     return `
-      <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border border-white/10 relative overflow-hidden group">
-        <!-- Top header -->
+      <div class="glass-card rounded-3xl p-6 border transition-all duration-300 flex flex-col justify-between ${
+        isApplied 
+          ? 'border-emerald-500/40 bg-emerald-950/10 shadow-lg shadow-emerald-500/5' 
+          : 'border-white/10 hover:border-purple-500/30'
+      }">
         <div>
+          <!-- Header Bar: Role Pill + Match + Bookmark -->
           <div class="flex items-start justify-between gap-3 mb-3">
-            <div>
-              <span class="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full ${currentStatus.class} mb-2">
-                ${currentStatus.label}
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-white/5 border border-white/10 text-slate-300">
+                ${escapeHtml(vac.roleName || 'Позиція')}
               </span>
-              <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">
-                ${escapeHtml(vac.title)}
-              </h3>
-              <p class="text-sm text-slate-400 font-medium">${escapeHtml(vac.company)} • <span class="text-slate-500">${escapeHtml(vac.location)}</span></p>
+              ${
+                isApplied 
+                  ? `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 animate-pulse">
+                      <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> Заявку відправлено
+                    </span>`
+                  : `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-slate-800 text-slate-400 border border-white/5">
+                      <i data-lucide="clock" class="w-3.5 h-3.5"></i> Очікує подачі
+                    </span>`
+              }
             </div>
-            
-            <div class="score-badge px-3 py-1.5 rounded-xl text-center shrink-0">
-              <div class="text-xs text-purple-300 font-semibold">Метч</div>
-              <div class="text-lg font-black text-white font-display">${vac.matchScore || 85}%</div>
+
+            <div class="flex items-center gap-2">
+              <div class="score-badge px-2.5 py-1 rounded-xl text-center">
+                <span class="text-xs font-bold text-white font-display">${vac.matchScore || 90}%</span>
+                <span class="text-[9px] text-purple-300 block leading-none">Метч</span>
+              </div>
+              <button onclick="toggleBookmark('${vac.id}')" title="${isSaved ? 'Прибрати з обраного' : 'Додати в обране'}" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-400 hover:text-amber-300 transition-colors">
+                <i data-lucide="star" class="w-4 h-4 ${isSaved ? 'text-amber-400 fill-amber-400' : ''}"></i>
+              </button>
             </div>
           </div>
 
-          <!-- Salary & Type -->
-          <div class="flex flex-wrap items-center gap-3 py-2 mb-3 text-sm text-slate-300 border-y border-white/5">
-            <span class="font-bold text-emerald-400 font-display">${escapeHtml(vac.salary || 'За домовленістю')}</span>
-            <span class="text-slate-600">•</span>
-            <span class="text-slate-400 text-xs">${escapeHtml(vac.type)}</span>
+          <!-- Title & Company -->
+          <h4 class="text-lg sm:text-xl font-bold text-white mb-1 hover:text-purple-300 transition-colors font-display">
+            ${escapeHtml(vac.title)}
+          </h4>
+          <p class="text-xs sm:text-sm text-slate-400 mb-3 flex items-center gap-2">
+            <span class="font-medium text-slate-300">${escapeHtml(vac.company)}</span>
+            <span>•</span>
+            <span class="text-slate-400">${escapeHtml(vac.location)}</span>
+            <span>•</span>
+            <span class="text-slate-500 text-xs">${escapeHtml(vac.postedDate || 'Нещодавно')}</span>
+          </p>
+
+          <!-- Salary & Description -->
+          <div class="mb-3 py-2 px-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Вилка винагороди:</span>
+            <span class="text-sm font-bold text-emerald-400 font-display">${escapeHtml(vac.salary)}</span>
           </div>
 
-          <!-- Description preview -->
-          <p class="text-sm text-slate-300/90 line-clamp-2 mb-4 leading-relaxed">
+          <p class="text-xs text-slate-300 line-clamp-2 mb-4 leading-relaxed">
             ${escapeHtml(vac.description)}
           </p>
 
-          <!-- Skills tags -->
+          <!-- Skill Tags -->
           <div class="flex flex-wrap gap-1.5 mb-5">
             ${(vac.tags || []).map(tag => `
               <span class="text-[11px] font-medium px-2 py-0.5 rounded-md bg-white/5 text-slate-300 border border-white/5">
@@ -193,139 +279,67 @@ function renderVacancyCards() {
           </div>
         </div>
 
-        <!-- Actions -->
-        <div class="flex items-center justify-between gap-2 pt-3 border-t border-white/10 mt-2">
-          <button onclick="openModal('${vac.id}')" class="text-xs font-semibold text-purple-400 hover:text-purple-300 flex items-center gap-1 transition-colors">
-            Деталі вакансії
-            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        <!-- ACTIONS ROW: Direct Link + Application Status Button -->
+        <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+          
+          <!-- Open Vacancy External Link -->
+          <a href="${escapeHtml(vac.link)}" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors group/link">
+            <span>Відкрити вакансію</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5 text-slate-400 group-hover/link:text-white transition-colors"></i>
+          </a>
+
+          <!-- Send Application Status Toggle Button -->
+          <button onclick="toggleApplicationStatus('${vac.id}')" class="px-4 py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition-all cursor-pointer ${
+            isApplied
+              ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 hover:bg-emerald-500/30'
+              : 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white shadow-lg shadow-purple-600/20'
+          }">
+            <i data-lucide="${isApplied ? 'check' : 'send'}" class="w-3.5 h-3.5"></i>
+            <span>${isApplied ? (vac.appliedAt ? `Заявку подано (${vac.appliedAt})` : 'Заявку подано ✓') : 'Позначити: Заявку відправив'}</span>
           </button>
 
-          <div class="flex items-center gap-1.5">
-            <button onclick="toggleSave('${vac.id}')" title="${vac.status === 'saved' ? 'Прибрати зі збережених' : 'Зберегти'}" class="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 transition-colors">
-              <i data-lucide="${vac.status === 'saved' ? 'bookmark-check' : 'bookmark'}" class="w-4 h-4 ${vac.status === 'saved' ? 'text-yellow-400' : ''}"></i>
-            </button>
-            <button onclick="toggleApply('${vac.id}')" title="${vac.status === 'applied' ? 'Скасувати статус відгуку' : 'Позначити як відгукнувся'}" class="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 transition-colors">
-              <i data-lucide="${vac.status === 'applied' ? 'check-circle-2' : 'send'}" class="w-4 h-4 ${vac.status === 'applied' ? 'text-green-400' : ''}"></i>
-            </button>
-          </div>
         </div>
       </div>
     `;
   }).join('');
 }
 
-// Modal handling
-window.openModal = function(id) {
+// Toggle application status
+window.toggleApplicationStatus = function(id) {
   const vac = vacancies.find(v => v.id === id);
   if (!vac) return;
 
-  const modal = document.getElementById('detailsModal');
-  const modalBody = document.getElementById('modalContent');
-  if (!modal || !modalBody) return;
-
-  modalBody.innerHTML = `
-    <div class="flex items-start justify-between gap-4 mb-4">
-      <div>
-        <h2 class="text-2xl font-bold text-white mb-1 font-display">${escapeHtml(vac.title)}</h2>
-        <p class="text-slate-400">${escapeHtml(vac.company)} • ${escapeHtml(vac.location)}</p>
-      </div>
-      <div class="score-badge px-4 py-2 rounded-xl text-center shrink-0">
-        <div class="text-xs text-purple-300 font-semibold">Сумісність</div>
-        <div class="text-2xl font-black text-white font-display">${vac.matchScore || 85}%</div>
-      </div>
-    </div>
-
-    <div class="flex flex-wrap gap-4 p-4 rounded-xl bg-white/5 border border-white/10 mb-6 text-sm">
-      <div>
-        <span class="text-slate-500 block text-xs">Винагорода</span>
-        <span class="font-bold text-emerald-400 font-display text-base">${escapeHtml(vac.salary || 'Не вказано')}</span>
-      </div>
-      <div>
-        <span class="text-slate-500 block text-xs">Формат</span>
-        <span class="text-slate-200 font-medium">${escapeHtml(vac.type)}</span>
-      </div>
-      <div>
-        <span class="text-slate-500 block text-xs">Опубліковано</span>
-        <span class="text-slate-200 font-medium">${escapeHtml(vac.postedDate || 'Нещодавно')}</span>
-      </div>
-    </div>
-
-    <div class="mb-6">
-      <h4 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-2">Опис вакансії</h4>
-      <p class="text-slate-300 leading-relaxed text-sm">${escapeHtml(vac.description)}</p>
-    </div>
-
-    <div class="mb-6">
-      <h4 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-2">Основні вимоги & навички</h4>
-      <ul class="space-y-2">
-        ${(vac.requirements || []).map(r => `
-          <li class="flex items-start gap-2.5 text-sm text-slate-300">
-            <i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0 mt-0.5"></i>
-            <span>${escapeHtml(r)}</span>
-          </li>
-        `).join('')}
-      </ul>
-    </div>
-
-    <div class="mb-6">
-      <h4 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-2">Теги навичок</h4>
-      <div class="flex flex-wrap gap-2">
-        ${(vac.tags || []).map(t => `
-          <span class="text-xs px-2.5 py-1 rounded-md bg-purple-500/10 text-purple-300 border border-purple-500/20 font-medium">
-            ${escapeHtml(t)}
-          </span>
-        `).join('')}
-      </div>
-    </div>
-
-    <div class="flex items-center justify-between gap-3 pt-4 border-t border-white/10">
-      <div class="flex gap-2">
-        <button onclick="toggleSave('${vac.id}'); openModal('${vac.id}');" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 text-xs font-semibold flex items-center gap-2 border border-white/10 transition-colors">
-          <i data-lucide="${vac.status === 'saved' ? 'bookmark-check' : 'bookmark'}" class="w-4 h-4 ${vac.status === 'saved' ? 'text-yellow-400' : ''}"></i>
-          ${vac.status === 'saved' ? 'Збережено' : 'В збережені'}
-        </button>
-        <button onclick="toggleApply('${vac.id}'); openModal('${vac.id}');" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 text-xs font-semibold flex items-center gap-2 border border-white/10 transition-colors">
-          <i data-lucide="${vac.status === 'applied' ? 'check-circle-2' : 'send'}" class="w-4 h-4 ${vac.status === 'applied' ? 'text-green-400' : ''}"></i>
-          ${vac.status === 'applied' ? 'Відгукнувся' : 'Позначити відгук'}
-        </button>
-      </div>
-
-      <a href="${vac.link || '#'}" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white text-xs font-bold flex items-center gap-2 transition-all shadow-lg shadow-purple-600/30">
-        <span>Перейти до вакансії</span>
-        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-      </a>
-    </div>
-  `;
-
-  modal.classList.remove('hidden');
-  modal.classList.add('flex');
-  if (window.lucide) lucide.createIcons();
-};
-
-window.closeModal = function() {
-  const modal = document.getElementById('detailsModal');
-  if (modal) {
-    modal.classList.add('hidden');
-    modal.classList.remove('flex');
+  if (vac.status === 'applied') {
+    vac.status = 'not_applied';
+    vac.appliedAt = null;
+  } else {
+    vac.status = 'applied';
+    const d = new Date();
+    const day = d.getDate();
+    const months = ['січ', 'лют', 'бер', 'кві', 'тра', 'чер', 'лип', 'сер', 'вер', 'жов', 'лис', 'груд'];
+    vac.appliedAt = `${day} ${months[d.getMonth()]}`;
   }
+
+  saveData();
+  renderTracker();
 };
 
-// Toggle Save
-window.toggleSave = function(id) {
+// Toggle bookmark
+window.toggleBookmark = function(id) {
   const vac = vacancies.find(v => v.id === id);
   if (!vac) return;
-  vac.status = (vac.status === 'saved') ? 'new' : 'saved';
-  saveToStorage();
-  renderApp();
+  vac.isSaved = !vac.isSaved;
+  saveData();
+  renderTracker();
 };
 
-// Toggle Apply
-window.toggleApply = function(id) {
-  const vac = vacancies.find(v => v.id === id);
-  if (!vac) return;
-  vac.status = (vac.status === 'applied') ? 'new' : 'applied';
-  saveToStorage();
-  renderApp();
+// Reset to defaults
+window.resetVacanciesDefaults = async function() {
+  if (confirm('Скинути всі вакансії до початкового стану?')) {
+    localStorage.removeItem(STORAGE_KEY);
+    await initVacanciesData();
+    renderTracker();
+  }
 };
 
 function escapeHtml(text) {

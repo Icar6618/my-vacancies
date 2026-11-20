@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Мої вакансії — Навички та цільові ролі</title>
+  <title>Мої вакансії — Радар компетенцій та трекер заявок</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Lucide Icons CDN -->
@@ -26,9 +26,9 @@
         <div>
           <h1 class="text-lg sm:text-xl font-bold font-display tracking-tight text-white flex items-center gap-2">
             Мої вакансії
-            <span class="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">Skills & Target Roles</span>
+            <span class="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">Career Radar & Tracker</span>
           </h1>
-          <p class="text-xs text-slate-400">Профіль компетенцій та кар'єрний радар</p>
+          <p class="text-xs text-slate-400">Трекер вакансій за персональним стеком навичок</p>
         </div>
       </div>
 
@@ -66,7 +66,7 @@
           Кар'єрний профіль & цільові посади
         </h2>
         <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-          На основі твого сайту-портфоліо <a href="https://icar6618.github.io/portfolio/" target="_blank" class="text-purple-400 hover:underline inline-flex items-center gap-1 font-semibold">icar6618.github.io/portfolio <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a> я додав усі позиції, які ти зазначаєш у портфоліо: від <strong>AI Creative Producer</strong> та <strong>UI/UX Product Designer</strong> до <strong>Creative Lead / Art Director</strong> та <strong>E-commerce Lead</strong>.
+          Система налаштована під твій досвід із <a href="https://icar6618.github.io/portfolio/" target="_blank" class="text-purple-400 hover:underline inline-flex items-center gap-1 font-semibold">портфоліо <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>. Нижче розташовані твої ключові позиції, а під ними — <strong>інтерактивний каталог вакансій</strong> з прямими посиланнями та кнопкою відстеження поданих заявок.
         </p>
       </div>
 
@@ -91,214 +91,318 @@
       </div>
     </section>
 
-    <!-- SECTION 1: ALL TARGET POSITIONS -->
-    <section class="space-y-6">
+    <!-- SECTION: VACANCIES CATALOG & TRACKER (НОВИЙ БЛОК) -->
+    <section id="vacanciesTrackerSection" class="space-y-6 pt-4">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 mb-2">
+            <i data-lucide="radar" class="w-3.5 h-3.5"></i>
+            <span>Каталог & Трекер відгуків</span>
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-bold text-white font-display">
+            Вакансії за моїми навичками
+          </h3>
+          <p class="text-slate-400 text-xs sm:text-sm mt-1">
+            Відстежуй статус кожного відгуку. Натискай «Позначити: Заявку відправив», щоб фіксувати свій прогрес.
+          </p>
+        </div>
+
+        <!-- Add Manual Vacancy Button -->
+        <button id="openAddModalBtn" class="px-4 py-2.5 rounded-2xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-lg shadow-purple-600/30 cursor-pointer shrink-0">
+          <i data-lucide="plus-circle" class="w-4 h-4"></i>
+          <span>+ Додати вакансію</span>
+        </button>
+      </div>
+
+      <!-- Tracker Stats Bar -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/15 text-purple-400 flex items-center justify-center font-bold">
+            <i data-lucide="briefcase" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="text-[11px] text-slate-400">Всього в базі</div>
+            <div id="countTotal" class="text-xl font-bold text-white font-display">0</div>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/15 text-amber-400 flex items-center justify-center font-bold">
+            <i data-lucide="clock" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="text-[11px] text-slate-400">Очікують подачі</div>
+            <div id="countNotApplied" class="text-xl font-bold text-amber-400 font-display">0</div>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center font-bold">
+            <i data-lucide="check-circle" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="text-[11px] text-slate-400">Заявок подано</div>
+            <div id="countApplied" class="text-xl font-bold text-emerald-400 font-display">0</div>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-yellow-500/15 text-yellow-400 flex items-center justify-center font-bold">
+            <i data-lucide="star" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="text-[11px] text-slate-400">В обраному</div>
+            <div id="countSaved" class="text-xl font-bold text-yellow-400 font-display">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filters & Search Toolbar -->
+      <div class="glass-panel p-4 rounded-3xl border border-white/10 space-y-4">
+        
+        <!-- Search & Status pills -->
+        <div class="flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between">
+          <div class="relative flex-1">
+            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+            <input 
+              type="text" 
+              id="searchVacanciesInput" 
+              placeholder="Пошук за посадою, компанією або інструментом (напр. Runway, Figma, DaVinci)..." 
+              class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 text-xs sm:text-sm focus:outline-none focus:border-purple-500 transition-colors"
+            >
+          </div>
+
+          <!-- Status toggle tabs -->
+          <div class="flex items-center gap-1.5 overflow-x-auto text-xs shrink-0">
+            <button data-status-filter="all" class="px-3 py-1.5 rounded-xl border border-purple-500 bg-purple-500/15 text-purple-300 font-semibold transition-all">
+              Всі
+            </button>
+            <button data-status-filter="not_applied" class="px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 text-slate-400 hover:text-white font-medium transition-all">
+              ⏳ Очікують
+            </button>
+            <button data-status-filter="applied" class="px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 text-slate-400 hover:text-white font-medium transition-all">
+              ✅ Подані заявки
+            </button>
+            <button data-status-filter="saved" class="px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 text-slate-400 hover:text-white font-medium transition-all">
+              ⭐ Обрані
+            </button>
+          </div>
+        </div>
+
+        <!-- Position Category Filter Tabs -->
+        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs">
+          <button data-role-filter="all" class="px-3.5 py-1.5 rounded-xl font-semibold bg-purple-600 text-white shadow-lg shadow-purple-600/30 transition-all shrink-0">
+            Усі позиції
+          </button>
+          <button data-role-filter="ai-creative" class="px-3.5 py-1.5 rounded-xl font-semibold bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 transition-all shrink-0">
+            ✨ AI Creative Producer
+          </button>
+          <button data-role-filter="product-design" class="px-3.5 py-1.5 rounded-xl font-semibold bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 transition-all shrink-0">
+            🎨 Product Designer (UI/UX)
+          </button>
+          <button data-role-filter="creative-lead" class="px-3.5 py-1.5 rounded-xl font-semibold bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 transition-all shrink-0">
+            👑 Creative Lead / Art Director
+          </button>
+          <button data-role-filter="video-motion" class="px-3.5 py-1.5 rounded-xl font-semibold bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 transition-all shrink-0">
+            🎬 Video & Motion
+          </button>
+          <button data-role-filter="ai-bots" class="px-3.5 py-1.5 rounded-xl font-semibold bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 transition-all shrink-0">
+            ⚡ AI Bots & Telegram
+          </button>
+          <button data-role-filter="brand-merch" class="px-3.5 py-1.5 rounded-xl font-semibold bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 transition-all shrink-0">
+            👕 Brand & Merch Art Director
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Vacancies Grid Container -->
+      <div id="vacanciesContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+
+      <!-- Empty State -->
+      <div id="vacanciesEmpty" class="hidden text-center py-16 px-4 rounded-3xl border border-white/5 bg-white/[0.02]">
+        <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-slate-400 mx-auto mb-3">
+          <i data-lucide="search-x" class="w-6 h-6"></i>
+        </div>
+        <h4 class="text-base font-bold text-white mb-1">Вакансій за цим фільтром не знайдено</h4>
+        <p class="text-xs text-slate-400 mb-4">Спробуйте змінити критерії пошуку або додати нове посилання</p>
+        <button onclick="resetVacanciesDefaults()" class="text-xs text-purple-400 hover:underline">
+          Скинути фільтри або відновити початкові дані
+        </button>
+      </div>
+
+    </section>
+
+    <!-- SECTION: TARGET POSITIONS OVERVIEW -->
+    <section class="space-y-6 pt-6">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
         <div>
           <div class="text-xs font-semibold text-purple-400 uppercase tracking-wider mb-1">Кар'єрний орієнтир</div>
           <h3 class="text-2xl sm:text-3xl font-bold text-white font-display">
-            Позиції, які підходять за твоїм портфоліо
+            Детальний опис цільових посад
           </h3>
         </div>
         <p class="text-xs sm:text-sm text-slate-400 max-w-md">
-          Повний перелік ролей для пошуку та налаштування фільтрів вакансій
+          Вимоги роботодавців та стек для кожної з твоїх спеціальностей
         </p>
       </div>
 
+      <!-- Roles Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-
-        <!-- Role 1: AI Creative Producer -->
+        <!-- AI Creative Producer -->
         <div class="lg:col-span-2 glass-card p-6 sm:p-7 rounded-3xl border border-purple-500/30 bg-gradient-to-br from-purple-950/20 via-transparent to-transparent flex flex-col justify-between group">
           <div>
             <div class="flex items-center justify-between gap-3 mb-4">
-              <div class="w-12 h-12 rounded-2xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center text-purple-300 group-hover:scale-105 transition-transform">
+              <div class="w-12 h-12 rounded-2xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center text-purple-300">
                 <i data-lucide="sparkles" class="w-6 h-6"></i>
               </div>
               <span class="px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-purple-500/25 text-purple-300 border border-purple-500/40">
                 Top Match: 98% • GenAI Lead
               </span>
             </div>
-            
-            <h4 class="text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors font-display">
+            <h4 class="text-xl sm:text-2xl font-bold text-white mb-2 font-display">
               AI Creative Producer / GenAI Content Specialist
             </h4>
-            
-            <p class="text-slate-300 text-sm leading-relaxed mb-5">
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
               Створення комерційного фото-, аудіо- та відеоконтенту за допомогою ШІ. Прискорення випуску контенту в 5–10 разів зі зниженням собівартості. Повний цикл від промптингу до DaVinci Resolve.
             </p>
-
-            <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5 mb-5 text-xs text-slate-300 flex items-center gap-2">
+            <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5 mb-4 text-xs text-slate-300 flex items-center gap-2">
               <i data-lucide="folder-check" class="w-4 h-4 text-purple-400 shrink-0"></i>
               <span><strong>Кейс із портфоліо:</strong> Why Not? GenAI Promo, моделі в одязі, візуали для релізів</span>
             </div>
           </div>
-
           <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
-            <div class="flex flex-wrap gap-1.5">
-              <span class="px-2 py-0.5 rounded text-xs bg-white/5 border border-white/10 text-slate-300">Midjourney v6</span>
-              <span class="px-2 py-0.5 rounded text-xs bg-white/5 border border-white/10 text-slate-300">Runway Gen-3</span>
-              <span class="px-2 py-0.5 rounded text-xs bg-white/5 border border-white/10 text-slate-300">Luma</span>
-              <span class="px-2 py-0.5 rounded text-xs bg-white/5 border border-white/10 text-slate-300">ElevenLabs</span>
-              <span class="px-2 py-0.5 rounded text-xs bg-purple-500/20 text-purple-300 border border-purple-500/30">DaVinci Resolve</span>
-            </div>
-            <div class="text-xs font-semibold text-emerald-400 font-display">$1,500 – $3,500+</div>
+            <span class="text-xs text-slate-400">Midjourney • Runway • ElevenLabs • DaVinci</span>
+            <span class="text-xs font-semibold text-emerald-400 font-display">$1,500 – $3,500+</span>
           </div>
         </div>
 
-        <!-- Role 2: Creative Lead / Art Director (NEW FROM PORTFOLIO FOOTER) -->
+        <!-- Creative Lead / Art Director -->
         <div class="glass-card p-6 sm:p-7 rounded-3xl border border-white/10 hover:border-violet-500/40 flex flex-col justify-between group">
           <div>
             <div class="flex items-center justify-between gap-3 mb-4">
-              <div class="w-12 h-12 rounded-2xl bg-violet-500/15 border border-violet-500/30 flex items-center justify-center text-violet-300 group-hover:scale-105 transition-transform">
+              <div class="w-12 h-12 rounded-2xl bg-violet-500/15 border border-violet-500/30 flex items-center justify-center text-violet-300">
                 <i data-lucide="crown" class="w-6 h-6"></i>
               </div>
               <span class="px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-violet-500/20 text-violet-300 border border-violet-500/30">
                 Метч: 96% • Lead
               </span>
             </div>
-
-            <h4 class="text-xl font-bold text-white mb-2 group-hover:text-violet-300 transition-colors font-display">
-              Creative Lead / Art Director
-            </h4>
-
+            <h4 class="text-xl font-bold text-white mb-2 font-display">Creative Lead / Art Director</h4>
             <p class="text-slate-300 text-sm leading-relaxed mb-4">
-              Керівництво креативним баченням проєкту, координація дизайну, AI-пайплайнів та медіа-кампаній. Робота на перетині креативу, технологій та бізнесу.
+              Керівництво креативним баченням проєкту, координація дизайну, AI-пайплайнів та медіа-кампаній.
             </p>
-
             <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5 mb-4 text-xs text-slate-300 flex items-center gap-2">
               <i data-lucide="folder-check" class="w-4 h-4 text-violet-400 shrink-0"></i>
-              <span><strong>Кейс із портфоліо:</strong> Загальне арт-дирекшн проєкту Why Not?</span>
+              <span><strong>Кейс:</strong> Загальне арт-дирекшн проєкту Why Not?</span>
             </div>
           </div>
-
           <div class="pt-4 border-t border-white/10 flex items-center justify-between">
             <span class="text-xs text-slate-400">Art Direction • Creative Vision</span>
             <span class="text-xs font-semibold text-emerald-400 font-display">$2,000 – $4,000</span>
           </div>
         </div>
 
-        <!-- Role 3: Product Designer (UI/UX) -->
+        <!-- Product Designer (UI/UX) -->
         <div class="glass-card p-6 sm:p-7 rounded-3xl border border-white/10 hover:border-pink-500/40 flex flex-col justify-between group">
           <div>
             <div class="flex items-center justify-between gap-3 mb-4">
-              <div class="w-12 h-12 rounded-2xl bg-pink-500/15 border border-pink-500/30 flex items-center justify-center text-pink-300 group-hover:scale-105 transition-transform">
+              <div class="w-12 h-12 rounded-2xl bg-pink-500/15 border border-pink-500/30 flex items-center justify-center text-pink-300">
                 <i data-lucide="layout" class="w-6 h-6"></i>
               </div>
               <span class="px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-pink-500/20 text-pink-300 border border-pink-500/30">
                 Метч: 95%
               </span>
             </div>
-
-            <h4 class="text-xl font-bold text-white mb-2 group-hover:text-pink-300 transition-colors font-display">
-              Product Designer (UI/UX)
-            </h4>
-
+            <h4 class="text-xl font-bold text-white mb-2 font-display">Product Designer (UI/UX)</h4>
             <p class="text-slate-300 text-sm leading-relaxed mb-4">
-              Проєктування e-commerce платформ, інтерфейсів та мобільного UX. Створення масштабованих дизайн-систем, autolayout, dark/light режимів та кошиків покупок.
+              Проєктування e-commerce платформ, інтерфейсів та мобільного UX. Створення масштабованих дизайн-систем.
             </p>
-
             <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5 mb-4 text-xs text-slate-300 flex items-center gap-2">
               <i data-lucide="folder-check" class="w-4 h-4 text-pink-400 shrink-0"></i>
-              <span><strong>Кейс із портфоліо:</strong> Повний редизайн why-not.com.ua</span>
+              <span><strong>Кейс:</strong> Повний редизайн why-not.com.ua</span>
             </div>
           </div>
-
           <div class="pt-4 border-t border-white/10 flex items-center justify-between">
             <span class="text-xs text-slate-400">Figma • Pixso • UX</span>
             <span class="text-xs font-semibold text-emerald-400 font-display">$1,200 – $2,800</span>
           </div>
         </div>
 
-        <!-- Role 4: Brand & Merch Art Director -->
+        <!-- Brand & Merch Art Director -->
         <div class="glass-card p-6 sm:p-7 rounded-3xl border border-white/10 hover:border-amber-500/40 flex flex-col justify-between group">
           <div>
             <div class="flex items-center justify-between gap-3 mb-4">
-              <div class="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-300 group-hover:scale-105 transition-transform">
+              <div class="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-300">
                 <i data-lucide="palette" class="w-6 h-6"></i>
               </div>
               <span class="px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/30">
                 Метч: 93%
               </span>
             </div>
-
-            <h4 class="text-xl font-bold text-white mb-2 group-hover:text-amber-300 transition-colors font-display">
-              Brand & Merch Art Director
-            </h4>
-
+            <h4 class="text-xl font-bold text-white mb-2 font-display">Brand & Merch Art Director</h4>
             <p class="text-slate-300 text-sm leading-relaxed mb-4">
-              Розробка айдентики, створення маскота бренду (енот у худі), лінійок одягу (Acid-wash, філософська типографіка, шовкодрук, шопери та кераміка).
+              Розробка айдентики, створення маскота (енот у худі), лінійок одягу (Acid-wash, шовкодрук, шопери).
             </p>
-
             <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5 mb-4 text-xs text-slate-300 flex items-center gap-2">
               <i data-lucide="folder-check" class="w-4 h-4 text-amber-400 shrink-0"></i>
-              <span><strong>Кейс із портфоліо:</strong> Логотип, брендбук та маскот Why Not?</span>
+              <span><strong>Кейс:</strong> Логотип, брендбук та маскот</span>
             </div>
           </div>
-
           <div class="pt-4 border-t border-white/10 flex items-center justify-between">
             <span class="text-xs text-slate-400">Merch • Mascot • Branding</span>
             <span class="text-xs font-semibold text-emerald-400 font-display">$1,200 – $2,500</span>
           </div>
         </div>
 
-        <!-- Role 5: Video Editor & Motion Designer -->
+        <!-- Video Editor & Motion Designer -->
         <div class="glass-card p-6 sm:p-7 rounded-3xl border border-white/10 hover:border-cyan-500/40 flex flex-col justify-between group">
           <div>
             <div class="flex items-center justify-between gap-3 mb-4">
-              <div class="w-12 h-12 rounded-2xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-300 group-hover:scale-105 transition-transform">
+              <div class="w-12 h-12 rounded-2xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-300">
                 <i data-lucide="video" class="w-6 h-6"></i>
               </div>
               <span class="px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
                 Метч: 91%
               </span>
             </div>
-
-            <h4 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors font-display">
-              Video Editor & Motion Designer
-            </h4>
-
+            <h4 class="text-xl font-bold text-white mb-2 font-display">Video Editor & Motion Designer</h4>
             <p class="text-slate-300 text-sm leading-relaxed mb-4">
-              Монтаж динамічних промо-роликів, контенту для соцмереж (Reels/Shorts/TikTok), саунд-дизайн, кольорокорекція в DaVinci Resolve та автосаби.
+              Монтаж промо-роликів, контенту для соцмереж (Reels/Shorts/TikTok), саунд-дизайн та кольорокорекція.
             </p>
-
             <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5 mb-4 text-xs text-slate-300 flex items-center gap-2">
               <i data-lucide="folder-check" class="w-4 h-4 text-cyan-400 shrink-0"></i>
-              <span><strong>Кейс із портфоліо:</strong> Промо-ролики для Why Not? Video</span>
+              <span><strong>Кейс:</strong> Промо-ролики для Why Not?</span>
             </div>
           </div>
-
           <div class="pt-4 border-t border-white/10 flex items-center justify-between">
             <span class="text-xs text-slate-400">DaVinci • FL Studio • Motion</span>
             <span class="text-xs font-semibold text-emerald-400 font-display">$1,000 – $2,200</span>
           </div>
         </div>
 
-        <!-- Role 6: AI Automation & Telegram Bot Specialist -->
+        <!-- AI Bot Specialist -->
         <div class="glass-card p-6 sm:p-7 rounded-3xl border border-white/10 hover:border-emerald-500/40 flex flex-col justify-between group">
           <div>
             <div class="flex items-center justify-between gap-3 mb-4">
-              <div class="w-12 h-12 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-300 group-hover:scale-105 transition-transform">
+              <div class="w-12 h-12 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-300">
                 <i data-lucide="bot" class="w-6 h-6"></i>
               </div>
               <span class="px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
                 Метч: 90%
               </span>
             </div>
-
-            <h4 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors font-display">
-              AI Support & Telegram Bot Specialist
-            </h4>
-
+            <h4 class="text-xl font-bold text-white mb-2 font-display">AI Support & Telegram Bot Specialist</h4>
             <p class="text-slate-300 text-sm leading-relaxed mb-4">
-              Розробка Telegram-ботів, впровадження LLM (Claude, ChatGPT, Gemini) для цілодобової автоматизації клієнтського сервісу, FAQ та обробки замовлень.
+              Розробка Telegram-ботів, впровадження LLM (Claude, ChatGPT, Gemini) для цілодобової автоматизації.
             </p>
-
             <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5 mb-4 text-xs text-slate-300 flex items-center gap-2">
               <i data-lucide="folder-check" class="w-4 h-4 text-emerald-400 shrink-0"></i>
-              <span><strong>Кейс із портфоліо:</strong> @whynot_supportbot у Telegram</span>
+              <span><strong>Кейс:</strong> @whynot_supportbot у Telegram</span>
             </div>
           </div>
-
           <div class="pt-4 border-t border-white/10 flex items-center justify-between">
             <span class="text-xs text-slate-400">Telegram API • Claude • Gemini</span>
             <span class="text-xs font-semibold text-emerald-400 font-display">$1,200 – $2,500</span>
@@ -308,72 +412,82 @@
       </div>
     </section>
 
-    <!-- SECTION 2: MAPPING TABLE (КЕЙСИ З ПОРТФОЛІО → РОЛІ) -->
-    <section class="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 space-y-6">
-      <div>
-        <div class="text-xs font-semibold text-purple-400 uppercase tracking-wider mb-1">Доказова база</div>
-        <h3 class="text-2xl font-bold text-white font-display">
-          Як твої кейси з портфоліо закривають кожну вакансію
-        </h3>
-        <p class="text-xs sm:text-sm text-slate-400 mt-1">
-          Зв'язка між реальними роботами на сайті <a href="https://icar6618.github.io/portfolio/" target="_blank" class="text-purple-300 hover:underline">icar6618.github.io/portfolio</a> та вимогами рекрутерів
-        </p>
-      </div>
-
-      <div class="overflow-x-auto">
-        <table class="w-full text-left border-collapse text-xs sm:text-sm">
-          <thead>
-            <tr class="border-b border-white/10 text-slate-400 text-xs uppercase tracking-wider font-semibold">
-              <th class="py-3 px-4">Кейс із твого портфоліо</th>
-              <th class="py-3 px-4">Що зроблено</th>
-              <th class="py-3 px-4">Підтверджує посаду</th>
-              <th class="py-3 px-4 text-right">Сумісність</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-white/5 text-slate-300">
-            <tr class="hover:bg-white/[0.02] transition-colors">
-              <td class="py-3.5 px-4 font-semibold text-white">Редизайн why-not.com.ua</td>
-              <td class="py-3.5 px-4 text-slate-400">Dark/Light UX, мобільна версія, кошик, вітрина</td>
-              <td class="py-3.5 px-4"><span class="text-pink-300 font-medium">Product Designer (UI/UX)</span></td>
-              <td class="py-3.5 px-4 text-right font-bold text-emerald-400 font-display">95%</td>
-            </tr>
-            <tr class="hover:bg-white/[0.02] transition-colors">
-              <td class="py-3.5 px-4 font-semibold text-white">GenAI Media & Video</td>
-              <td class="py-3.5 px-4 text-slate-400">Генерація моделей у мерчі, промо-ролики, аудіо</td>
-              <td class="py-3.5 px-4"><span class="text-purple-300 font-medium">AI Creative Producer</span></td>
-              <td class="py-3.5 px-4 text-right font-bold text-emerald-400 font-display">98%</td>
-            </tr>
-            <tr class="hover:bg-white/[0.02] transition-colors">
-              <td class="py-3.5 px-4 font-semibold text-white">Why Not? Брендбук & Маскот</td>
-              <td class="py-3.5 px-4 text-slate-400">Векторна сітка лого, єнот у худі, мерч-дропи</td>
-              <td class="py-3.5 px-4"><span class="text-amber-300 font-medium">Brand & Merch Art Director</span></td>
-              <td class="py-3.5 px-4 text-right font-bold text-emerald-400 font-display">93%</td>
-            </tr>
-            <tr class="hover:bg-white/[0.02] transition-colors">
-              <td class="py-3.5 px-4 font-semibold text-white">@whynot_supportbot</td>
-              <td class="py-3.5 px-4 text-slate-400">Цілодобова підтримка клієнтів через Telegram + LLM</td>
-              <td class="py-3.5 px-4"><span class="text-emerald-300 font-medium">AI Bot & Automation Specialist</span></td>
-              <td class="py-3.5 px-4 text-right font-bold text-emerald-400 font-display">90%</td>
-            </tr>
-            <tr class="hover:bg-white/[0.02] transition-colors">
-              <td class="py-3.5 px-4 font-semibold text-white">Керівництво Why Not? (CEO)</td>
-              <td class="py-3.5 px-4 text-slate-400">Zero-investment модель, B2B з артистами, юніт-економіка</td>
-              <td class="py-3.5 px-4"><span class="text-violet-300 font-medium">Creative Lead / E-commerce Lead</span></td>
-              <td class="py-3.5 px-4 text-right font-bold text-emerald-400 font-display">96%</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
   </main>
+
+  <!-- ADD VACANCY MODAL FORM -->
+  <div id="addVacancyModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4">
+    <div class="glass-panel border border-white/15 rounded-3xl max-w-lg w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto shadow-2xl">
+      <button id="closeAddModalBtn" class="absolute top-5 right-5 p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-colors">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="mb-5">
+        <h3 class="text-xl font-bold text-white font-display">Додати нову вакансію</h3>
+        <p class="text-xs text-slate-400">Встав посилання та основні дані про вакансію</p>
+      </div>
+
+      <form id="addVacancyForm" class="space-y-4 text-xs">
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1">Назва посади *</label>
+          <input type="text" id="newTitle" required placeholder="напр. GenAI Creator / Video Editor" class="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1">Компанія *</label>
+            <input type="text" id="newCompany" required placeholder="напр. Creative Agency" class="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500">
+          </div>
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1">Категорія ролі</label>
+            <select id="newRole" class="w-full px-3 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-white focus:outline-none focus:border-purple-500">
+              <option value="ai-creative">AI Creative Producer</option>
+              <option value="product-design">Product Designer (UI/UX)</option>
+              <option value="creative-lead">Creative Lead / Art Director</option>
+              <option value="video-motion">Video & Motion Designer</option>
+              <option value="ai-bots">AI Bot & Automation</option>
+              <option value="brand-merch">Brand & Merch Art Director</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1">Посилання на вакансію *</label>
+            <input type="url" id="newLink" required placeholder="https://djinni.co/jobs/..." class="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500">
+          </div>
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1">Вилка винагороди</label>
+            <input type="text" id="newSalary" placeholder="напр. $2,000 – $3,000" class="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1">Теги / Інструменти (через кому)</label>
+          <input type="text" id="newTags" placeholder="Runway, Midjourney, DaVinci Resolve, Remote" class="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500">
+        </div>
+
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1">Короткий опис</label>
+          <textarea id="newDescription" rows="3" placeholder="Основні обов'язки та вимоги..." class="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500"></textarea>
+        </div>
+
+        <div class="pt-2 flex justify-end gap-2">
+          <button type="button" onclick="document.getElementById('addVacancyModal').classList.add('hidden')" class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 transition-colors">
+            Скасувати
+          </button>
+          <button type="submit" class="px-5 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold transition-all shadow-lg shadow-purple-600/30">
+            Зберегти вакансію
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <footer class="border-t border-white/10 py-6 text-center text-xs text-slate-500 relative z-10">
     <p>Мої вакансії © 2026 • Viktor Malieiev Career Radar</p>
   </footer>
 
-  <script>
-    lucide.createIcons();
-  </script>
+  <!-- Scripts -->
+  <script src="./js/app.js"></script>
 </body>
 </html>
