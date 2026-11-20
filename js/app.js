@@ -1,9 +1,10 @@
 let vacancies = [];
 let activeRole = 'all';
 let activeStatus = 'all';
+let activeWorkplace = 'all'; // 'all' | 'remote' | 'office' | 'hybrid'
 let searchQuery = '';
 
-const STORAGE_KEY = 'my_vacancies_data_v3';
+const STORAGE_KEY = 'my_vacancies_data_v4';
 
 document.addEventListener('DOMContentLoaded', async () => {
   await initVacanciesData();
@@ -54,16 +55,31 @@ function setupUIEventListeners() {
     });
   });
 
-  // Status pills
-  document.querySelectorAll('[data-status-filter]').forEach(btn => {
+  // Workplace Format Filter (Дистанційно / В офісі)
+  document.querySelectorAll('[data-workplace-filter]').forEach(btn => {
     btn.addEventListener('click', (e) => {
-      document.querySelectorAll('[data-status-filter]').forEach(b => {
-        b.classList.remove('border-purple-500', 'text-purple-300', 'bg-purple-500/15');
+      document.querySelectorAll('[data-workplace-filter]').forEach(b => {
+        b.classList.remove('border-teal-500', 'text-teal-300', 'bg-teal-500/15', 'font-bold');
         b.classList.add('border-white/10', 'text-slate-400', 'bg-white/5');
       });
       const el = e.currentTarget;
       el.classList.remove('border-white/10', 'text-slate-400', 'bg-white/5');
-      el.classList.add('border-purple-500', 'text-purple-300', 'bg-purple-500/15');
+      el.classList.add('border-teal-500', 'text-teal-300', 'bg-teal-500/15', 'font-bold');
+      activeWorkplace = el.getAttribute('data-workplace-filter');
+      renderTracker();
+    });
+  });
+
+  // Status pills
+  document.querySelectorAll('[data-status-filter]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      document.querySelectorAll('[data-status-filter]').forEach(b => {
+        b.classList.remove('border-purple-500', 'text-purple-300', 'bg-purple-500/15', 'font-bold');
+        b.classList.add('border-white/10', 'text-slate-400', 'bg-white/5');
+      });
+      const el = e.currentTarget;
+      el.classList.remove('border-white/10', 'text-slate-400', 'bg-white/5');
+      el.classList.add('border-purple-500', 'text-purple-300', 'bg-purple-500/15', 'font-bold');
       activeStatus = el.getAttribute('data-status-filter');
       renderTracker();
     });
@@ -103,6 +119,7 @@ function setupUIEventListeners() {
       const title = document.getElementById('newTitle').value.trim();
       const company = document.getElementById('newCompany').value.trim();
       const roleCategory = document.getElementById('newRole').value;
+      const workplaceType = document.getElementById('newWorkplace').value;
       const link = document.getElementById('newLink').value.trim() || '#';
       const salary = document.getElementById('newSalary').value.trim() || 'За домовленістю';
       const tagsInput = document.getElementById('newTags').value.trim();
@@ -117,21 +134,29 @@ function setupUIEventListeners() {
         'brand-merch': 'Brand & Merch Art Director'
       };
 
+      const workplaceLabels = {
+        'remote': 'Дистанційно (Remote)',
+        'office': 'Робота в офісі',
+        'hybrid': 'Гібридний формат'
+      };
+
       const newVac = {
         id: 'vac-' + Date.now(),
         roleCategory: roleCategory,
         roleName: roleNames[roleCategory] || 'Інше',
+        workplaceType: workplaceType,
+        workplaceLabel: workplaceLabels[workplaceType] || 'Дистанційно',
         title: title,
         company: company,
-        location: 'Remote',
+        location: workplaceType === 'remote' ? 'Remote' : 'Офіс / Гібрид',
         salary: salary,
-        type: 'Remote',
+        type: workplaceLabels[workplaceType],
         postedDate: 'Щойно додано',
         link: link,
         matchScore: 90,
         status: 'not_applied',
         appliedAt: null,
-        tags: tagsInput ? tagsInput.split(',').map(t => t.trim()).filter(Boolean) : ['Remote'],
+        tags: tagsInput ? tagsInput.split(',').map(t => t.trim()).filter(Boolean) : [workplaceLabels[workplaceType]],
         description: description || 'Опис вакансії додано користувачем.',
         matchAnalysis: {
           strengths: ['Додано вручну користувачем'],
@@ -188,6 +213,15 @@ function renderCardsGrid() {
     // Role filter
     const matchRole = (activeRole === 'all') || (v.roleCategory === activeRole);
 
+    // Workplace filter (Remote vs Office vs Hybrid)
+    let matchWorkplace = true;
+    const vType = v.workplaceType || (v.location && v.location.toLowerCase().includes('remote') ? 'remote' : 'office');
+    if (activeWorkplace === 'remote') {
+      matchWorkplace = (vType === 'remote');
+    } else if (activeWorkplace === 'office') {
+      matchWorkplace = (vType === 'office' || vType === 'hybrid');
+    }
+
     // Status filter
     let matchStatus = true;
     if (activeStatus === 'applied') matchStatus = (v.status === 'applied');
@@ -199,9 +233,10 @@ function renderCardsGrid() {
       v.title.toLowerCase().includes(searchQuery) ||
       v.company.toLowerCase().includes(searchQuery) ||
       (v.tags && v.tags.some(t => t.toLowerCase().includes(searchQuery))) ||
-      (v.roleName && v.roleName.toLowerCase().includes(searchQuery));
+      (v.roleName && v.roleName.toLowerCase().includes(searchQuery)) ||
+      (v.location && v.location.toLowerCase().includes(searchQuery));
 
-    return matchRole && matchStatus && matchSearch;
+    return matchRole && matchWorkplace && matchStatus && matchSearch;
   });
 
   if (filtered.length === 0) {
@@ -219,6 +254,21 @@ function renderCardsGrid() {
     const strengths = (vac.matchAnalysis && vac.matchAnalysis.strengths) || [];
     const gaps = (vac.matchAnalysis && vac.matchAnalysis.gaps) || [];
 
+    // Workplace style
+    const wType = vac.workplaceType || 'remote';
+    let workplaceBadge = `<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-teal-500/15 text-teal-300 border border-teal-500/25">
+      <i data-lucide="globe" class="w-3 h-3"></i> Дистанційно (Remote)
+    </span>`;
+    if (wType === 'office') {
+      workplaceBadge = `<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-indigo-500/15 text-indigo-300 border border-indigo-500/25">
+        <i data-lucide="building" class="w-3 h-3"></i> В офісі
+      </span>`;
+    } else if (wType === 'hybrid') {
+      workplaceBadge = `<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-sky-500/15 text-sky-300 border border-sky-500/25">
+        <i data-lucide="shuffle" class="w-3 h-3"></i> Гібридний формат
+      </span>`;
+    }
+
     // Match Color
     let matchBg = 'from-purple-500/20 to-pink-500/20 border-purple-500/30 text-purple-300';
     if (match >= 95) matchBg = 'from-emerald-500/20 to-teal-500/20 border-emerald-500/30 text-emerald-300';
@@ -231,25 +281,24 @@ function renderCardsGrid() {
           : 'border-white/10 hover:border-purple-500/30'
       }">
         <div>
-          <!-- Header Bar: Role Pill + Match + Bookmark -->
+          <!-- Header Bar: Role Pill + Workplace + Match + Bookmark -->
           <div class="flex items-start justify-between gap-3 mb-3">
             <div class="flex flex-wrap items-center gap-2">
-              <span class="px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-white/5 border border-white/10 text-slate-300">
+              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-white/5 border border-white/10 text-slate-300">
                 ${escapeHtml(vac.roleName || 'Позиція')}
               </span>
+              ${workplaceBadge}
               ${
                 isApplied 
-                  ? `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 animate-pulse">
-                      <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> Заявку відправлено
+                  ? `<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 animate-pulse">
+                      <i data-lucide="check-circle" class="w-3 h-3"></i> Подано
                     </span>`
-                  : `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-slate-800 text-slate-400 border border-white/5">
-                      <i data-lucide="clock" class="w-3.5 h-3.5"></i> Очікує подачі
-                    </span>`
+                  : ''
               }
             </div>
 
             <div class="flex items-center gap-2">
-              <div class="px-3 py-1.5 rounded-xl bg-gradient-to-r ${matchBg} border text-center shrink-0">
+              <div class="px-2.5 py-1 rounded-xl bg-gradient-to-r ${matchBg} border text-center shrink-0">
                 <span class="text-xs font-black font-display">${match}%</span>
                 <span class="text-[9px] block leading-none font-semibold uppercase tracking-wider opacity-80">Гарант</span>
               </div>
@@ -276,7 +325,7 @@ function renderCardsGrid() {
 
           <!-- Salary & Description -->
           <div class="mb-3 py-2 px-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-between">
-            <span class="text-xs text-slate-400">Вилка:</span>
+            <span class="text-xs text-slate-400">Вилка винагороди:</span>
             <span class="text-sm font-bold text-emerald-400 font-display">${escapeHtml(vac.salary)}</span>
           </div>
 
