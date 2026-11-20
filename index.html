@@ -1,163 +1,31 @@
 <!DOCTYPE html>
-<html lang="uk" class="dark">
+<html lang="uk">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Мої вакансії — Агрегатор та персональний трекер вакансій</title>
-  <!-- Tailwind CSS CDN -->
+  <title>Мої вакансії</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons CDN -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="./css/style.css">
 </head>
-<body class="relative overflow-x-hidden selection:bg-purple-500/30 selection:text-purple-200">
-
-  <!-- Ambient Glow Background -->
-  <div class="fixed inset-0 pointer-events-none glow-gradient z-0"></div>
-
-  <!-- Header / Nav -->
-  <header class="sticky top-0 z-30 glass-panel border-b border-white/10 px-4 sm:px-8 py-3.5">
-    <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 to-pink-600 flex items-center justify-center text-white shadow-lg shadow-purple-600/30">
-          <i data-lucide="briefcase" class="w-5 h-5"></i>
-        </div>
-        <div>
-          <h1 class="text-lg sm:text-xl font-bold font-display tracking-tight text-white flex items-center gap-2">
-            Мої вакансії
-            <span class="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">Radar</span>
-          </h1>
-          <p class="text-xs text-slate-400">Персональний фільтр за навичками та трекер відгуків</p>
-        </div>
-      </div>
-
-      <div class="flex items-center gap-3">
-        <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs text-slate-300">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span>Профіль: <strong class="text-white">Viktor Maleiev</strong></span>
-        </div>
-      </div>
+<body class="bg-[#0b0d13] text-slate-100 min-h-screen flex items-center justify-center p-6 selection:bg-purple-500/30">
+  <div class="max-w-md w-full text-center space-y-6">
+    <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400 text-3xl shadow-lg shadow-purple-500/10">
+      💼
     </div>
-  </header>
+    
+    <div class="space-y-2">
+      <h1 class="text-3xl font-extrabold tracking-tight text-white">Мої вакансії</h1>
+      <p class="text-slate-400 text-sm">
+        Сайт успішно створено та запущено. Полотно чисте і готове до наповнення.
+      </p>
+    </div>
 
-  <!-- Main Container -->
-  <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 py-8">
-
-    <!-- Top Stats Banner -->
-    <section class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-      <div class="glass-card p-4 rounded-2xl border border-white/10 flex items-center gap-4">
-        <div class="w-11 h-11 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
-          <i data-lucide="layers" class="w-5 h-5"></i>
-        </div>
-        <div>
-          <div class="text-xs text-slate-400 font-medium">Всього вакансій</div>
-          <div id="statTotal" class="text-2xl font-bold text-white font-display">0</div>
-        </div>
+    <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 text-xs text-slate-400 space-y-1">
+      <div class="flex items-center justify-center gap-2 text-emerald-400 font-medium">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Сервер активний
       </div>
-
-      <div class="glass-card p-4 rounded-2xl border border-white/10 flex items-center gap-4">
-        <div class="w-11 h-11 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400">
-          <i data-lucide="flame" class="w-5 h-5"></i>
-        </div>
-        <div>
-          <div class="text-xs text-slate-400 font-medium">Метч > 90%</div>
-          <div id="statHighMatch" class="text-2xl font-bold text-white font-display">0</div>
-        </div>
-      </div>
-
-      <div class="glass-card p-4 rounded-2xl border border-white/10 flex items-center gap-4">
-        <div class="w-11 h-11 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
-          <i data-lucide="bookmark" class="w-5 h-5"></i>
-        </div>
-        <div>
-          <div class="text-xs text-slate-400 font-medium">Збережені</div>
-          <div id="statSaved" class="text-2xl font-bold text-white font-display">0</div>
-        </div>
-      </div>
-
-      <div class="glass-card p-4 rounded-2xl border border-white/10 flex items-center gap-4">
-        <div class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
-          <i data-lucide="send" class="w-5 h-5"></i>
-        </div>
-        <div>
-          <div class="text-xs text-slate-400 font-medium">Відгукнувся</div>
-          <div id="statApplied" class="text-2xl font-bold text-white font-display">0</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Filters & Search Toolbar -->
-    <section class="glass-panel p-4 rounded-2xl border border-white/10 mb-8 space-y-4">
-      <!-- Search & Status Select -->
-      <div class="flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between">
-        <div class="relative flex-1">
-          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
-          <input 
-            type="text" 
-            id="searchInput" 
-            placeholder="Шукати за посадою, компанією або навичкою (напр. Runway, Figma, DaVinci)..." 
-            class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-purple-500 transition-colors"
-          >
-        </div>
-
-        <div class="flex items-center gap-2">
-          <select id="statusFilter" class="px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-slate-300 text-sm focus:outline-none focus:border-purple-500 cursor-pointer">
-            <option value="all">Усі статуси</option>
-            <option value="new">Тільки нові</option>
-            <option value="saved">Збережені</option>
-            <option value="applied">Вже відгукнувся</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- Categories Badges -->
-      <div class="flex items-center gap-2 overflow-x-auto pb-1 text-xs">
-        <button data-category="all" class="px-3.5 py-1.5 rounded-xl font-semibold bg-purple-600 text-white transition-all shrink-0">
-          Всі спеціальності
-        </button>
-        <button data-category="ai-media" class="px-3.5 py-1.5 rounded-xl font-semibold bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 transition-all shrink-0">
-          ✨ Generative AI Media
-        </button>
-        <button data-category="design" class="px-3.5 py-1.5 rounded-xl font-semibold bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 transition-all shrink-0">
-          🎨 UI/UX & Design
-        </button>
-        <button data-category="video" class="px-3.5 py-1.5 rounded-xl font-semibold bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 transition-all shrink-0">
-          🎬 Video & Motion
-        </button>
-        <button data-category="automation" class="px-3.5 py-1.5 rounded-xl font-semibold bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 transition-all shrink-0">
-          ⚡ AI Bots & Automation
-        </button>
-      </div>
-    </section>
-
-    <!-- Vacancies Grid -->
-    <section>
-      <div id="vacanciesGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
-
-      <!-- Empty State -->
-      <div id="emptyState" class="hidden text-center py-16 px-4">
-        <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 mx-auto mb-4">
-          <i data-lucide="search-x" class="w-6 h-6"></i>
-        </div>
-        <h3 class="text-lg font-bold text-white mb-1">Нічого не знайдено</h3>
-        <p class="text-sm text-slate-400">Спробуйте змінити фільтри або пошуковий запит.</p>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Vacancy Details Modal -->
-  <div id="detailsModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4">
-    <div class="glass-panel border border-white/15 rounded-3xl max-w-2xl w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto shadow-2xl">
-      <button id="closeModal" class="absolute top-5 right-5 p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-colors">
-        <i data-lucide="x" class="w-5 h-5"></i>
-      </button>
-      <div id="modalContent"></div>
+      <div>Готовий виконувати наступні кроки</div>
     </div>
   </div>
-
-  <!-- Scripts -->
-  <script src="./js/app.js"></script>
 </body>
 </html>
