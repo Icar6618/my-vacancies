@@ -1,144 +1,198 @@
 [
   {
-    "id": "vac-djinni-reply-video",
+    "id": "vac-djinni-856111",
+    "roleCategory": "ai-creative",
+    "roleName": "AI Creative Producer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "title": "Middle AI Video Editor – Performance Ads (DTC Health Brand)",
+    "company": "EcoNatura",
+    "location": "Remote (Весь світ / Worldwide)",
+    "salary": "до $3,000 / міс",
+    "type": "Full-time (Remote)",
+    "postedDate": "Оновлено сьогодні (Djinni)",
+    "link": "https://djinni.co/jobs/856111-middle-ai-video-editor-performance-ads-dtc-he/",
+    "matchScore": 98,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": ["AI Video Generation", "ElevenLabs Voiceovers", "DaVinci Resolve", "Sound Design", "Performance Ads"],
+    "description": "Створення комерційних рекламних відео для міжнародного DTC бренду. 90% відео створюються за допомогою ШІ (генерація кадрів, озвучка через ElevenLabs, монтаж під біт, анімації та хуки з високим утриманням).",
+    "matchAnalysis": {
+      "strengths": [
+        "100% твій стек: генерація ШІ-відео + синтез голосу в ElevenLabs",
+        "Монтаж, динамічний ритм та саунд-дизайн у DaVinci Resolve",
+        "Розуміння e-commerce та створення конверсійних візуалів (з кейсу Why Not?)"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-djinni-859038",
     "roleCategory": "video-motion",
     "roleName": "Video & Motion Designer",
     "workplaceType": "remote",
     "workplaceLabel": "Дистанційно (Remote)",
-    "title": "Video Editor & AI Creator (Reels, TikTok, Shorts)",
-    "company": "Reply.io",
-    "location": "Full Remote (Україна / Worldwide)",
-    "salary": "$1,200 – $2,200 / міс",
+    "title": "Short-Form Video Editor / Clipper (Reels, Shorts, TikTok)",
+    "company": "Fundomate Technologies Inc.",
+    "location": "Remote (Україна / Europe)",
+    "salary": "$1,200 – $2,200 / міс ($$$)",
     "type": "Full-time (Remote)",
-    "postedDate": "Сьогодні (Djinni)",
-    "link": "https://djinni.co/jobs/keyword-video-editor/",
+    "postedDate": "Опубліковано вчора (Djinni)",
+    "link": "https://djinni.co/jobs/859038-short-form-video-editor-clipper-reels-shorts-/",
     "matchScore": 97,
     "status": "not_applied",
     "appliedAt": null,
     "isSaved": false,
-    "tags": ["DaVinci Resolve", "AI Video Tools", "Reels & TikTok", "Auto-subs", "Sound Design"],
-    "description": "Повний цикл створення та монтажу динамічних вертикальних відео (Reels, TikTok, Shorts) для міжнародного продукту. Використання генеративного ШІ, саунд-дизайн, кінетична типографіка та висока конверсія переглядів.",
+    "tags": ["DaVinci Resolve", "AI Clipping Tools", "Reels & Shorts", "Sound Design", "Auto-subs"],
+    "description": "Створення 15–90 секундних вірусних вертикальних кліпів для Instagram Reels, YouTube Shorts та TikTok. Робота з хуками, утриманням уваги, кінетичною типографікою, автосубтитрами та саунд-дизайном.",
     "matchAnalysis": {
       "strengths": [
-        "100% відповідність: досвід динамічного монтажу в DaVinci Resolve",
-        "Використання ШІ-інструментів для генерації відео та озвучки (Runway, ElevenLabs)",
-        "Робота зі звуком (FL Studio, Audacity) та кінетичними автосубтитрами"
+        "Пряма вимога володіння DaVinci Resolve",
+        "Вміння монтувати динамічні вертикальні відео під музику",
+        "Використання AI-інструментів для прискорення монтажу та субтитрів"
       ],
       "gaps": []
     }
   },
   {
-    "id": "vac-djinni-justmarkets-lead",
-    "roleCategory": "creative-lead",
-    "roleName": "Creative Lead / Art Director",
+    "id": "vac-djinni-858414",
+    "roleCategory": "ai-creative",
+    "roleName": "AI Creative Producer",
     "workplaceType": "remote",
     "workplaceLabel": "Дистанційно (Remote)",
-    "title": "Brand Design Lead (Art Direction & Creative)",
-    "company": "JustMarkets Tech",
-    "location": "Full Remote (Україна / EU)",
-    "salary": "$2,500 – $4,000 / міс",
+    "title": "AI Video Creator (Commercial & Cinematic Content)",
+    "company": "Videfy",
+    "location": "Remote (Worldwide / Весь світ)",
+    "salary": "$1,500 – $3,000 / міс",
     "type": "Full-time (Remote)",
-    "postedDate": "Вчора (Djinni)",
-    "link": "https://djinni.co/jobs/?category=design&title=Lead",
-    "matchScore": 95,
+    "postedDate": "16 листопада (Djinni)",
+    "link": "https://djinni.co/jobs/858414-ai-video-creator/",
+    "matchScore": 96,
     "status": "not_applied",
     "appliedAt": null,
     "isSaved": false,
-    "tags": ["Art Direction", "Creative Vision", "Motion & Video", "Brand Systems", "Team Lead"],
-    "description": "Керівництво мультидисциплінарною дизайн-командою (motion, 3D, video, web та graphic). Формування єдиної креативної та візуальної стратегії для глобальних маркетингових кампаній.",
+    "tags": ["AI Video Generation", "Cinematic Direction", "Prompting", "Character Consistency", "Video Editing"],
+    "description": "Створення візуально вражаючих комерційних та кінематографічних відео за допомогою сучасних генеративних ШІ-інструментів зі збереженням консистентності персонажів та сцен.",
     "matchAnalysis": {
       "strengths": [
-        "Підприємницький досвід засновника та арт-директора бренду Why Not?",
-        "Комплексне бачення: від логотипа та мерчу до відеопродакшену та UI",
-        "Швидке тестування гіпотез за допомогою генеративного ШІ"
+        "Генеративний медіа-продакшн: Midjourney, Runway, Luma",
+        "Збереження цілісного стилю персонажів (маскот Why Not?, фотомоделі)",
+        "Креативне бачення та арт-дирекшн"
       ],
-      "gaps": [
-        "Комунікація та синхронізація з великою розподіленою командою"
-      ]
+      "gaps": []
     }
   },
   {
-    "id": "vac-djinni-devico-uiux",
+    "id": "vac-djinni-807016",
     "roleCategory": "product-design",
     "roleName": "Product Designer (UI/UX)",
     "workplaceType": "remote",
     "workplaceLabel": "Дистанційно (Remote)",
-    "title": "UI/UX Product Designer (Mobile & Web Ecosystem)",
-    "company": "Devico",
-    "location": "Full Remote (Україна / EU)",
-    "salary": "$1,500 – $2,800 / міс",
+    "title": "Web & Product Designer (eCommerce & DTC Storefronts)",
+    "company": "TraffCore",
+    "location": "Remote (Весь світ / Worldwide)",
+    "salary": "$1,000 – $1,600 / міс",
     "type": "Full-time (Remote)",
-    "postedDate": "Сьогодні (Djinni)",
-    "link": "https://djinni.co/jobs/keyword-ui-ux/",
-    "matchScore": 94,
+    "postedDate": "Оновлено нещодавно (Djinni)",
+    "link": "https://djinni.co/jobs/807016-web-designer/",
+    "matchScore": 95,
     "status": "not_applied",
     "appliedAt": null,
     "isSaved": false,
-    "tags": ["Figma", "Design Systems", "Mobile UX", "AutoLayout", "Dark/Light UI"],
-    "description": "Проєктування мобільних та веб-інтерфейсів, розвиток масштабованих компонентних дизайн-систем у Figma, підготовка макетів та тісна взаємодія з розробниками.",
+    "tags": ["Figma", "eCommerce Storefronts", "Responsive UI", "Landing Pages", "Brand Identity"],
+    "description": "Проєктування e-commerce вітрин, адаптивних мобільних лендингів, конверсійних воронок та оформлення брендів для міжнародних ринків США та Європи.",
     "matchAnalysis": {
       "strengths": [
-        "Живий кейс повного редизайну маркетплейсу why-not.com.ua (desktop + mobile)",
-        "Глибоке практичне знання Figma (компоненти, AutoLayout, інтерактивні стани)",
-        "Увага до деталей: адаптивні сітки, темні/світлі теми, UX кошика"
-      ],
-      "gaps": [
-        "Вимога базової англійської для мітингів (B1/B2)"
-      ]
-    }
-  },
-  {
-    "id": "vac-djinni-talentuch-motion",
-    "roleCategory": "video-motion",
-    "roleName": "Video & Motion Designer",
-    "workplaceType": "remote",
-    "workplaceLabel": "Дистанційно (Remote)",
-    "title": "Performance Motion Designer / Video Editor",
-    "company": "Talentuch",
-    "location": "Full Remote (Україна)",
-    "salary": "$1,400 – $2,300 / міс",
-    "type": "Full-time (Remote)",
-    "postedDate": "2 дні тому (Djinni)",
-    "link": "https://djinni.co/jobs/keyword-motion-design/",
-    "matchScore": 93,
-    "status": "not_applied",
-    "appliedAt": null,
-    "isSaved": false,
-    "tags": ["Motion Design", "DaVinci Resolve", "Commercial Video", "Social Ads", "Sound Editing"],
-    "description": "Створення висококонверсійних рекламних та промо-креативів, динамічний відеомонтаж, робота зі звуковими доріжками, анімація графіки та титрів.",
-    "matchAnalysis": {
-      "strengths": [
-        "Досвід створення промо-роликів у DaVinci Resolve",
-        "Саунд-дизайн та робота зі звуком (FL Studio, Audacity)",
-        "Відчуття темпу, ритму та кінетичної типографіки"
+        "Прямий збіг із твоїм кейсом: редизайн e-commerce платформи why-not.com.ua",
+        "Проєктування адаптивних макетів (Mobile + Desktop) у Figma",
+        "Розробка айдентики, брендингу та графічних стилів"
       ],
       "gaps": []
     }
   },
   {
-    "id": "vac-djinni-smartist-creative",
-    "roleCategory": "creative-lead",
-    "roleName": "Creative Lead / Art Director",
+    "id": "vac-djinni-859041",
+    "roleCategory": "video-motion",
+    "roleName": "Video & Motion Designer",
     "workplaceType": "remote",
     "workplaceLabel": "Дистанційно (Remote)",
-    "title": "Creative Director / Brand Identity Lead",
-    "company": "Smartist",
-    "location": "Full Remote",
-    "salary": "$2,000 – $3,500 / міс",
-    "type": "Full-time / Flexible",
-    "postedDate": "3 дні тому (Djinni)",
-    "link": "https://djinni.co/jobs/?category=design",
+    "title": "Long-Form Video Editor (Documentary & AI-Assisted Editing)",
+    "company": "Fundomate Technologies Inc.",
+    "location": "Remote (Україна / Europe)",
+    "salary": "$1,500 – $2,500 / міс ($$$)",
+    "type": "Full-time (Remote)",
+    "postedDate": "Опубліковано 19 листопада (Djinni)",
+    "link": "https://djinni.co/jobs/859041-long-form-video-editor-documentary-and-ai-ass/",
+    "matchScore": 94,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": ["DaVinci Resolve", "AI Workflows", "Color Correction", "Audio Mixing", "Storytelling"],
+    "description": "Монтаж інтерв'ю, подкастів, документальних історій та бренд-контенту від 10 до 60+ хвилин. Робота з кольорокорекцією, зведенням звуку та інтеграцією ШІ-інструментів для оптимізації процесу.",
+    "matchAnalysis": {
+      "strengths": [
+        "Пряма вимога володіння DaVinci Resolve",
+        "Зведення звукових доріжок (FL Studio / Audacity)",
+        "Кольорокорекція та робота з наративом"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-djinni-859043",
+    "roleCategory": "product-design",
+    "roleName": "Product Designer (UI/UX)",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "title": "Product Designer / Design Engineer",
+    "company": "Söderberg & Partners Heartpace HR",
+    "location": "Remote (Країни ЄС / Ukraine)",
+    "salary": "$2,000 – $3,500 / міс ($$$)",
+    "type": "Full-time (Remote)",
+    "postedDate": "19 листопада (Djinni)",
+    "link": "https://djinni.co/jobs/859043-product-designer-design-engineer/",
     "matchScore": 93,
     "status": "not_applied",
     "appliedAt": null,
     "isSaved": false,
-    "tags": ["Brand Identity", "Figma", "Visual Systems", "Creative Campaigns", "Merch"],
-    "description": "Формування цілісної візуальної айдентики продукту, гайдлайни бренду, візуальні системи, рекламні креативи та координація партнерів.",
+    "tags": ["Figma", "Design Systems", "Interactive Prototyping", "UI/UX Quality", "SaaS"],
+    "description": "Шведська продуктова компанія. Замість статичних макетів дизайнери створюють інтерактивні клікабельні прототипи у Figma, відповідають за дизайн-систему та якість користувацького інтерфейсу.",
     "matchAnalysis": {
       "strengths": [
-        "Повний цикл створення айдентики Why Not?: логотип, брендбук, маскот-єнот",
-        "Практичний досвід підготовки фізичного мерчу (Acid-wash, шовкодрук)",
-        "Робота в Figma та продуктовий підхід"
+        "Глибоке практичне проєктування в Figma (AutoLayout, дизайн-системи, компоненти)",
+        "Створення клікабельних інтерактивних сценаріїв",
+        "Розуміння фронтенд-верстки (HTML/CSS/JS)"
+      ],
+      "gaps": [
+        "Англійська мова для міжнародних мітингів"
+      ]
+    }
+  },
+  {
+    "id": "vac-djinni-847583",
+    "roleCategory": "product-design",
+    "roleName": "Product Designer (UI/UX)",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "title": "Product Designer (AI-native & E-commerce)",
+    "company": "PAR Retail",
+    "location": "Remote (Польща / Сербія / Ukraine)",
+    "salary": "$1,800 – $3,000 / міс ($$$)",
+    "type": "Full-time (Remote)",
+    "postedDate": "Оновлено нещодавно (Djinni)",
+    "link": "https://djinni.co/jobs/847583-product-designer-ai-native/",
+    "matchScore": 92,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": ["Figma", "AI Design Workflows", "E-commerce Platforms", "Design Systems", "User Journey"],
+    "description": "Проєктування e-commerce платформ лояльності та купівельного досвіду. Інтеграція новітніх ШІ-інструментів у щоденний дизайнерський пайплайн, розвиток дизайн-систем.",
+    "matchAnalysis": {
+      "strengths": [
+        "Досвід e-commerce інтерфейсів (Why Not?)",
+        "Поєднання традиційного UX у Figma з AI-воркфлоу",
+        "Побудова дизайн-систем"
       ],
       "gaps": []
     }
@@ -172,34 +226,6 @@
         "Вимога 1+ року специфічного досвіду SEO лінкбілдінгу (Ahrefs/Semrush)",
         "Вільна ділова англійська (B2+) для листування із західними видавцями"
       ]
-    }
-  },
-  {
-    "id": "vac-djinni-fundomate-clipper",
-    "roleCategory": "video-motion",
-    "roleName": "Video & Motion Designer",
-    "workplaceType": "remote",
-    "workplaceLabel": "Дистанційно (Remote)",
-    "title": "Short-Form Video Editor & Social Clipper",
-    "company": "Fundomate Technologies",
-    "location": "Full Remote (Україна / Worldwide)",
-    "salary": "$1,000 – $1,800 / міс",
-    "type": "Contract / Full-time",
-    "postedDate": "4 дні тому (Djinni)",
-    "link": "https://djinni.co/jobs/keyword-video-editor/",
-    "matchScore": 92,
-    "status": "not_applied",
-    "appliedAt": null,
-    "isSaved": false,
-    "tags": ["Reels & Shorts", "DaVinci Resolve", "Subtitles", "Audio Sync", "Hook Editing"],
-    "description": "Створення вірусних хуків, нарізка та динамічний монтаж подкастів та інтерв'ю для вертикальних соцмереж. Точна синхронізація звуку, яскраві графічні плашки та анімовані субтитри.",
-    "matchAnalysis": {
-      "strengths": [
-        "Досвід монтажу під біт у DaVinci Resolve",
-        "Робота зі звуком (FL Studio, Audacity)",
-        "Створення клікабельних візуалів та нарізок"
-      ],
-      "gaps": []
     }
   }
 ]
