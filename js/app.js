@@ -1,18 +1,26 @@
 let vacancies = [];
-let activeRole = 'all';
-let activeStatus = 'all';
-let activeWorkplace = 'all'; // 'all' | 'remote' | 'office' | 'hybrid'
-let searchQuery = '';
 
-const STORAGE_KEY = 'my_vacancies_data_v4';
+// Filter States
+let filterState = {
+  searchQuery: '',
+  role: 'all',
+  workplace: 'all',
+  status: 'all',
+  minSalary: 'all',
+  minMatch: 'all',
+  source: 'all',
+  sortBy: 'match_desc'
+};
+
+const STORAGE_KEY = 'my_vacancies_data_v5';
 
 document.addEventListener('DOMContentLoaded', async () => {
   await initVacanciesData();
-  setupUIEventListeners();
-  renderTracker();
+  setupEventListeners();
+  renderApp();
 });
 
-// Load vacancies
+// Load vacancies data
 async function initVacanciesData() {
   const local = localStorage.getItem(STORAGE_KEY);
   if (local) {
@@ -38,63 +46,180 @@ function saveData() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(vacancies));
 }
 
-// Event Listeners
-function setupUIEventListeners() {
-  // Role category filter tabs
-  document.querySelectorAll('[data-role-filter]').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      document.querySelectorAll('[data-role-filter]').forEach(b => {
-        b.classList.remove('bg-purple-600', 'text-white', 'shadow-lg', 'shadow-purple-600/30');
-        b.classList.add('bg-white/5', 'text-slate-300');
-      });
-      const el = e.currentTarget;
-      el.classList.remove('bg-white/5', 'text-slate-300');
-      el.classList.add('bg-purple-600', 'text-white', 'shadow-lg', 'shadow-purple-600/30');
-      activeRole = el.getAttribute('data-role-filter');
-      renderTracker();
-    });
-  });
-
-  // Workplace Format Filter (Дистанційно / В офісі)
-  document.querySelectorAll('[data-workplace-filter]').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      document.querySelectorAll('[data-workplace-filter]').forEach(b => {
-        b.classList.remove('border-teal-500', 'text-teal-300', 'bg-teal-500/15', 'font-bold');
-        b.classList.add('border-white/10', 'text-slate-400', 'bg-white/5');
-      });
-      const el = e.currentTarget;
-      el.classList.remove('border-white/10', 'text-slate-400', 'bg-white/5');
-      el.classList.add('border-teal-500', 'text-teal-300', 'bg-teal-500/15', 'font-bold');
-      activeWorkplace = el.getAttribute('data-workplace-filter');
-      renderTracker();
-    });
-  });
-
-  // Status pills
-  document.querySelectorAll('[data-status-filter]').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      document.querySelectorAll('[data-status-filter]').forEach(b => {
-        b.classList.remove('border-purple-500', 'text-purple-300', 'bg-purple-500/15', 'font-bold');
-        b.classList.add('border-white/10', 'text-slate-400', 'bg-white/5');
-      });
-      const el = e.currentTarget;
-      el.classList.remove('border-white/10', 'text-slate-400', 'bg-white/5');
-      el.classList.add('border-purple-500', 'text-purple-300', 'bg-purple-500/15', 'font-bold');
-      activeStatus = el.getAttribute('data-status-filter');
-      renderTracker();
-    });
-  });
-
+// Setup Event Listeners
+function setupEventListeners() {
   // Search input
   const searchInput = document.getElementById('searchVacanciesInput');
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
-      searchQuery = e.target.value.toLowerCase().trim();
-      renderTracker();
+      filterState.searchQuery = e.target.value.toLowerCase().trim();
+      renderApp();
     });
   }
 
-  // Quick Add Modal Form
+  // Clear search button
+  const clearSearchBtn = document.getElementById('clearSearchBtn');
+  if (clearSearchBtn && searchInput) {
+    clearSearchBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      filterState.searchQuery = '';
+      renderApp();
+    });
+  }
+
+  // Role Category Pills
+  document.querySelectorAll('[data-role-filter]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      document.querySelectorAll('[data-role-filter]').forEach(b => {
+        b.classList.remove('filter-pill-active');
+        b.classList.add('bg-white/5', 'text-slate-400');
+      });
+      const el = e.currentTarget;
+      el.classList.remove('bg-white/5', 'text-slate-400');
+      el.classList.add('filter-pill-active');
+      filterState.role = el.getAttribute('data-role-filter');
+      renderApp();
+    });
+  });
+
+  // Workplace Format Pills
+  document.querySelectorAll('[data-workplace-filter]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      document.querySelectorAll('[data-workplace-filter]').forEach(b => {
+        b.classList.remove('filter-pill-active');
+        b.classList.add('bg-white/5', 'text-slate-400');
+      });
+      const el = e.currentTarget;
+      el.classList.remove('bg-white/5', 'text-slate-400');
+      el.classList.add('filter-pill-active');
+      filterState.workplace = el.getAttribute('data-workplace-filter');
+      renderApp();
+    });
+  });
+
+  // Status Filter Pills
+  document.querySelectorAll('[data-status-filter]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      document.querySelectorAll('[data-status-filter]').forEach(b => {
+        b.classList.remove('filter-pill-active');
+        b.classList.add('bg-white/5', 'text-slate-400');
+      });
+      const el = e.currentTarget;
+      el.classList.remove('bg-white/5', 'text-slate-400');
+      el.classList.add('filter-pill-active');
+      filterState.status = el.getAttribute('data-status-filter');
+      renderApp();
+    });
+  });
+
+  // Dropdown Filters: Min Match, Min Salary, Source, SortBy
+  const minMatchSelect = document.getElementById('filterMinMatch');
+  if (minMatchSelect) {
+    minMatchSelect.addEventListener('change', (e) => {
+      filterState.minMatch = e.target.value;
+      renderApp();
+    });
+  }
+
+  const minSalarySelect = document.getElementById('filterMinSalary');
+  if (minSalarySelect) {
+    minSalarySelect.addEventListener('change', (e) => {
+      filterState.minSalary = e.target.value;
+      renderApp();
+    });
+  }
+
+  const sourceSelect = document.getElementById('filterSource');
+  if (sourceSelect) {
+    sourceSelect.addEventListener('change', (e) => {
+      filterState.source = e.target.value;
+      renderApp();
+    });
+  }
+
+  const sortBySelect = document.getElementById('filterSortBy');
+  if (sortBySelect) {
+    sortBySelect.addEventListener('change', (e) => {
+      filterState.sortBy = e.target.value;
+      renderApp();
+    });
+  }
+
+  // Reset all filters button
+  const resetBtn = document.getElementById('resetAllFiltersBtn');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', resetAllFilters);
+  }
+
+  // Toggle Profile Section Accordion
+  const toggleProfileBtn = document.getElementById('toggleProfileAccordionBtn');
+  const profileContent = document.getElementById('profileAccordionContent');
+  const profileChevron = document.getElementById('profileChevronIcon');
+  if (toggleProfileBtn && profileContent) {
+    toggleProfileBtn.addEventListener('click', () => {
+      const isHidden = profileContent.classList.contains('hidden');
+      if (isHidden) {
+        profileContent.classList.remove('hidden');
+        if (profileChevron) profileChevron.style.transform = 'rotate(180deg)';
+      } else {
+        profileContent.classList.add('hidden');
+        if (profileChevron) profileChevron.style.transform = 'rotate(0deg)';
+      }
+    });
+  }
+
+  // Add Vacancy Modal Setup
+  setupAddVacancyModal();
+}
+
+// Reset filters
+function resetAllFilters() {
+  filterState = {
+    searchQuery: '',
+    role: 'all',
+    workplace: 'all',
+    status: 'all',
+    minSalary: 'all',
+    minMatch: 'all',
+    source: 'all',
+    sortBy: 'match_desc'
+  };
+
+  const searchInput = document.getElementById('searchVacanciesInput');
+  if (searchInput) searchInput.value = '';
+
+  const minMatch = document.getElementById('filterMinMatch');
+  if (minMatch) minMatch.value = 'all';
+
+  const minSalary = document.getElementById('filterMinSalary');
+  if (minSalary) minSalary.value = 'all';
+
+  const source = document.getElementById('filterSource');
+  if (source) source.value = 'all';
+
+  const sortBy = document.getElementById('filterSortBy');
+  if (sortBy) sortBy.value = 'match_desc';
+
+  document.querySelectorAll('[data-role-filter]').forEach(b => {
+    b.classList.remove('filter-pill-active');
+    if (b.getAttribute('data-role-filter') === 'all') b.classList.add('filter-pill-active');
+  });
+
+  document.querySelectorAll('[data-workplace-filter]').forEach(b => {
+    b.classList.remove('filter-pill-active');
+    if (b.getAttribute('data-workplace-filter') === 'all') b.classList.add('filter-pill-active');
+  });
+
+  document.querySelectorAll('[data-status-filter]').forEach(b => {
+    b.classList.remove('filter-pill-active');
+    if (b.getAttribute('data-status-filter') === 'all') b.classList.add('filter-pill-active');
+  });
+
+  renderApp();
+}
+
+// Modal handling
+function setupAddVacancyModal() {
   const addModal = document.getElementById('addVacancyModal');
   const openAddBtn = document.getElementById('openAddModalBtn');
   const closeAddBtn = document.getElementById('closeAddModalBtn');
@@ -159,7 +284,7 @@ function setupUIEventListeners() {
         tags: tagsInput ? tagsInput.split(',').map(t => t.trim()).filter(Boolean) : [workplaceLabels[workplaceType]],
         description: description || 'Опис вакансії додано користувачем.',
         matchAnalysis: {
-          strengths: ['Додано вручну користувачем'],
+          strengths: ['Додано користувачем вручну'],
           gaps: []
         }
       };
@@ -169,13 +294,13 @@ function setupUIEventListeners() {
       addForm.reset();
       addModal.classList.add('hidden');
       addModal.classList.remove('flex');
-      renderTracker();
+      renderApp();
     });
   }
 }
 
-// Render main tracker
-function renderTracker() {
+// Render entire UI
+function renderApp() {
   updateDashboardCounters();
   renderCardsGrid();
   if (window.lucide) {
@@ -183,61 +308,123 @@ function renderTracker() {
   }
 }
 
-// Update counters
+// Update KPI Counters
 function updateDashboardCounters() {
-  const totalEl = document.getElementById('countTotal');
-  const notAppliedEl = document.getElementById('countNotApplied');
-  const appliedEl = document.getElementById('countApplied');
-  const savedEl = document.getElementById('countSaved');
+  const countTotalEl = document.getElementById('countTotal');
+  const countHighMatchEl = document.getElementById('countHighMatch');
+  const countNotAppliedEl = document.getElementById('countNotApplied');
+  const countAppliedEl = document.getElementById('countApplied');
+  const countSavedEl = document.getElementById('countSaved');
 
-  if (!totalEl) return;
+  if (!countTotalEl) return;
 
   const total = vacancies.length;
+  const highMatch = vacancies.filter(v => (v.matchScore || 0) >= 90).length;
   const applied = vacancies.filter(v => v.status === 'applied').length;
   const saved = vacancies.filter(v => v.isSaved).length;
   const notApplied = total - applied;
 
-  totalEl.textContent = total;
-  notAppliedEl.textContent = notApplied;
-  appliedEl.textContent = applied;
-  savedEl.textContent = saved;
+  countTotalEl.textContent = total;
+  if (countHighMatchEl) countHighMatchEl.textContent = highMatch;
+  countNotAppliedEl.textContent = notApplied;
+  countAppliedEl.textContent = applied;
+  countSavedEl.textContent = saved;
 }
 
-// Filter and render list
+// Filter and Sort algorithm
+function getFilteredAndSortedVacancies() {
+  return vacancies.filter(v => {
+    // 1. Role filter
+    if (filterState.role !== 'all' && v.roleCategory !== filterState.role) {
+      return false;
+    }
+
+    // 2. Workplace filter
+    const vType = v.workplaceType || (v.location && v.location.toLowerCase().includes('remote') ? 'remote' : 'office');
+    if (filterState.workplace === 'remote' && vType !== 'remote') return false;
+    if (filterState.workplace === 'office' && vType !== 'office' && vType !== 'hybrid') return false;
+
+    // 3. Status filter
+    if (filterState.status === 'applied' && v.status !== 'applied') return false;
+    if (filterState.status === 'not_applied' && v.status === 'applied') return false;
+    if (filterState.status === 'saved' && !v.isSaved) return false;
+
+    // 4. Min Match filter
+    if (filterState.minMatch !== 'all') {
+      const minScore = parseInt(filterState.minMatch, 10);
+      if ((v.matchScore || 0) < minScore) return false;
+    }
+
+    // 5. Min Salary filter (parsing numeric values)
+    if (filterState.minSalary !== 'all') {
+      const targetMin = parseInt(filterState.minSalary, 10);
+      const salaryText = (v.salary || '').toLowerCase();
+      // Extract first dollar amount or hryvnia equivalent
+      const dollarMatch = salaryText.match(/\$([0-9,]+)/);
+      const uahMatch = salaryText.match(/([0-9,]+)\s*грн/);
+      let parsedUsd = 0;
+
+      if (dollarMatch) {
+        parsedUsd = parseInt(dollarMatch[1].replace(/,/g, ''), 10);
+      } else if (uahMatch) {
+        parsedUsd = Math.round(parseInt(uahMatch[1].replace(/,/g, ''), 10) / 41.5);
+      }
+
+      if (parsedUsd > 0 && parsedUsd < targetMin) return false;
+    }
+
+    // 6. Source platform filter
+    if (filterState.source !== 'all') {
+      const link = (v.link || '').toLowerCase();
+      if (filterState.source === 'linkedin' && !link.includes('linkedin.com')) return false;
+      if (filterState.source === 'djinni' && !link.includes('djinni.co')) return false;
+      if (filterState.source === 'dou' && !link.includes('dou.ua')) return false;
+      if (filterState.source === 'workua' && !link.includes('work.ua') && !link.includes('robota.ua')) return false;
+    }
+
+    // 7. Search text query
+    if (filterState.searchQuery) {
+      const q = filterState.searchQuery;
+      const inTitle = v.title && v.title.toLowerCase().includes(q);
+      const inCompany = v.company && v.company.toLowerCase().includes(q);
+      const inDesc = v.description && v.description.toLowerCase().includes(q);
+      const inRole = v.roleName && v.roleName.toLowerCase().includes(q);
+      const inTags = v.tags && v.tags.some(t => t.toLowerCase().includes(q));
+
+      if (!inTitle && !inCompany && !inDesc && !inRole && !inTags) return false;
+    }
+
+    return true;
+  }).sort((a, b) => {
+    if (filterState.sortBy === 'match_desc') {
+      return (b.matchScore || 0) - (a.matchScore || 0);
+    }
+    if (filterState.sortBy === 'date_desc') {
+      return (b.id || '').localeCompare(a.id || '');
+    }
+    if (filterState.sortBy === 'salary_desc') {
+      const getVal = (v) => {
+        const m = (v.salary || '').match(/\$([0-9,]+)/);
+        return m ? parseInt(m[1].replace(/,/g, ''), 10) : 0;
+      };
+      return getVal(b) - getVal(a);
+    }
+    return 0;
+  });
+}
+
+// Render cards
 function renderCardsGrid() {
   const container = document.getElementById('vacanciesContainer');
   const emptyState = document.getElementById('vacanciesEmpty');
+  const resultCountEl = document.getElementById('filteredResultsCount');
   if (!container) return;
 
-  const filtered = vacancies.filter(v => {
-    // Role filter
-    const matchRole = (activeRole === 'all') || (v.roleCategory === activeRole);
+  const filtered = getFilteredAndSortedVacancies();
 
-    // Workplace filter (Remote vs Office vs Hybrid)
-    let matchWorkplace = true;
-    const vType = v.workplaceType || (v.location && v.location.toLowerCase().includes('remote') ? 'remote' : 'office');
-    if (activeWorkplace === 'remote') {
-      matchWorkplace = (vType === 'remote');
-    } else if (activeWorkplace === 'office') {
-      matchWorkplace = (vType === 'office' || vType === 'hybrid');
-    }
-
-    // Status filter
-    let matchStatus = true;
-    if (activeStatus === 'applied') matchStatus = (v.status === 'applied');
-    else if (activeStatus === 'not_applied') matchStatus = (v.status !== 'applied');
-    else if (activeStatus === 'saved') matchStatus = !!v.isSaved;
-
-    // Search query
-    const matchSearch = !searchQuery ||
-      v.title.toLowerCase().includes(searchQuery) ||
-      v.company.toLowerCase().includes(searchQuery) ||
-      (v.tags && v.tags.some(t => t.toLowerCase().includes(searchQuery))) ||
-      (v.roleName && v.roleName.toLowerCase().includes(searchQuery)) ||
-      (v.location && v.location.toLowerCase().includes(searchQuery));
-
-    return matchRole && matchWorkplace && matchStatus && matchSearch;
-  });
+  if (resultCountEl) {
+    resultCountEl.textContent = `${filtered.length} із ${vacancies.length}`;
+  }
 
   if (filtered.length === 0) {
     container.innerHTML = '';
@@ -254,10 +441,21 @@ function renderCardsGrid() {
     const strengths = (vac.matchAnalysis && vac.matchAnalysis.strengths) || [];
     const gaps = (vac.matchAnalysis && vac.matchAnalysis.gaps) || [];
 
-    // Workplace style
+    // Platform source badge
+    let platformBadge = `<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-white/5 border border-white/10 text-slate-400">Пряма</span>`;
+    const linkLower = (vac.link || '').toLowerCase();
+    if (linkLower.includes('linkedin.com')) {
+      platformBadge = `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-bold bg-[#0a66c2]/15 text-[#70b5f9] border border-[#0a66c2]/30">LinkedIn</span>`;
+    } else if (linkLower.includes('djinni.co')) {
+      platformBadge = `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-bold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">Djinni</span>`;
+    } else if (linkLower.includes('dou.ua')) {
+      platformBadge = `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-bold bg-amber-500/15 text-amber-300 border border-amber-500/30">DOU</span>`;
+    }
+
+    // Workplace badge
     const wType = vac.workplaceType || 'remote';
     let workplaceBadge = `<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-teal-500/15 text-teal-300 border border-teal-500/25">
-      <i data-lucide="globe" class="w-3 h-3"></i> Дистанційно (Remote)
+      <i data-lucide="globe" class="w-3 h-3"></i> Remote
     </span>`;
     if (wType === 'office') {
       workplaceBadge = `<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-indigo-500/15 text-indigo-300 border border-indigo-500/25">
@@ -265,91 +463,88 @@ function renderCardsGrid() {
       </span>`;
     } else if (wType === 'hybrid') {
       workplaceBadge = `<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-sky-500/15 text-sky-300 border border-sky-500/25">
-        <i data-lucide="shuffle" class="w-3 h-3"></i> Гібридний формат
+        <i data-lucide="shuffle" class="w-3 h-3"></i> Гібрид
       </span>`;
     }
 
-    // Match Color
-    let matchBg = 'from-purple-500/20 to-pink-500/20 border-purple-500/30 text-purple-300';
-    if (match >= 95) matchBg = 'from-emerald-500/20 to-teal-500/20 border-emerald-500/30 text-emerald-300';
-    else if (match < 80) matchBg = 'from-amber-500/20 to-orange-500/20 border-amber-500/30 text-amber-300';
+    // Match Color Badge
+    let matchColor = 'bg-purple-500/20 text-purple-300 border-purple-500/30';
+    if (match >= 95) matchColor = 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30';
+    else if (match < 80) matchColor = 'bg-amber-500/20 text-amber-300 border-amber-500/30';
 
     return `
-      <div class="glass-card rounded-3xl p-6 border transition-all duration-300 flex flex-col justify-between ${
+      <div class="glass-card rounded-2xl p-5 sm:p-6 border transition-all duration-300 flex flex-col justify-between ${
         isApplied 
           ? 'border-emerald-500/40 bg-emerald-950/10 shadow-lg shadow-emerald-500/5' 
-          : 'border-white/10 hover:border-purple-500/30'
+          : 'border-white/10 hover:border-purple-500/35'
       }">
         <div>
-          <!-- Header Bar: Role Pill + Workplace + Match + Bookmark -->
-          <div class="flex items-start justify-between gap-3 mb-3">
-            <div class="flex flex-wrap items-center gap-2">
+          <!-- Top Row: Source, Role, Workplace, Match, Bookmark -->
+          <div class="flex items-start justify-between gap-2.5 mb-3">
+            <div class="flex flex-wrap items-center gap-1.5">
+              ${platformBadge}
               <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-white/5 border border-white/10 text-slate-300">
                 ${escapeHtml(vac.roleName || 'Позиція')}
               </span>
               ${workplaceBadge}
-              ${
-                isApplied 
-                  ? `<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 animate-pulse">
-                      <i data-lucide="check-circle" class="w-3 h-3"></i> Подано
-                    </span>`
-                  : ''
-              }
             </div>
 
-            <div class="flex items-center gap-2">
-              <div class="px-2.5 py-1 rounded-xl bg-gradient-to-r ${matchBg} border text-center shrink-0">
-                <span class="text-xs font-black font-display">${match}%</span>
-                <span class="text-[9px] block leading-none font-semibold uppercase tracking-wider opacity-80">Гарант</span>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <div class="px-2.5 py-1 rounded-xl ${matchColor} border text-center">
+                <div class="text-xs font-black font-display leading-tight">${match}%</div>
+                <div class="text-[8px] uppercase tracking-wider opacity-75 font-semibold">Метч</div>
               </div>
-              <button onclick="toggleBookmark('${vac.id}')" title="${isSaved ? 'Прибрати з обраного' : 'Додати в обране'}" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-400 hover:text-amber-300 transition-colors">
+              <button onclick="toggleBookmark('${vac.id}')" title="${isSaved ? 'Прибрати з обраного' : 'Додати в обране'}" class="p-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-400 hover:text-amber-300 transition-colors">
                 <i data-lucide="star" class="w-4 h-4 ${isSaved ? 'text-amber-400 fill-amber-400' : ''}"></i>
               </button>
             </div>
           </div>
 
-          <!-- Title & Company -->
-          <h4 class="text-lg sm:text-xl font-bold text-white mb-1 hover:text-purple-300 transition-colors font-display">
+          <!-- Title -->
+          <h4 class="text-lg font-bold text-white mb-1 hover:text-purple-300 transition-colors font-display leading-snug">
             ${escapeHtml(vac.title)}
           </h4>
-          <p class="text-xs sm:text-sm text-slate-400 mb-3 flex flex-wrap items-center gap-2">
-            <span class="font-medium text-slate-300">${escapeHtml(vac.company)}</span>
+
+          <!-- Company, Location & Date -->
+          <div class="text-xs text-slate-400 mb-3 flex flex-wrap items-center gap-2">
+            <span class="font-semibold text-slate-200">${escapeHtml(vac.company)}</span>
             <span>•</span>
             <span class="text-slate-400">${escapeHtml(vac.location)}</span>
             <span>•</span>
-            <span class="text-purple-400 font-medium text-xs flex items-center gap-1">
+            <span class="text-purple-400 font-medium flex items-center gap-1">
               <i data-lucide="calendar" class="w-3 h-3"></i>
               ${escapeHtml(vac.postedDate || 'Нещодавно')}
             </span>
-          </p>
-
-          <!-- Salary & Description -->
-          <div class="mb-3 py-2 px-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-between">
-            <span class="text-xs text-slate-400">Вилка винагороди:</span>
-            <span class="text-sm font-bold text-emerald-400 font-display">${escapeHtml(vac.salary)}</span>
           </div>
 
-          <p class="text-xs text-slate-300 line-clamp-2 mb-3 leading-relaxed">
+          <!-- Salary Pill -->
+          <div class="mb-3 py-2 px-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-between">
+            <span class="text-[11px] text-slate-400 font-medium">Винагорода:</span>
+            <span class="text-xs sm:text-sm font-bold text-emerald-400 font-display">${escapeHtml(vac.salary)}</span>
+          </div>
+
+          <!-- Description Preview -->
+          <p class="text-xs text-slate-300/90 line-clamp-2 mb-3 leading-relaxed">
             ${escapeHtml(vac.description)}
           </p>
 
-          <!-- MATCH BREAKDOWN: Why fits & Gaps -->
+          <!-- Match Analysis Breakdown -->
           ${
             (strengths.length > 0 || gaps.length > 0)
               ? `
-                <div class="p-3 rounded-2xl bg-white/[0.02] border border-white/5 mb-4 text-xs space-y-1.5">
+                <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5 mb-4 text-xs space-y-1.5">
                   <div class="text-[10px] uppercase font-bold tracking-wider text-slate-400 flex items-center gap-1.5">
                     <i data-lucide="shield-check" class="w-3.5 h-3.5 text-purple-400"></i>
-                    <span>Оцінка гаранту успіху:</span>
+                    <span>Оцінка сумісності:</span>
                   </div>
-                  ${strengths.map(s => `
-                    <div class="flex items-start gap-1.5 text-slate-300">
+                  ${strengths.slice(0, 2).map(s => `
+                    <div class="flex items-start gap-1.5 text-slate-300 text-[11px]">
                       <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i>
                       <span>${escapeHtml(s)}</span>
                     </div>
                   `).join('')}
-                  ${gaps.map(g => `
-                    <div class="flex items-start gap-1.5 text-amber-300/90">
+                  ${gaps.slice(0, 1).map(g => `
+                    <div class="flex items-start gap-1.5 text-amber-300/90 text-[11px]">
                       <i data-lucide="alert-circle" class="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5"></i>
                       <span>${escapeHtml(g)}</span>
                     </div>
@@ -360,8 +555,8 @@ function renderCardsGrid() {
           }
 
           <!-- Skill Tags -->
-          <div class="flex flex-wrap gap-1.5 mb-5">
-            ${(vac.tags || []).map(tag => `
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            ${(vac.tags || []).slice(0, 5).map(tag => `
               <span class="text-[11px] font-medium px-2 py-0.5 rounded-md bg-white/5 text-slate-300 border border-white/5">
                 ${escapeHtml(tag)}
               </span>
@@ -369,25 +564,21 @@ function renderCardsGrid() {
           </div>
         </div>
 
-        <!-- ACTIONS ROW: Direct Link + Application Status Button -->
-        <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
-          
-          <!-- Open Vacancy External Link -->
-          <a href="${escapeHtml(vac.link)}" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors group/link">
+        <!-- Card Actions Footer -->
+        <div class="pt-3.5 border-t border-white/10 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
+          <a href="${escapeHtml(vac.link)}" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors group/link">
             <span>Відкрити вакансію</span>
             <i data-lucide="external-link" class="w-3.5 h-3.5 text-slate-400 group-hover/link:text-white transition-colors"></i>
           </a>
 
-          <!-- Send Application Status Toggle Button -->
-          <button onclick="toggleApplicationStatus('${vac.id}')" class="px-4 py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition-all cursor-pointer ${
+          <button onclick="toggleApplicationStatus('${vac.id}')" class="px-4 py-2 rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition-all cursor-pointer ${
             isApplied
               ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 hover:bg-emerald-500/30'
               : 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white shadow-lg shadow-purple-600/20'
           }">
             <i data-lucide="${isApplied ? 'check' : 'send'}" class="w-3.5 h-3.5"></i>
-            <span>${isApplied ? (vac.appliedAt ? `Заявку подано (${vac.appliedAt})` : 'Заявку подано ✓') : 'Позначити: Заявку відправив'}</span>
+            <span>${isApplied ? (vac.appliedAt ? `Заявку подано (${vac.appliedAt})` : 'Заявку подано ✓') : 'Позначити: Подав заявку'}</span>
           </button>
-
         </div>
       </div>
     `;
@@ -411,7 +602,7 @@ window.toggleApplicationStatus = function(id) {
   }
 
   saveData();
-  renderTracker();
+  renderApp();
 };
 
 // Toggle bookmark
@@ -420,16 +611,7 @@ window.toggleBookmark = function(id) {
   if (!vac) return;
   vac.isSaved = !vac.isSaved;
   saveData();
-  renderTracker();
-};
-
-// Reset to defaults
-window.resetVacanciesDefaults = async function() {
-  if (confirm('Скинути всі вакансії до початкового стану?')) {
-    localStorage.removeItem(STORAGE_KEY);
-    await initVacanciesData();
-    renderTracker();
-  }
+  renderApp();
 };
 
 function escapeHtml(text) {
