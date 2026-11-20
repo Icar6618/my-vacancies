@@ -541,13 +541,19 @@ function renderCardsGrid() {
             </a>
           </h4>
 
-          <!-- Direct URL Link Pill Right Under the Position Title -->
-          <div class="mb-3">
-            <a href="${escapeHtml(vac.link)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/25 text-purple-300 hover:text-white text-[11px] font-medium transition-all group/directlink">
-              <i data-lucide="link" class="w-3 h-3 text-purple-400 shrink-0"></i>
-              <span class="truncate max-w-[220px] sm:max-w-[320px]">${escapeHtml(vac.link)}</span>
-              <i data-lucide="arrow-up-right" class="w-3 h-3 text-purple-400 group-hover/directlink:translate-x-0.5 group-hover/directlink:-translate-y-0.5 transition-transform shrink-0"></i>
-            </a>
+          <!-- Direct Full URL Link Starting with https:// -->
+          <div class="mb-3.5 p-2.5 rounded-xl bg-purple-950/20 border border-purple-500/25 flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2 min-w-0 flex-1">
+              <i data-lucide="link" class="w-3.5 h-3.5 text-purple-400 shrink-0"></i>
+              <a href="${escapeHtml(vac.link)}" target="_blank" rel="noopener noreferrer" class="text-xs text-purple-300 hover:text-white font-mono break-all underline decoration-purple-500/50 hover:decoration-white transition-colors">
+                ${escapeHtml(vac.link)}
+              </a>
+            </div>
+            
+            <button onclick="navigator.clipboard.writeText('${escapeHtml(vac.link)}'); alert('Посилання скопійовано: ${escapeHtml(vac.link)}');" title="Скопіювати посилання" class="px-2 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white text-[11px] font-medium flex items-center gap-1 transition-colors shrink-0 cursor-pointer">
+              <i data-lucide="copy" class="w-3 h-3"></i>
+              <span>Копіювати</span>
+            </button>
           </div>
 
           <!-- Company, Location & Date -->
