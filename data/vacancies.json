@@ -1,5 +1,33 @@
 [
   {
+    "id": "vac-linkedin-4491600273",
+    "roleCategory": "ai-bots",
+    "roleName": "AI Growth & Outreach",
+    "title": "Outreach Manager (AI Search Visibility & GEO)",
+    "company": "CrowdReply",
+    "location": "Ukraine · Remote (Full-time)",
+    "salary": "За результатами співбесіди (Competitive Offer)",
+    "type": "Full-time (Remote)",
+    "postedDate": "16 годин тому (LinkedIn)",
+    "link": "https://www.linkedin.com/jobs/view/4491600273/",
+    "matchScore": 74,
+    "status": "not_applied",
+    "appliedAt": null,
+    "tags": ["AI Search (GEO)", "ChatGPT & Perplexity", "B2B Outreach", "Партнерські переговори", "English B2+"],
+    "description": "CrowdReply — швидкозростаючий ШІ-стартап (10,000+ брендів), що оптимізує цитування продуктів у ChatGPT, Perplexity, Gemini та Google AI Overviews. Менеджер веде комунікацію з видавцями та сайтами для отримання згадок у ШІ-пошуку.",
+    "matchAnalysis": {
+      "strengths": [
+        "Глибоке розуміння екосистеми сучасних LLM (ChatGPT, Claude, Gemini)",
+        "Досвід ведення переговорів та залучення партнерів (з кейсу заснування Why Not?)",
+        "Вміння швидко тестувати гіпотези та автоматизувати процеси"
+      ],
+      "gaps": [
+        "Вимога 1+ року специфічного досвіду SEO лінкбілдінгу (Ahrefs/Semrush)",
+        "Вільна ділова англійська (B2+) для листування із західними видавцями"
+      ]
+    }
+  },
+  {
     "id": "vac-001",
     "roleCategory": "ai-creative",
     "roleName": "AI Creative Producer",
@@ -8,13 +36,21 @@
     "location": "Remote (Worldwide)",
     "salary": "$2,500 – $4,000 / міс",
     "type": "Full-time (Remote)",
-    "postedDate": "Сьогодні",
+    "postedDate": "Сьогодні (20 лист.)",
     "link": "https://djinni.co/jobs/",
     "matchScore": 98,
     "status": "not_applied",
     "appliedAt": null,
     "tags": ["Midjourney v6", "Runway Gen-3", "Luma", "ElevenLabs", "DaVinci Resolve"],
-    "description": "Створення вірусних промо-роликів, генерація AI-відео для брендів, монтаж та саунд-дизайн на стику новітніх нейромереж."
+    "description": "Створення вірусних промо-роликів, генерація AI-відео для брендів, монтаж та саунд-дизайн на стику новітніх нейромереж.",
+    "matchAnalysis": {
+      "strengths": [
+        "100% відповідність стеку: Midjourney v6 + Runway Gen-3 + Luma + ElevenLabs",
+        "Повний цикл відеомонтажу та саунд-дизайну в DaVinci Resolve",
+        "Реальне портфоліо з готовими фотореалістичними візуалами та моделями"
+      ],
+      "gaps": []
+    }
   },
   {
     "id": "vac-002",
@@ -25,13 +61,23 @@
     "location": "Київ / Віддалено (Remote)",
     "salary": "80,000 – 110,000 грн",
     "type": "Full-time (Remote)",
-    "postedDate": "Вчора",
+    "postedDate": "Вчора (19 лист.)",
     "link": "https://dou.ua/vacancies/",
     "matchScore": 95,
     "status": "not_applied",
     "appliedAt": null,
     "tags": ["Figma", "Pixso", "Mobile UX", "Design Systems", "Dark Mode"],
-    "description": "Проєктування мобільного досвіду, кошика замовлень, дизайн-системи та конверсійних вітрин для масштабного маркетплейсу."
+    "description": "Проєктування мобільного досвіду, кошика замовлень, дизайн-системи та конверсійних вітрин для масштабного маркетплейсу.",
+    "matchAnalysis": {
+      "strengths": [
+        "Живий кейс повного редизайну маркетплейсу why-not.com.ua (desktop + mobile)",
+        "Проєктування кошика з маскотом, сторінок артистів та Dark/Light тем",
+        "Глибоке володіння компонентами та AutoLayout у Figma та Pixso"
+      ],
+      "gaps": [
+        "Можливі питання щодо глибини A/B тестування на великих мільйонних вибірках"
+      ]
+    }
   },
   {
     "id": "vac-003",
@@ -42,13 +88,21 @@
     "location": "Remote (EU / UA)",
     "salary": "$2,200 – $3,500 / міс",
     "type": "Full-time / Flexible",
-    "postedDate": "2 дні тому",
+    "postedDate": "18 лист. 2026",
     "link": "https://djinni.co/jobs/",
     "matchScore": 96,
     "status": "not_applied",
     "appliedAt": null,
     "tags": ["Art Direction", "GenAI Pipeline", "Brand Identity", "Storytelling"],
-    "description": "Керівництво креативною командою, розробка повної айдентики для стартапів та запуск крос-медійних рекламних кампаній із використанням ШІ."
+    "description": "Керівництво креативною командою, розробка повної айдентики для стартапів та запуск крос-медійних рекламних кампаній із використанням ШІ.",
+    "matchAnalysis": {
+      "strengths": [
+        "Підприємницький бекграунд засновника бренду (Why Not?)",
+        "Управління візуальним стилем: лого, маскот, одяг, промо, відео",
+        "Впровадження ШІ як мультиплікатора швидкості команди"
+      ],
+      "gaps": []
+    }
   },
   {
     "id": "vac-004",
@@ -59,13 +113,21 @@
     "location": "Remote",
     "salary": "$1,500 – $2,300 / міс",
     "type": "Contract / Part-time",
-    "postedDate": "3 дні тому",
+    "postedDate": "17 лист. 2026",
     "link": "https://www.work.ua/",
     "matchScore": 92,
     "status": "not_applied",
     "appliedAt": null,
     "tags": ["DaVinci Resolve", "Sound Design", "FL Studio", "Auto-subs", "Motion"],
-    "description": "Динамічний монтаж коротких рекламних роликів, кінетична типографіка, кольорокорекція та саунд-дизайн під біт."
+    "description": "Динамічний монтаж коротких рекламних роликів, кінетична типографіка, кольорокорекція та саунд-дизайн під біт.",
+    "matchAnalysis": {
+      "strengths": [
+        "Монтаж у DaVinci Resolve під музичний біт",
+        "Робота зі звуком (FL Studio, Audacity)",
+        "Створення кінетичних титрів та автосубтитрів"
+      ],
+      "gaps": []
+    }
   },
   {
     "id": "vac-005",
@@ -76,13 +138,23 @@
     "location": "Remote",
     "salary": "$1,800 – $2,800 / міс",
     "type": "Full-time (Remote)",
-    "postedDate": "4 дні тому",
+    "postedDate": "16 лист. 2026",
     "link": "https://djinni.co/jobs/",
     "matchScore": 90,
     "status": "not_applied",
     "appliedAt": null,
     "tags": ["Telegram Bot API", "Claude 3.5 Sonnet", "ChatGPT API", "Customer Support", "No-Code"],
-    "description": "Розробка розумних ботів підтримки в Telegram на базі LLM, автоматизація клієнтських воронок та відповіді на часті запитання."
+    "description": "Розробка розумних ботів підтримки в Telegram на базі LLM, автоматизація клієнтських воронок та відповіді на часті запитання.",
+    "matchAnalysis": {
+      "strengths": [
+        "Живий запуск діючого сервісного бота @whynot_supportbot у Telegram",
+        "Промптинг та конфігурація LLM (Claude, ChatGPT, Gemini)",
+        "Автоматизація FAQ та маршрутизації замовлень"
+      ],
+      "gaps": [
+        "Якщо компанія вимагає складний бекенд на Python/Django з мікросервісами"
+      ]
+    }
   },
   {
     "id": "vac-006",
@@ -93,12 +165,20 @@
     "location": "Remote",
     "salary": "50,000 – 80,000 грн",
     "type": "Project / Full-time",
-    "postedDate": "5 днів тому",
+    "postedDate": "15 лист. 2026",
     "link": "https://www.robota.ua/",
     "matchScore": 93,
     "status": "not_applied",
     "appliedAt": null,
     "tags": ["Mascot Design", "Silk Screen", "Acid-Wash", "Patterns", "Print Prep"],
-    "description": "Створення фірмових персонажів (маскотів), лекал для шовкодруку на худі та оверсайз футболках, дизайн упаковки та підготовка до виробництва."
+    "description": "Створення фірмових персонажів (маскотів), лекал для шовкодруку на худі та оверсайз футболках, дизайн упаковки та підготовка до виробництва.",
+    "matchAnalysis": {
+      "strengths": [
+        "Повний цикл створення фізичного мерчу Why Not? (Acid-Wash, шовкодрук, шопери, кераміка)",
+        "Авторська серія ілюстрацій фірмового маскота (єнот у худі)",
+        "Реальний досвід додрукарської підготовки та роботи з виробництвом"
+      ],
+      "gaps": []
+    }
   }
 ]

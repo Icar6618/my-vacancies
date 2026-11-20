@@ -3,7 +3,7 @@ let activeRole = 'all';
 let activeStatus = 'all';
 let searchQuery = '';
 
-const STORAGE_KEY = 'my_vacancies_data_v2';
+const STORAGE_KEY = 'my_vacancies_data_v3';
 
 document.addEventListener('DOMContentLoaded', async () => {
   await initVacanciesData();
@@ -113,7 +113,7 @@ function setupUIEventListeners() {
         'product-design': 'Product Designer (UI/UX)',
         'creative-lead': 'Creative Lead / Art Director',
         'video-motion': 'Video & Motion Designer',
-        'ai-bots': 'AI Bot & Automation Specialist',
+        'ai-bots': 'AI Bot & Automation',
         'brand-merch': 'Brand & Merch Art Director'
       };
 
@@ -126,13 +126,17 @@ function setupUIEventListeners() {
         location: 'Remote',
         salary: salary,
         type: 'Remote',
-        postedDate: 'Щойно',
+        postedDate: 'Щойно додано',
         link: link,
-        matchScore: 92,
+        matchScore: 90,
         status: 'not_applied',
         appliedAt: null,
         tags: tagsInput ? tagsInput.split(',').map(t => t.trim()).filter(Boolean) : ['Remote'],
-        description: description || 'Опис вакансії додано користувачем.'
+        description: description || 'Опис вакансії додано користувачем.',
+        matchAnalysis: {
+          strengths: ['Додано вручну користувачем'],
+          gaps: []
+        }
       };
 
       vacancies.unshift(newVac);
@@ -211,6 +215,14 @@ function renderCardsGrid() {
   container.innerHTML = filtered.map(vac => {
     const isApplied = (vac.status === 'applied');
     const isSaved = !!vac.isSaved;
+    const match = vac.matchScore || 85;
+    const strengths = (vac.matchAnalysis && vac.matchAnalysis.strengths) || [];
+    const gaps = (vac.matchAnalysis && vac.matchAnalysis.gaps) || [];
+
+    // Match Color
+    let matchBg = 'from-purple-500/20 to-pink-500/20 border-purple-500/30 text-purple-300';
+    if (match >= 95) matchBg = 'from-emerald-500/20 to-teal-500/20 border-emerald-500/30 text-emerald-300';
+    else if (match < 80) matchBg = 'from-amber-500/20 to-orange-500/20 border-amber-500/30 text-amber-300';
 
     return `
       <div class="glass-card rounded-3xl p-6 border transition-all duration-300 flex flex-col justify-between ${
@@ -237,9 +249,9 @@ function renderCardsGrid() {
             </div>
 
             <div class="flex items-center gap-2">
-              <div class="score-badge px-2.5 py-1 rounded-xl text-center">
-                <span class="text-xs font-bold text-white font-display">${vac.matchScore || 90}%</span>
-                <span class="text-[9px] text-purple-300 block leading-none">Метч</span>
+              <div class="px-3 py-1.5 rounded-xl bg-gradient-to-r ${matchBg} border text-center shrink-0">
+                <span class="text-xs font-black font-display">${match}%</span>
+                <span class="text-[9px] block leading-none font-semibold uppercase tracking-wider opacity-80">Гарант</span>
               </div>
               <button onclick="toggleBookmark('${vac.id}')" title="${isSaved ? 'Прибрати з обраного' : 'Додати в обране'}" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-400 hover:text-amber-300 transition-colors">
                 <i data-lucide="star" class="w-4 h-4 ${isSaved ? 'text-amber-400 fill-amber-400' : ''}"></i>
@@ -251,23 +263,52 @@ function renderCardsGrid() {
           <h4 class="text-lg sm:text-xl font-bold text-white mb-1 hover:text-purple-300 transition-colors font-display">
             ${escapeHtml(vac.title)}
           </h4>
-          <p class="text-xs sm:text-sm text-slate-400 mb-3 flex items-center gap-2">
+          <p class="text-xs sm:text-sm text-slate-400 mb-3 flex flex-wrap items-center gap-2">
             <span class="font-medium text-slate-300">${escapeHtml(vac.company)}</span>
             <span>•</span>
             <span class="text-slate-400">${escapeHtml(vac.location)}</span>
             <span>•</span>
-            <span class="text-slate-500 text-xs">${escapeHtml(vac.postedDate || 'Нещодавно')}</span>
+            <span class="text-purple-400 font-medium text-xs flex items-center gap-1">
+              <i data-lucide="calendar" class="w-3 h-3"></i>
+              ${escapeHtml(vac.postedDate || 'Нещодавно')}
+            </span>
           </p>
 
           <!-- Salary & Description -->
           <div class="mb-3 py-2 px-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-between">
-            <span class="text-xs text-slate-400">Вилка винагороди:</span>
+            <span class="text-xs text-slate-400">Вилка:</span>
             <span class="text-sm font-bold text-emerald-400 font-display">${escapeHtml(vac.salary)}</span>
           </div>
 
-          <p class="text-xs text-slate-300 line-clamp-2 mb-4 leading-relaxed">
+          <p class="text-xs text-slate-300 line-clamp-2 mb-3 leading-relaxed">
             ${escapeHtml(vac.description)}
           </p>
+
+          <!-- MATCH BREAKDOWN: Why fits & Gaps -->
+          ${
+            (strengths.length > 0 || gaps.length > 0)
+              ? `
+                <div class="p-3 rounded-2xl bg-white/[0.02] border border-white/5 mb-4 text-xs space-y-1.5">
+                  <div class="text-[10px] uppercase font-bold tracking-wider text-slate-400 flex items-center gap-1.5">
+                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-purple-400"></i>
+                    <span>Оцінка гаранту успіху:</span>
+                  </div>
+                  ${strengths.map(s => `
+                    <div class="flex items-start gap-1.5 text-slate-300">
+                      <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i>
+                      <span>${escapeHtml(s)}</span>
+                    </div>
+                  `).join('')}
+                  ${gaps.map(g => `
+                    <div class="flex items-start gap-1.5 text-amber-300/90">
+                      <i data-lucide="alert-circle" class="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5"></i>
+                      <span>${escapeHtml(g)}</span>
+                    </div>
+                  `).join('')}
+                </div>
+              `
+              : ''
+          }
 
           <!-- Skill Tags -->
           <div class="flex flex-wrap gap-1.5 mb-5">
