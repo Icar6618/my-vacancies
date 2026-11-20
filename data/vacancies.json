@@ -17,10 +17,16 @@
     "postedDate": "Оновлено сьогодні (Djinni)",
     "link": "https://djinni.co/jobs/856111-middle-ai-video-editor-performance-ads-dtc-he/",
     "matchScore": 98,
-    "status": "not_applied",
-    "appliedAt": null,
-    "isSaved": false,
-    "tags": ["AI Video Generation", "ElevenLabs Voiceovers", "DaVinci Resolve", "Sound Design", "Performance Ads"],
+    "status": "applied",
+    "appliedAt": "20 лис",
+    "isSaved": true,
+    "tags": [
+      "AI Video Generation",
+      "ElevenLabs Voiceovers",
+      "DaVinci Resolve",
+      "Sound Design",
+      "Performance Ads"
+    ],
     "description": "Створення комерційних рекламних відео для міжнародного DTC бренду. 90% відео створюються за допомогою ШІ (генерація кадрів, озвучка через ElevenLabs, монтаж під біт, анімації та хуки з високим утриманням).",
     "matchAnalysis": {
       "strengths": [
@@ -52,7 +58,13 @@
     "status": "not_applied",
     "appliedAt": null,
     "isSaved": false,
-    "tags": ["AI Video Generation", "Cinematic Direction", "Prompting", "Character Consistency", "Video Editing"],
+    "tags": [
+      "AI Video Generation",
+      "Cinematic Direction",
+      "Prompting",
+      "Character Consistency",
+      "Video Editing"
+    ],
     "description": "Створення візуально вражаючих комерційних та кінематографічних відео за допомогою сучасних генеративних ШІ-інструментів зі збереженням консистентності персонажів та сцен.",
     "matchAnalysis": {
       "strengths": [
@@ -81,10 +93,16 @@
     "postedDate": "Оновлено нещодавно (Djinni)",
     "link": "https://djinni.co/jobs/807016-web-designer/",
     "matchScore": 95,
-    "status": "not_applied",
-    "appliedAt": null,
+    "status": "applied",
+    "appliedAt": "20 лис",
     "isSaved": false,
-    "tags": ["Figma", "eCommerce Storefronts", "Responsive UI", "Landing Pages", "Brand Identity"],
+    "tags": [
+      "Figma",
+      "eCommerce Storefronts",
+      "Responsive UI",
+      "Landing Pages",
+      "Brand Identity"
+    ],
     "description": "Проєктування e-commerce вітрин, адаптивних мобільних лендингів, конверсійних воронок та оформлення брендів для міжнародних ринків США та Європи.",
     "matchAnalysis": {
       "strengths": [
@@ -116,7 +134,13 @@
     "status": "not_applied",
     "appliedAt": null,
     "isSaved": false,
-    "tags": ["DaVinci Resolve", "AI Clipping Tools", "Reels & Shorts", "Sound Design", "Auto-subs"],
+    "tags": [
+      "DaVinci Resolve",
+      "AI Clipping Tools",
+      "Reels & Shorts",
+      "Sound Design",
+      "Auto-subs"
+    ],
     "description": "Створення 15–90 секундних вірусних вертикальних кліпів для Instagram Reels, YouTube Shorts та TikTok. Робота з хуками, утриманням уваги, кінетичною типографікою, автосубтитрами та саунд-дизайном.",
     "matchAnalysis": {
       "strengths": [
@@ -150,7 +174,13 @@
     "status": "not_applied",
     "appliedAt": null,
     "isSaved": false,
-    "tags": ["DaVinci Resolve", "AI Workflows", "Color Correction", "Audio Mixing", "Storytelling"],
+    "tags": [
+      "DaVinci Resolve",
+      "AI Workflows",
+      "Color Correction",
+      "Audio Mixing",
+      "Storytelling"
+    ],
     "description": "Монтаж інтерв'ю, подкастів, документальних історій та бренд-контенту від 10 до 60+ хвилин. Робота з кольорокорекцією, зведенням звуку та інтеграцією ШІ-інструментів для оптимізації процесу.",
     "matchAnalysis": {
       "strengths": [
@@ -184,7 +214,13 @@
     "status": "not_applied",
     "appliedAt": null,
     "isSaved": false,
-    "tags": ["Figma", "Design Systems", "Interactive Prototyping", "UI/UX Quality", "SaaS"],
+    "tags": [
+      "Figma",
+      "Design Systems",
+      "Interactive Prototyping",
+      "UI/UX Quality",
+      "SaaS"
+    ],
     "description": "Шведська продуктова компанія. Замість статичних макетів дизайнери створюють інтерактивні клікабельні прототипи у Figma, відповідають за дизайн-систему та якість користувацького інтерфейсу.",
     "matchAnalysis": {
       "strengths": [
@@ -218,7 +254,13 @@
     "status": "not_applied",
     "appliedAt": null,
     "isSaved": false,
-    "tags": ["Figma", "AI Design Workflows", "E-commerce Platforms", "Design Systems", "User Journey"],
+    "tags": [
+      "Figma",
+      "AI Design Workflows",
+      "E-commerce Platforms",
+      "Design Systems",
+      "User Journey"
+    ],
     "description": "Проєктування e-commerce платформ лояльності та купівельного досвіду. Інтеграція новітніх ШІ-інструментів у щоденний дизайнерський пайплайн, розвиток дизайн-систем.",
     "matchAnalysis": {
       "strengths": [
@@ -252,7 +294,13 @@
     "status": "not_applied",
     "appliedAt": null,
     "isSaved": false,
-    "tags": ["AI Search (GEO)", "ChatGPT & Perplexity", "B2B Outreach", "Партнерські переговори", "English B2+"],
+    "tags": [
+      "AI Search (GEO)",
+      "ChatGPT & Perplexity",
+      "B2B Outreach",
+      "Партнерські переговори",
+      "English B2+"
+    ],
     "description": "CrowdReply — швидкозростаючий ШІ-стартап (10,000+ брендів), що оптимізує цитування продуктів у ChatGPT, Perplexity, Gemini та Google AI Overviews. Менеджер веде комунікацію з видавцями та сайтами для отримання згадок у ШІ-пошуку.",
     "matchAnalysis": {
       "strengths": [
