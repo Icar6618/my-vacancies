@@ -158,18 +158,11 @@
             </button>
           </div>
 
-          <!-- Action Buttons Group -->
+          <!-- Action Button: Download / Sync JSON -->
           <div class="flex items-center gap-2 shrink-0">
-            <!-- Download / Sync JSON Button -->
-            <button onclick="downloadVacanciesJson()" title="Завантажити актуальний файл vacancies.json для збереження" class="px-3 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer">
+            <button onclick="downloadVacanciesJson()" title="Завантажити актуальний файл vacancies.json для збереження" class="px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer">
               <i data-lucide="download" class="w-3.5 h-3.5 text-purple-400"></i>
               <span class="hidden sm:inline">Експорт JSON</span>
-            </button>
-
-            <!-- Add Button -->
-            <button id="openAddModalBtn" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-md shadow-purple-600/30 cursor-pointer">
-              <i data-lucide="plus" class="w-4 h-4"></i>
-              <span>Додати вакансію</span>
             </button>
           </div>
 
@@ -442,84 +435,6 @@
     </section>
 
   </main>
-
-  <!-- ADD VACANCY MODAL FORM -->
-  <div id="addVacancyModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4">
-    <div class="glass-panel border border-white/15 rounded-3xl max-w-lg w-full p-6 relative max-h-[90vh] overflow-y-auto shadow-2xl">
-      <button id="closeAddModalBtn" class="absolute top-5 right-5 p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-colors">
-        <i data-lucide="x" class="w-5 h-5"></i>
-      </button>
-
-      <div class="mb-5">
-        <h3 class="text-xl font-bold text-white font-display">Додати нову вакансію</h3>
-        <p class="text-xs text-slate-400">Вставте посилання та параметри знайденої вакансії</p>
-      </div>
-
-      <form id="addVacancyForm" class="space-y-4 text-xs">
-        <div>
-          <label class="block text-slate-300 font-semibold mb-1">Назва посади *</label>
-          <input type="text" id="newTitle" required placeholder="напр. GenAI Creator / Video Editor" class="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500">
-        </div>
-
-        <div class="grid grid-cols-2 gap-3">
-          <div>
-            <label class="block text-slate-300 font-semibold mb-1">Компанія *</label>
-            <input type="text" id="newCompany" required placeholder="напр. Creative Agency" class="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500">
-          </div>
-          <div>
-            <label class="block text-slate-300 font-semibold mb-1">Категорія ролі</label>
-            <select id="newRole" class="w-full px-3 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-white focus:outline-none focus:border-purple-500">
-              <option value="ai-creative">AI Creative Producer</option>
-              <option value="product-design">Product Designer (UI/UX)</option>
-              <option value="creative-lead">Creative Lead / Art Director</option>
-              <option value="video-motion">Video & Motion Designer</option>
-              <option value="ai-bots">AI Bot & Automation</option>
-              <option value="brand-merch">Brand & Merch Art Director</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-2 gap-3">
-          <div>
-            <label class="block text-slate-300 font-semibold mb-1">Формат роботи</label>
-            <select id="newWorkplace" class="w-full px-3 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-white focus:outline-none focus:border-purple-500">
-              <option value="remote">Дистанційно (Remote)</option>
-              <option value="office">В офісі</option>
-              <option value="hybrid">Гібридний формат</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-slate-300 font-semibold mb-1">Вилка винагороди</label>
-            <input type="text" id="newSalary" placeholder="напр. $2,000 – $3,000" class="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500">
-          </div>
-        </div>
-
-        <div>
-          <label class="block text-slate-300 font-semibold mb-1">Посилання на вакансію *</label>
-          <input type="url" id="newLink" required placeholder="https://djinni.co/jobs/..." class="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500">
-        </div>
-
-        <div>
-          <label class="block text-slate-300 font-semibold mb-1">Теги / Інструменти (через кому)</label>
-          <input type="text" id="newTags" placeholder="Runway, Midjourney, DaVinci Resolve, Remote" class="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500">
-        </div>
-
-        <div>
-          <label class="block text-slate-300 font-semibold mb-1">Короткий опис</label>
-          <textarea id="newDescription" rows="3" placeholder="Основні обов'язки та вимоги..." class="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500"></textarea>
-        </div>
-
-        <div class="pt-2 flex justify-end gap-2">
-          <button type="button" onclick="document.getElementById('addVacancyModal').classList.add('hidden')" class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 transition-colors">
-            Скасувати
-          </button>
-          <button type="submit" class="px-5 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold transition-all shadow-lg shadow-purple-600/30">
-            Зберегти вакансію
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
 
   <!-- FOOTER -->
   <footer class="border-t border-white/10 py-6 text-center text-xs text-slate-500 relative z-10">

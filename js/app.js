@@ -207,9 +207,6 @@ function setupEventListeners() {
       }
     });
   }
-
-  // Add Vacancy Modal Setup
-  setupAddVacancyModal();
 }
 
 // Reset filters
@@ -264,93 +261,6 @@ function resetAllFilters() {
   });
 
   renderApp();
-}
-
-// Modal handling
-function setupAddVacancyModal() {
-  const addModal = document.getElementById('addVacancyModal');
-  const openAddBtn = document.getElementById('openAddModalBtn');
-  const closeAddBtn = document.getElementById('closeAddModalBtn');
-  const addForm = document.getElementById('addVacancyForm');
-
-  if (openAddBtn && addModal) {
-    openAddBtn.addEventListener('click', () => {
-      addModal.classList.remove('hidden');
-      addModal.classList.add('flex');
-    });
-  }
-  if (closeAddBtn && addModal) {
-    closeAddBtn.addEventListener('click', () => {
-      addModal.classList.add('hidden');
-      addModal.classList.remove('flex');
-    });
-  }
-
-  if (addForm) {
-    addForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const title = document.getElementById('newTitle').value.trim();
-      const company = document.getElementById('newCompany').value.trim();
-      const roleCategory = document.getElementById('newRole').value;
-      const workplaceType = document.getElementById('newWorkplace').value;
-      const candidateCountry = document.getElementById('newCandidateCountry')?.value || 'worldwide';
-      const englishLevel = document.getElementById('newEnglishLevel')?.value || 'B2';
-      const link = document.getElementById('newLink').value.trim() || '#';
-      const salary = document.getElementById('newSalary').value.trim() || 'За домовленістю';
-      const tagsInput = document.getElementById('newTags').value.trim();
-      const description = document.getElementById('newDescription').value.trim();
-
-      const roleNames = {
-        'ai-creative': 'AI Creative Producer',
-        'product-design': 'Product Designer (UI/UX)',
-        'creative-lead': 'Creative Lead / Art Director',
-        'video-motion': 'Video & Motion Designer',
-        'ai-bots': 'AI Bot & Automation',
-        'brand-merch': 'Brand & Merch Art Director'
-      };
-
-      const workplaceLabels = {
-        'remote': 'Дистанційно (Remote)',
-        'office': 'Робота в офісі',
-        'hybrid': 'Гібридний формат'
-      };
-
-      const newVac = {
-        id: 'vac-' + Date.now(),
-        roleCategory: roleCategory,
-        roleName: roleNames[roleCategory] || 'Інше',
-        workplaceType: workplaceType,
-        workplaceLabel: workplaceLabels[workplaceType] || 'Дистанційно',
-        candidateCountry: candidateCountry,
-        candidateCountryLabel: candidateCountry === 'worldwide' ? 'Весь світ (Грузія OK)' : 'Країна з обмеженням',
-        englishLevel: englishLevel,
-        englishLabel: englishLevel,
-        title: title,
-        company: company,
-        location: workplaceType === 'remote' ? 'Remote' : 'Офіс / Гібрид',
-        salary: salary,
-        type: workplaceLabels[workplaceType],
-        postedDate: 'Щойно додано',
-        link: link,
-        matchScore: 90,
-        status: 'not_applied',
-        appliedAt: null,
-        tags: tagsInput ? tagsInput.split(',').map(t => t.trim()).filter(Boolean) : [workplaceLabels[workplaceType]],
-        description: description || 'Опис вакансії додано користувачем.',
-        matchAnalysis: {
-          strengths: ['Додано користувачем вручну'],
-          gaps: []
-        }
-      };
-
-      vacancies.unshift(newVac);
-      saveData();
-      addForm.reset();
-      addModal.classList.add('hidden');
-      addModal.classList.remove('flex');
-      renderApp();
-    });
-  }
 }
 
 // Render entire UI
