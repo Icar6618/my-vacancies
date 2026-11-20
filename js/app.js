@@ -1,18 +1,29 @@
 let vacancies = [];
 
+// Candidate profile settings based on user's Djinni profile
+const candidateProfile = {
+  country: 'Georgia',
+  countryLabel: 'Грузія',
+  english: 'B2',
+  englishLabel: 'B2 – Вище середнього',
+  salaryExpectation: 1000
+};
+
 // Filter States
 let filterState = {
   searchQuery: '',
   role: 'all',
   workplace: 'all',
   status: 'all',
+  candidateCountry: 'all', // 'all' | 'georgia_friendly' | 'ukraine' | 'eu'
+  englishLevel: 'all',     // 'all' | 'max_b2' | 'b2' | 'c1'
   minSalary: 'all',
   minMatch: 'all',
   source: 'all',
   sortBy: 'match_desc'
 };
 
-const STORAGE_KEY = 'my_vacancies_data_v7';
+const STORAGE_KEY = 'my_vacancies_data_v8';
 
 document.addEventListener('DOMContentLoaded', async () => {
   await initVacanciesData();
@@ -56,28 +67,6 @@ function saveData() {
     }).catch(() => {});
   } catch (e) {}
 }
-
-// Download data file directly
-window.downloadVacanciesJson = function() {
-  const jsonStr = JSON.stringify(vacancies, null, 2);
-  const blob = new Blob([jsonStr], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'vacancies.json';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-};
-
-// Copy JSON to clipboard
-window.copyVacanciesJson = function() {
-  const jsonStr = JSON.stringify(vacancies, null, 2);
-  navigator.clipboard.writeText(jsonStr).then(() => {
-    alert('Дані вакансій скопійовано в буфер обміну! Можна надіслати їх у чат.');
-  });
-};
 
 // Setup Event Listeners
 function setupEventListeners() {
@@ -144,6 +133,24 @@ function setupEventListeners() {
       renderApp();
     });
   });
+
+  // NEW: Candidate Country / Geolocation Filter Select
+  const countrySelect = document.getElementById('filterCandidateCountry');
+  if (countrySelect) {
+    countrySelect.addEventListener('change', (e) => {
+      filterState.candidateCountry = e.target.value;
+      renderApp();
+    });
+  }
+
+  // NEW: English Level Filter Select
+  const englishSelect = document.getElementById('filterEnglishLevel');
+  if (englishSelect) {
+    englishSelect.addEventListener('change', (e) => {
+      filterState.englishLevel = e.target.value;
+      renderApp();
+    });
+  }
 
   // Dropdown Filters: Min Match, Min Salary, Source, SortBy
   const minMatchSelect = document.getElementById('filterMinMatch');
@@ -212,6 +219,8 @@ function resetAllFilters() {
     role: 'all',
     workplace: 'all',
     status: 'all',
+    candidateCountry: 'all',
+    englishLevel: 'all',
     minSalary: 'all',
     minMatch: 'all',
     source: 'all',
@@ -220,6 +229,12 @@ function resetAllFilters() {
 
   const searchInput = document.getElementById('searchVacanciesInput');
   if (searchInput) searchInput.value = '';
+
+  const countrySel = document.getElementById('filterCandidateCountry');
+  if (countrySel) countrySel.value = 'all';
+
+  const englishSel = document.getElementById('filterEnglishLevel');
+  if (englishSel) englishSel.value = 'all';
 
   const minMatch = document.getElementById('filterMinMatch');
   if (minMatch) minMatch.value = 'all';
@@ -278,6 +293,8 @@ function setupAddVacancyModal() {
       const company = document.getElementById('newCompany').value.trim();
       const roleCategory = document.getElementById('newRole').value;
       const workplaceType = document.getElementById('newWorkplace').value;
+      const candidateCountry = document.getElementById('newCandidateCountry')?.value || 'worldwide';
+      const englishLevel = document.getElementById('newEnglishLevel')?.value || 'B2';
       const link = document.getElementById('newLink').value.trim() || '#';
       const salary = document.getElementById('newSalary').value.trim() || 'За домовленістю';
       const tagsInput = document.getElementById('newTags').value.trim();
@@ -304,6 +321,10 @@ function setupAddVacancyModal() {
         roleName: roleNames[roleCategory] || 'Інше',
         workplaceType: workplaceType,
         workplaceLabel: workplaceLabels[workplaceType] || 'Дистанційно',
+        candidateCountry: candidateCountry,
+        candidateCountryLabel: candidateCountry === 'worldwide' ? 'Весь світ (Грузія OK)' : 'Країна з обмеженням',
+        englishLevel: englishLevel,
+        englishLabel: englishLevel,
         title: title,
         company: company,
         location: workplaceType === 'remote' ? 'Remote' : 'Офіс / Гібрид',
@@ -382,17 +403,42 @@ function getFilteredAndSortedVacancies() {
     if (filterState.status === 'not_applied' && v.status === 'applied') return false;
     if (filterState.status === 'saved' && !v.isSaved) return false;
 
-    // 4. Min Match filter
+    // 4. Candidate Country filter (Джинни обмеження: Грузія vs Україна vs ЄС)
+    if (filterState.candidateCountry !== 'all') {
+      const vCountry = (v.candidateCountry || 'worldwide').toLowerCase();
+      if (filterState.candidateCountry === 'georgia_friendly') {
+        // Must be open worldwide or explicitly allow Georgia
+        if (vCountry === 'ukraine' || vCountry === 'eu') return false;
+      } else if (filterState.candidateCountry === 'ukraine') {
+        if (vCountry !== 'ukraine' && vCountry !== 'worldwide') return false;
+      } else if (filterState.candidateCountry === 'eu') {
+        if (vCountry !== 'eu' && vCountry !== 'worldwide') return false;
+      }
+    }
+
+    // 5. English Level filter (Джинни обмеження: B2 vs C1)
+    if (filterState.englishLevel !== 'all') {
+      const vEng = (v.englishLevel || 'B2').toUpperCase();
+      if (filterState.englishLevel === 'max_b2') {
+        // Reject jobs requiring C1 or C2!
+        if (vEng === 'C1' || vEng === 'C2') return false;
+      } else if (filterState.englishLevel === 'b2') {
+        if (vEng !== 'B2' && vEng !== 'B1') return false;
+      } else if (filterState.englishLevel === 'c1') {
+        if (vEng !== 'C1') return false;
+      }
+    }
+
+    // 6. Min Match filter
     if (filterState.minMatch !== 'all') {
       const minScore = parseInt(filterState.minMatch, 10);
       if ((v.matchScore || 0) < minScore) return false;
     }
 
-    // 5. Min Salary filter (parsing numeric values)
+    // 7. Min Salary filter (parsing numeric values)
     if (filterState.minSalary !== 'all') {
       const targetMin = parseInt(filterState.minSalary, 10);
       const salaryText = (v.salary || '').toLowerCase();
-      // Extract first dollar amount or hryvnia equivalent
       const dollarMatch = salaryText.match(/\$([0-9,]+)/);
       const uahMatch = salaryText.match(/([0-9,]+)\s*грн/);
       let parsedUsd = 0;
@@ -406,7 +452,7 @@ function getFilteredAndSortedVacancies() {
       if (parsedUsd > 0 && parsedUsd < targetMin) return false;
     }
 
-    // 6. Source platform filter
+    // 8. Source platform filter
     if (filterState.source !== 'all') {
       const link = (v.link || '').toLowerCase();
       if (filterState.source === 'linkedin' && !link.includes('linkedin.com')) return false;
@@ -415,7 +461,7 @@ function getFilteredAndSortedVacancies() {
       if (filterState.source === 'workua' && !link.includes('work.ua') && !link.includes('robota.ua')) return false;
     }
 
-    // 7. Search text query
+    // 9. Search text query
     if (filterState.searchQuery) {
       const q = filterState.searchQuery;
       const inTitle = v.title && v.title.toLowerCase().includes(q);
@@ -473,6 +519,35 @@ function renderCardsGrid() {
     const match = vac.matchScore || 85;
     const strengths = (vac.matchAnalysis && vac.matchAnalysis.strengths) || [];
     const gaps = (vac.matchAnalysis && vac.matchAnalysis.gaps) || [];
+
+    // Check Djinni compatibility against Viktor's profile:
+    // Profile: Country = Georgia, English = B2, Min salary = $1000
+    const vCountry = (vac.candidateCountry || 'worldwide').toLowerCase();
+    const vEng = (vac.englishLevel || 'B2').toUpperCase();
+
+    const countryMismatch = (vCountry === 'ukraine'); // Company wants Ukraine-only
+    const englishMismatch = (vEng === 'C1' || vEng === 'C2'); // Company wants C1+
+
+    let djinniStatusBadge = '';
+    if (!countryMismatch && !englishMismatch) {
+      djinniStatusBadge = `
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-emerald-500/10 border border-emerald-500/25 text-emerald-300 text-[11px] font-semibold">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i>
+          <span>100% сумісно з профілем (Грузія • B2 • від $1,000)</span>
+        </div>
+      `;
+    } else {
+      const warnings = [];
+      if (countryMismatch) warnings.push('⚠️ Тільки Україна (у профілі Грузія)');
+      if (englishMismatch) warnings.push('⚠️ Вимагають C1 (у профілі B2)');
+
+      djinniStatusBadge = `
+        <div class="inline-flex flex-wrap items-center gap-1.5 px-2.5 py-1 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-[11px] font-semibold">
+          <i data-lucide="alert-triangle" class="w-3.5 h-3.5 text-amber-400 shrink-0"></i>
+          <span>${warnings.join(' • ')}</span>
+        </div>
+      `;
+    }
 
     // Platform source badge
     let platformBadge = `<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-white/5 border border-white/10 text-slate-400">Пряма</span>`;
@@ -533,6 +608,11 @@ function renderCardsGrid() {
             </div>
           </div>
 
+          <!-- Djinni Requirements Compatibility Indicator -->
+          <div class="mb-2.5">
+            ${djinniStatusBadge}
+          </div>
+
           <!-- Title with Direct Link -->
           <h4 class="text-lg font-bold text-white mb-1.5 font-display leading-snug">
             <a href="${escapeHtml(vac.link)}" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition-colors inline-flex items-center gap-1.5 group/title">
@@ -568,10 +648,17 @@ function renderCardsGrid() {
             </span>
           </div>
 
-          <!-- Salary Pill -->
-          <div class="mb-3 py-2 px-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-between">
-            <span class="text-[11px] text-slate-400 font-medium">Винагорода:</span>
-            <span class="text-xs sm:text-sm font-bold text-emerald-400 font-display">${escapeHtml(vac.salary)}</span>
+          <!-- Salary & Country/English requirements Pill -->
+          <div class="mb-3 py-2 px-3 rounded-xl bg-white/[0.02] border border-white/5 flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2 text-xs">
+              <span class="text-slate-400 font-medium">Винагорода:</span>
+              <span class="font-bold text-emerald-400 font-display">${escapeHtml(vac.salary)}</span>
+            </div>
+            <div class="flex items-center gap-2 text-[11px] text-slate-400">
+              <span>Англ: <strong class="text-slate-200">${escapeHtml(vac.englishLevel || 'B2')}</strong></span>
+              <span>•</span>
+              <span>Локація: <strong class="text-slate-200">${escapeHtml(vac.candidateCountry === 'worldwide' ? 'Грузія OK' : (vac.candidateCountryLabel || 'Україна'))}</strong></span>
+            </div>
           </div>
 
           <!-- Description Preview -->
@@ -588,13 +675,13 @@ function renderCardsGrid() {
                     <i data-lucide="shield-check" class="w-3.5 h-3.5 text-purple-400"></i>
                     <span>Оцінка сумісності:</span>
                   </div>
-                  ${strengths.slice(0, 2).map(s => `
+                  ${strengths.slice(0, 3).map(s => `
                     <div class="flex items-start gap-1.5 text-slate-300 text-[11px]">
                       <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i>
                       <span>${escapeHtml(s)}</span>
                     </div>
                   `).join('')}
-                  ${gaps.slice(0, 1).map(g => `
+                  ${gaps.slice(0, 2).map(g => `
                     <div class="flex items-start gap-1.5 text-amber-300/90 text-[11px]">
                       <i data-lucide="alert-circle" class="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5"></i>
                       <span>${escapeHtml(g)}</span>

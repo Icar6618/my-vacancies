@@ -42,9 +42,10 @@
 
       <!-- Action Buttons & Portfolio Link -->
       <div class="flex items-center gap-2 sm:gap-3">
-        <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-xs text-emerald-300 font-semibold">
+        <!-- Djinni Profile Parameters Pill -->
+        <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-white/10 text-xs text-slate-300">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span>Open for Remote</span>
+          <span>Профіль Djinni: <strong class="text-white">Грузія</strong> • Англ: <strong class="text-white">B2</strong> • <strong class="text-emerald-400">$1,000</strong></span>
         </div>
 
         <a href="https://icar6618.github.io/portfolio/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/30 text-xs font-semibold text-purple-300 hover:text-purple-200 transition-colors flex items-center gap-1.5 shadow-sm">
@@ -206,13 +207,13 @@
           </div>
         </div>
 
-        <!-- Detailed Dropdown Filters (Workplace, Match, Salary, Source, Sort) -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 pt-3 border-t border-white/5 text-xs">
+        <!-- Detailed Dropdown Filters (Workplace, Country/Geo, English, Match, Salary, Source, Sort) -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-2.5 pt-3 border-t border-white/5 text-xs">
           
           <!-- Workplace Filter Dropdown -->
           <div>
             <label class="block text-[10px] uppercase font-bold text-slate-400 mb-1">Формат роботи</label>
-            <select id="filterWorkplaceSelect" onchange="document.querySelector(`[data-workplace-filter='${this.value}']`)?.click();" class="custom-select w-full px-3 py-2 rounded-xl bg-slate-900 border border-white/10 text-slate-200 text-xs focus:outline-none focus:border-purple-500 cursor-pointer">
+            <select id="filterWorkplaceSelect" onchange="document.querySelector(`[data-workplace-filter='${this.value}']`)?.click();" class="custom-select w-full px-2.5 py-2 rounded-xl bg-slate-900 border border-white/10 text-slate-200 text-xs focus:outline-none focus:border-purple-500 cursor-pointer">
               <option value="all">🌐 Всі формати</option>
               <option value="remote">💻 Тільки Remote</option>
               <option value="office">🏢 В офісі / Гібрид</option>
@@ -225,10 +226,36 @@
             </div>
           </div>
 
+          <!-- NEW: Candidate Location / Country Filter -->
+          <div>
+            <label class="block text-[10px] uppercase font-bold text-teal-400 mb-1 flex items-center gap-1">
+              <span>📍 Локація кандидата</span>
+            </label>
+            <select id="filterCandidateCountry" class="custom-select w-full px-2.5 py-2 rounded-xl bg-slate-900 border border-teal-500/30 text-teal-300 text-xs focus:outline-none focus:border-teal-500 cursor-pointer">
+              <option value="all">🌍 Всі локації</option>
+              <option value="georgia_friendly">✅ Грузія / Worldwide OK</option>
+              <option value="ukraine">🇺🇦 Тільки Україна</option>
+              <option value="eu">🇪🇺 Країни ЄС</option>
+            </select>
+          </div>
+
+          <!-- NEW: English Level Filter -->
+          <div>
+            <label class="block text-[10px] uppercase font-bold text-purple-400 mb-1 flex items-center gap-1">
+              <span>🗣️ Рівень англійської</span>
+            </label>
+            <select id="filterEnglishLevel" class="custom-select w-full px-2.5 py-2 rounded-xl bg-slate-900 border border-purple-500/30 text-purple-300 text-xs focus:outline-none focus:border-purple-500 cursor-pointer">
+              <option value="all">🌐 Будь-який рівень</option>
+              <option value="max_b2">✅ Підходить для B2 (без C1)</option>
+              <option value="b2">Вимога B1 – B2</option>
+              <option value="c1">Вимога C1 (Advanced)</option>
+            </select>
+          </div>
+
           <!-- Minimum Match Score Filter -->
           <div>
             <label class="block text-[10px] uppercase font-bold text-slate-400 mb-1">Гарант успіху (Метч)</label>
-            <select id="filterMinMatch" class="custom-select w-full px-3 py-2 rounded-xl bg-slate-900 border border-white/10 text-slate-200 text-xs focus:outline-none focus:border-purple-500 cursor-pointer">
+            <select id="filterMinMatch" class="custom-select w-full px-2.5 py-2 rounded-xl bg-slate-900 border border-white/10 text-slate-200 text-xs focus:outline-none focus:border-purple-500 cursor-pointer">
               <option value="all">⚡ Будь-який метч</option>
               <option value="90">🔥 Топ метч ≥ 90%</option>
               <option value="80">✨ Високий ≥ 80%</option>
@@ -239,7 +266,7 @@
           <!-- Minimum Salary Filter -->
           <div>
             <label class="block text-[10px] uppercase font-bold text-slate-400 mb-1">Мін. винагорода</label>
-            <select id="filterMinSalary" class="custom-select w-full px-3 py-2 rounded-xl bg-slate-900 border border-white/10 text-slate-200 text-xs focus:outline-none focus:border-purple-500 cursor-pointer">
+            <select id="filterMinSalary" class="custom-select w-full px-2.5 py-2 rounded-xl bg-slate-900 border border-white/10 text-slate-200 text-xs focus:outline-none focus:border-purple-500 cursor-pointer">
               <option value="all">💰 Будь-яка вилка</option>
               <option value="1000">від $1,000 / міс</option>
               <option value="1500">від $1,500 / міс</option>
@@ -251,7 +278,7 @@
           <!-- Source Platform Filter -->
           <div>
             <label class="block text-[10px] uppercase font-bold text-slate-400 mb-1">Джерело</label>
-            <select id="filterSource" class="custom-select w-full px-3 py-2 rounded-xl bg-slate-900 border border-white/10 text-slate-200 text-xs focus:outline-none focus:border-purple-500 cursor-pointer">
+            <select id="filterSource" class="custom-select w-full px-2.5 py-2 rounded-xl bg-slate-900 border border-white/10 text-slate-200 text-xs focus:outline-none focus:border-purple-500 cursor-pointer">
               <option value="all">🔗 Усі сайти</option>
               <option value="linkedin">LinkedIn</option>
               <option value="djinni">Djinni</option>
@@ -263,10 +290,10 @@
           <!-- Sort Order -->
           <div class="col-span-2 sm:col-span-1">
             <label class="block text-[10px] uppercase font-bold text-slate-400 mb-1">Сортування</label>
-            <select id="filterSortBy" class="custom-select w-full px-3 py-2 rounded-xl bg-slate-900 border border-white/10 text-slate-200 text-xs focus:outline-none focus:border-purple-500 cursor-pointer">
+            <select id="filterSortBy" class="custom-select w-full px-2.5 py-2 rounded-xl bg-slate-900 border border-white/10 text-slate-200 text-xs focus:outline-none focus:border-purple-500 cursor-pointer">
               <option value="match_desc">🎯 За сумісністю</option>
-              <option value="date_desc">📅 Спочатку найновіші</option>
-              <option value="salary_desc">💵 Найвища зарплата</option>
+              <option value="date_desc">📅 Найновіші</option>
+              <option value="salary_desc">💵 Найвища вилка</option>
             </select>
           </div>
 

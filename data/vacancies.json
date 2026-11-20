@@ -5,6 +5,10 @@
     "roleName": "AI Creative Producer",
     "workplaceType": "remote",
     "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B2",
+    "englishLabel": "B2 (Вище середнього)",
     "title": "Middle AI Video Editor – Performance Ads (DTC Health Brand)",
     "company": "EcoNatura",
     "location": "Remote (Весь світ / Worldwide)",
@@ -22,35 +26,7 @@
       "strengths": [
         "100% твій стек: генерація ШІ-відео + синтез голосу в ElevenLabs",
         "Монтаж, динамічний ритм та саунд-дизайн у DaVinci Resolve",
-        "Розуміння e-commerce та створення конверсійних візуалів (з кейсу Why Not?)"
-      ],
-      "gaps": []
-    }
-  },
-  {
-    "id": "vac-djinni-859038",
-    "roleCategory": "video-motion",
-    "roleName": "Video & Motion Designer",
-    "workplaceType": "remote",
-    "workplaceLabel": "Дистанційно (Remote)",
-    "title": "Short-Form Video Editor / Clipper (Reels, Shorts, TikTok)",
-    "company": "Fundomate Technologies Inc.",
-    "location": "Remote (Україна / Europe)",
-    "salary": "$1,200 – $2,200 / міс ($$$)",
-    "type": "Full-time (Remote)",
-    "postedDate": "Опубліковано вчора (Djinni)",
-    "link": "https://djinni.co/jobs/859038-short-form-video-editor-clipper-reels-shorts-/",
-    "matchScore": 97,
-    "status": "not_applied",
-    "appliedAt": null,
-    "isSaved": false,
-    "tags": ["DaVinci Resolve", "AI Clipping Tools", "Reels & Shorts", "Sound Design", "Auto-subs"],
-    "description": "Створення 15–90 секундних вірусних вертикальних кліпів для Instagram Reels, YouTube Shorts та TikTok. Робота з хуками, утриманням уваги, кінетичною типографікою, автосубтитрами та саунд-дизайном.",
-    "matchAnalysis": {
-      "strengths": [
-        "Пряма вимога володіння DaVinci Resolve",
-        "Вміння монтувати динамічні вертикальні відео під музику",
-        "Використання AI-інструментів для прискорення монтажу та субтитрів"
+        "Підходить локація (Worldwide / Грузія) та рівень англійської (B2)"
       ],
       "gaps": []
     }
@@ -61,6 +37,10 @@
     "roleName": "AI Creative Producer",
     "workplaceType": "remote",
     "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B2",
+    "englishLabel": "B2 (Вище середнього)",
     "title": "AI Video Creator (Commercial & Cinematic Content)",
     "company": "Videfy",
     "location": "Remote (Worldwide / Весь світ)",
@@ -78,7 +58,7 @@
       "strengths": [
         "Генеративний медіа-продакшн: Midjourney, Runway, Luma",
         "Збереження цілісного стилю персонажів (маскот Why Not?, фотомоделі)",
-        "Креативне бачення та арт-дирекшн"
+        "Креативне бачення та відсутність обмежень по країні"
       ],
       "gaps": []
     }
@@ -89,6 +69,10 @@
     "roleName": "Product Designer (UI/UX)",
     "workplaceType": "remote",
     "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B1",
+    "englishLabel": "B1 – B2 (Комфортний рівень)",
     "title": "Web & Product Designer (eCommerce & DTC Storefronts)",
     "company": "TraffCore",
     "location": "Remote (Весь світ / Worldwide)",
@@ -106,9 +90,43 @@
       "strengths": [
         "Прямий збіг із твоїм кейсом: редизайн e-commerce платформи why-not.com.ua",
         "Проєктування адаптивних макетів (Mobile + Desktop) у Figma",
-        "Розробка айдентики, брендингу та графічних стилів"
+        "Розглядають кандидатів з будь-якої локації (у т.ч. Грузія) та з рівнем B1-B2"
       ],
       "gaps": []
+    }
+  },
+  {
+    "id": "vac-djinni-859038",
+    "roleCategory": "video-motion",
+    "roleName": "Video & Motion Designer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "ukraine",
+    "candidateCountryLabel": "Україна / Europe",
+    "englishLevel": "B2",
+    "englishLabel": "B2 (Вище середнього)",
+    "title": "Short-Form Video Editor / Clipper (Reels, Shorts, TikTok)",
+    "company": "Fundomate Technologies Inc.",
+    "location": "Remote (Україна / Europe)",
+    "salary": "$1,200 – $2,200 / міс",
+    "type": "Full-time (Remote)",
+    "postedDate": "Опубліковано вчора (Djinni)",
+    "link": "https://djinni.co/jobs/859038-short-form-video-editor-clipper-reels-shorts-/",
+    "matchScore": 90,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": ["DaVinci Resolve", "AI Clipping Tools", "Reels & Shorts", "Sound Design", "Auto-subs"],
+    "description": "Створення 15–90 секундних вірусних вертикальних кліпів для Instagram Reels, YouTube Shorts та TikTok. Робота з хуками, утриманням уваги, кінетичною типографікою, автосубтитрами та саунд-дизайном.",
+    "matchAnalysis": {
+      "strengths": [
+        "Пряма вимога володіння DaVinci Resolve",
+        "Вміння монтувати динамічні вертикальні відео під музику",
+        "Англійська B2 підходить"
+      ],
+      "gaps": [
+        "Компанія може вказати пріоритет на кандидатів в Україні (якщо в профілі стоїть Грузія, Djinni покаже попередження)"
+      ]
     }
   },
   {
@@ -117,14 +135,18 @@
     "roleName": "Video & Motion Designer",
     "workplaceType": "remote",
     "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "ukraine",
+    "candidateCountryLabel": "Україна / Europe",
+    "englishLevel": "B2",
+    "englishLabel": "B2 (Вище середнього)",
     "title": "Long-Form Video Editor (Documentary & AI-Assisted Editing)",
     "company": "Fundomate Technologies Inc.",
     "location": "Remote (Україна / Europe)",
-    "salary": "$1,500 – $2,500 / міс ($$$)",
+    "salary": "$1,500 – $2,500 / міс",
     "type": "Full-time (Remote)",
     "postedDate": "Опубліковано 19 листопада (Djinni)",
     "link": "https://djinni.co/jobs/859041-long-form-video-editor-documentary-and-ai-ass/",
-    "matchScore": 94,
+    "matchScore": 89,
     "status": "not_applied",
     "appliedAt": null,
     "isSaved": false,
@@ -136,7 +158,9 @@
         "Зведення звукових доріжок (FL Studio / Audacity)",
         "Кольорокорекція та робота з наративом"
       ],
-      "gaps": []
+      "gaps": [
+        "Можливе обмеження по країні кандидатів на Djinni (Україна)"
+      ]
     }
   },
   {
@@ -145,14 +169,18 @@
     "roleName": "Product Designer (UI/UX)",
     "workplaceType": "remote",
     "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "eu",
+    "candidateCountryLabel": "Країни ЄС / Ukraine",
+    "englishLevel": "C1",
+    "englishLabel": "C1 (Просунутий)",
     "title": "Product Designer / Design Engineer",
     "company": "Söderberg & Partners Heartpace HR",
     "location": "Remote (Країни ЄС / Ukraine)",
-    "salary": "$2,000 – $3,500 / міс ($$$)",
+    "salary": "$2,000 – $3,500 / міс",
     "type": "Full-time (Remote)",
     "postedDate": "19 листопада (Djinni)",
     "link": "https://djinni.co/jobs/859043-product-designer-design-engineer/",
-    "matchScore": 93,
+    "matchScore": 76,
     "status": "not_applied",
     "appliedAt": null,
     "isSaved": false,
@@ -161,11 +189,11 @@
     "matchAnalysis": {
       "strengths": [
         "Глибоке практичне проєктування в Figma (AutoLayout, дизайн-системи, компоненти)",
-        "Створення клікабельних інтерактивних сценаріїв",
-        "Розуміння фронтенд-верстки (HTML/CSS/JS)"
+        "Створення клікабельних інтерактивних сценаріїв"
       ],
       "gaps": [
-        "Англійська мова для міжнародних мітингів"
+        "Djinni попередження: Вимагають англійську C1 (у вас B2)",
+        "Djinni попередження: Пріоритет на резидентів ЄС"
       ]
     }
   },
@@ -175,14 +203,18 @@
     "roleName": "Product Designer (UI/UX)",
     "workplaceType": "remote",
     "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "eu",
+    "candidateCountryLabel": "Польща, Сербія, Remote",
+    "englishLevel": "B2",
+    "englishLabel": "B2 (Вище середнього)",
     "title": "Product Designer (AI-native & E-commerce)",
     "company": "PAR Retail",
     "location": "Remote (Польща / Сербія / Ukraine)",
-    "salary": "$1,800 – $3,000 / міс ($$$)",
+    "salary": "$1,800 – $3,000 / міс",
     "type": "Full-time (Remote)",
     "postedDate": "Оновлено нещодавно (Djinni)",
     "link": "https://djinni.co/jobs/847583-product-designer-ai-native/",
-    "matchScore": 92,
+    "matchScore": 91,
     "status": "not_applied",
     "appliedAt": null,
     "isSaved": false,
@@ -192,9 +224,11 @@
       "strengths": [
         "Досвід e-commerce інтерфейсів (Why Not?)",
         "Поєднання традиційного UX у Figma з AI-воркфлоу",
-        "Побудова дизайн-систем"
+        "Англійська B2 повністю відповідає вимогам"
       ],
-      "gaps": []
+      "gaps": [
+        "Можлива прив'язка до країн (Польща/Сербія)"
+      ]
     }
   },
   {
@@ -203,6 +237,10 @@
     "roleName": "AI Growth & Outreach",
     "workplaceType": "remote",
     "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Україна / Remote (розглядають будь-де)",
+    "englishLevel": "B2",
+    "englishLabel": "B2 (Вище середнього)",
     "title": "Outreach Manager (AI Search Visibility & GEO)",
     "company": "CrowdReply",
     "location": "Україна (Remote)",
@@ -220,11 +258,10 @@
       "strengths": [
         "Глибоке розуміння екосистеми сучасних LLM (ChatGPT, Claude, Gemini)",
         "Досвід ведення переговорів та залучення партнерів (з кейсу заснування Why Not?)",
-        "Вміння швидко тестувати гіпотези та автоматизувати процеси"
+        "Англійська B2 підходить"
       ],
       "gaps": [
-        "Вимога 1+ року специфічного досвіду SEO лінкбілдінгу (Ahrefs/Semrush)",
-        "Вільна ділова англійська (B2+) для листування із західними видавцями"
+        "Вимога 1+ року специфічного досвіду SEO лінкбілдінгу (Ahrefs/Semrush)"
       ]
     }
   }
