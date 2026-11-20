@@ -1,5 +1,149 @@
 [
   {
+    "id": "vac-djinni-reply-video",
+    "roleCategory": "video-motion",
+    "roleName": "Video & Motion Designer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "title": "Video Editor & AI Creator (Reels, TikTok, Shorts)",
+    "company": "Reply.io",
+    "location": "Full Remote (Україна / Worldwide)",
+    "salary": "$1,200 – $2,200 / міс",
+    "type": "Full-time (Remote)",
+    "postedDate": "Сьогодні (Djinni)",
+    "link": "https://djinni.co/jobs/keyword-video-editor/",
+    "matchScore": 97,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": ["DaVinci Resolve", "AI Video Tools", "Reels & TikTok", "Auto-subs", "Sound Design"],
+    "description": "Повний цикл створення та монтажу динамічних вертикальних відео (Reels, TikTok, Shorts) для міжнародного продукту. Використання генеративного ШІ, саунд-дизайн, кінетична типографіка та висока конверсія переглядів.",
+    "matchAnalysis": {
+      "strengths": [
+        "100% відповідність: досвід динамічного монтажу в DaVinci Resolve",
+        "Використання ШІ-інструментів для генерації відео та озвучки (Runway, ElevenLabs)",
+        "Робота зі звуком (FL Studio, Audacity) та кінетичними автосубтитрами"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-djinni-justmarkets-lead",
+    "roleCategory": "creative-lead",
+    "roleName": "Creative Lead / Art Director",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "title": "Brand Design Lead (Art Direction & Creative)",
+    "company": "JustMarkets Tech",
+    "location": "Full Remote (Україна / EU)",
+    "salary": "$2,500 – $4,000 / міс",
+    "type": "Full-time (Remote)",
+    "postedDate": "Вчора (Djinni)",
+    "link": "https://djinni.co/jobs/?category=design&title=Lead",
+    "matchScore": 95,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": ["Art Direction", "Creative Vision", "Motion & Video", "Brand Systems", "Team Lead"],
+    "description": "Керівництво мультидисциплінарною дизайн-командою (motion, 3D, video, web та graphic). Формування єдиної креативної та візуальної стратегії для глобальних маркетингових кампаній.",
+    "matchAnalysis": {
+      "strengths": [
+        "Підприємницький досвід засновника та арт-директора бренду Why Not?",
+        "Комплексне бачення: від логотипа та мерчу до відеопродакшену та UI",
+        "Швидке тестування гіпотез за допомогою генеративного ШІ"
+      ],
+      "gaps": [
+        "Комунікація та синхронізація з великою розподіленою командою"
+      ]
+    }
+  },
+  {
+    "id": "vac-djinni-devico-uiux",
+    "roleCategory": "product-design",
+    "roleName": "Product Designer (UI/UX)",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "title": "UI/UX Product Designer (Mobile & Web Ecosystem)",
+    "company": "Devico",
+    "location": "Full Remote (Україна / EU)",
+    "salary": "$1,500 – $2,800 / міс",
+    "type": "Full-time (Remote)",
+    "postedDate": "Сьогодні (Djinni)",
+    "link": "https://djinni.co/jobs/keyword-ui-ux/",
+    "matchScore": 94,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": ["Figma", "Design Systems", "Mobile UX", "AutoLayout", "Dark/Light UI"],
+    "description": "Проєктування мобільних та веб-інтерфейсів, розвиток масштабованих компонентних дизайн-систем у Figma, підготовка макетів та тісна взаємодія з розробниками.",
+    "matchAnalysis": {
+      "strengths": [
+        "Живий кейс повного редизайну маркетплейсу why-not.com.ua (desktop + mobile)",
+        "Глибоке практичне знання Figma (компоненти, AutoLayout, інтерактивні стани)",
+        "Увага до деталей: адаптивні сітки, темні/світлі теми, UX кошика"
+      ],
+      "gaps": [
+        "Вимога базової англійської для мітингів (B1/B2)"
+      ]
+    }
+  },
+  {
+    "id": "vac-djinni-talentuch-motion",
+    "roleCategory": "video-motion",
+    "roleName": "Video & Motion Designer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "title": "Performance Motion Designer / Video Editor",
+    "company": "Talentuch",
+    "location": "Full Remote (Україна)",
+    "salary": "$1,400 – $2,300 / міс",
+    "type": "Full-time (Remote)",
+    "postedDate": "2 дні тому (Djinni)",
+    "link": "https://djinni.co/jobs/keyword-motion-design/",
+    "matchScore": 93,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": ["Motion Design", "DaVinci Resolve", "Commercial Video", "Social Ads", "Sound Editing"],
+    "description": "Створення висококонверсійних рекламних та промо-креативів, динамічний відеомонтаж, робота зі звуковими доріжками, анімація графіки та титрів.",
+    "matchAnalysis": {
+      "strengths": [
+        "Досвід створення промо-роликів у DaVinci Resolve",
+        "Саунд-дизайн та робота зі звуком (FL Studio, Audacity)",
+        "Відчуття темпу, ритму та кінетичної типографіки"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-djinni-smartist-creative",
+    "roleCategory": "creative-lead",
+    "roleName": "Creative Lead / Art Director",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "title": "Creative Director / Brand Identity Lead",
+    "company": "Smartist",
+    "location": "Full Remote",
+    "salary": "$2,000 – $3,500 / міс",
+    "type": "Full-time / Flexible",
+    "postedDate": "3 дні тому (Djinni)",
+    "link": "https://djinni.co/jobs/?category=design",
+    "matchScore": 93,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": ["Brand Identity", "Figma", "Visual Systems", "Creative Campaigns", "Merch"],
+    "description": "Формування цілісної візуальної айдентики продукту, гайдлайни бренду, візуальні системи, рекламні креативи та координація партнерів.",
+    "matchAnalysis": {
+      "strengths": [
+        "Повний цикл створення айдентики Why Not?: логотип, брендбук, маскот-єнот",
+        "Практичний досвід підготовки фізичного мерчу (Acid-wash, шовкодрук)",
+        "Робота в Figma та продуктовий підхід"
+      ],
+      "gaps": []
+    }
+  },
+  {
     "id": "vac-linkedin-4491600273",
     "roleCategory": "ai-bots",
     "roleName": "AI Growth & Outreach",
@@ -15,6 +159,7 @@
     "matchScore": 74,
     "status": "not_applied",
     "appliedAt": null,
+    "isSaved": false,
     "tags": ["AI Search (GEO)", "ChatGPT & Perplexity", "B2B Outreach", "Партнерські переговори", "English B2+"],
     "description": "CrowdReply — швидкозростаючий ШІ-стартап (10,000+ брендів), що оптимізує цитування продуктів у ChatGPT, Perplexity, Gemini та Google AI Overviews. Менеджер веде комунікацію з видавцями та сайтами для отримання згадок у ШІ-пошуку.",
     "matchAnalysis": {
@@ -30,168 +175,29 @@
     }
   },
   {
-    "id": "vac-001",
-    "roleCategory": "ai-creative",
-    "roleName": "AI Creative Producer",
-    "workplaceType": "remote",
-    "workplaceLabel": "Дистанційно (Remote)",
-    "title": "Senior GenAI Video & Creative Producer",
-    "company": "Metavibe Studios (US / Remote)",
-    "location": "Worldwide (Remote)",
-    "salary": "$2,500 – $4,000 / міс",
-    "type": "Full-time (Remote)",
-    "postedDate": "Сьогодні (20 лист.)",
-    "link": "https://djinni.co/jobs/",
-    "matchScore": 98,
-    "status": "applied",
-    "appliedAt": "20 лис",
-    "isSaved": true,
-    "tags": ["Midjourney v6", "Runway Gen-3", "Luma", "ElevenLabs", "DaVinci Resolve"],
-    "description": "Створення вірусних промо-роликів, генерація AI-відео для брендів, монтаж та саунд-дизайн на стику новітніх нейромереж.",
-    "matchAnalysis": {
-      "strengths": [
-        "100% відповідність стеку: Midjourney v6 + Runway Gen-3 + Luma + ElevenLabs",
-        "Повний цикл відеомонтажу та саунд-дизайну в DaVinci Resolve",
-        "Реальне портфоліо з готовими фотореалістичними візуалами та моделями"
-      ],
-      "gaps": []
-    }
-  },
-  {
-    "id": "vac-002",
-    "roleCategory": "product-design",
-    "roleName": "Product Designer (UI/UX)",
-    "workplaceType": "hybrid",
-    "workplaceLabel": "Гібрид / Офіс (Київ) або Remote",
-    "title": "Middle+ / Senior Product Designer (E-commerce / Web)",
-    "company": "Kasta Tech",
-    "location": "Київ (Офіс / Гібрид / Remote)",
-    "salary": "80,000 – 110,000 грн",
-    "type": "Full-time",
-    "postedDate": "Вчора (19 лист.)",
-    "link": "https://dou.ua/vacancies/",
-    "matchScore": 95,
-    "status": "not_applied",
-    "appliedAt": null,
-    "tags": ["Figma", "Pixso", "Mobile UX", "Design Systems", "Dark Mode"],
-    "description": "Проєктування мобільного досвіду, кошика замовлень, дизайн-системи та конверсійних вітрин для масштабного маркетплейсу.",
-    "matchAnalysis": {
-      "strengths": [
-        "Живий кейс повного редизайну маркетплейсу why-not.com.ua (desktop + mobile)",
-        "Проєктування кошика з маскотом, сторінок артистів та Dark/Light тем",
-        "Глибоке володіння компонентами та AutoLayout у Figma та Pixso"
-      ],
-      "gaps": [
-        "Можливі питання щодо глибини A/B тестування на великих мільйонних вибірках"
-      ]
-    }
-  },
-  {
-    "id": "vac-003",
-    "roleCategory": "creative-lead",
-    "roleName": "Creative Lead / Art Director",
-    "workplaceType": "remote",
-    "workplaceLabel": "Дистанційно (Remote)",
-    "title": "Creative Lead & Visual Brand Strategist",
-    "company": "Pulse Creative Agency",
-    "location": "Remote (EU / UA)",
-    "salary": "$2,200 – $3,500 / міс",
-    "type": "Full-time / Flexible",
-    "postedDate": "18 лист. 2026",
-    "link": "https://djinni.co/jobs/",
-    "matchScore": 96,
-    "status": "not_applied",
-    "appliedAt": null,
-    "tags": ["Art Direction", "GenAI Pipeline", "Brand Identity", "Storytelling"],
-    "description": "Керівництво креативною командою, розробка повної айдентики для стартапів та запуск крос-медійних рекламних кампаній із використанням ШІ.",
-    "matchAnalysis": {
-      "strengths": [
-        "Підприємницький бекграунд засновника бренду (Why Not?)",
-        "Управління візуальним стилем: лого, маскот, одяг, промо, відео",
-        "Впровадження ШІ як мультиплікатора швидкості команди"
-      ],
-      "gaps": []
-    }
-  },
-  {
-    "id": "vac-004",
+    "id": "vac-djinni-fundomate-clipper",
     "roleCategory": "video-motion",
     "roleName": "Video & Motion Designer",
     "workplaceType": "remote",
     "workplaceLabel": "Дистанційно (Remote)",
-    "title": "Motion Designer & Video Editor (Reels / Promo / DaVinci)",
-    "company": "Digital Media Force",
-    "location": "Remote",
-    "salary": "$1,500 – $2,300 / міс",
-    "type": "Contract / Part-time",
-    "postedDate": "17 лист. 2026",
-    "link": "https://www.work.ua/",
+    "title": "Short-Form Video Editor & Social Clipper",
+    "company": "Fundomate Technologies",
+    "location": "Full Remote (Україна / Worldwide)",
+    "salary": "$1,000 – $1,800 / міс",
+    "type": "Contract / Full-time",
+    "postedDate": "4 дні тому (Djinni)",
+    "link": "https://djinni.co/jobs/keyword-video-editor/",
     "matchScore": 92,
     "status": "not_applied",
     "appliedAt": null,
-    "tags": ["DaVinci Resolve", "Sound Design", "FL Studio", "Auto-subs", "Motion"],
-    "description": "Динамічний монтаж коротких рекламних роликів, кінетична типографіка, кольорокорекція та саунд-дизайн під біт.",
+    "isSaved": false,
+    "tags": ["Reels & Shorts", "DaVinci Resolve", "Subtitles", "Audio Sync", "Hook Editing"],
+    "description": "Створення вірусних хуків, нарізка та динамічний монтаж подкастів та інтерв'ю для вертикальних соцмереж. Точна синхронізація звуку, яскраві графічні плашки та анімовані субтитри.",
     "matchAnalysis": {
       "strengths": [
-        "Монтаж у DaVinci Resolve під музичний біт",
+        "Досвід монтажу під біт у DaVinci Resolve",
         "Робота зі звуком (FL Studio, Audacity)",
-        "Створення кінетичних титрів та автосубтитрів"
-      ],
-      "gaps": []
-    }
-  },
-  {
-    "id": "vac-005",
-    "roleCategory": "ai-bots",
-    "roleName": "AI Bot & Automation Specialist",
-    "workplaceType": "remote",
-    "workplaceLabel": "Дистанційно (Remote)",
-    "title": "Telegram Bot Developer & AI Integrator",
-    "company": "FlowAuto AI Lab",
-    "location": "Remote",
-    "salary": "$1,800 – $2,800 / міс",
-    "type": "Full-time (Remote)",
-    "postedDate": "16 лист. 2026",
-    "link": "https://djinni.co/jobs/",
-    "matchScore": 90,
-    "status": "not_applied",
-    "appliedAt": null,
-    "tags": ["Telegram Bot API", "Claude 3.5 Sonnet", "ChatGPT API", "Customer Support", "No-Code"],
-    "description": "Розробка розумних ботів підтримки в Telegram на базі LLM, автоматизація клієнтських воронок та відповіді на часті запитання.",
-    "matchAnalysis": {
-      "strengths": [
-        "Живий запуск діючого сервісного бота @whynot_supportbot у Telegram",
-        "Промптинг та конфігурація LLM (Claude, ChatGPT, Gemini)",
-        "Автоматизація FAQ та маршрутизації замовлень"
-      ],
-      "gaps": [
-        "Якщо компанія вимагає складний бекенд на Python/Django з мікросервісами"
-      ]
-    }
-  },
-  {
-    "id": "vac-006",
-    "roleCategory": "brand-merch",
-    "roleName": "Brand & Merch Art Director",
-    "workplaceType": "office",
-    "workplaceLabel": "В офісі / На виробництві",
-    "title": "Apparel & Merchandise Designer (Fashion & Drops)",
-    "company": "Urban Culture Brand",
-    "location": "Київ (Офіс / Виробництво)",
-    "salary": "50,000 – 80,000 грн",
-    "type": "Project / Full-time",
-    "postedDate": "15 лист. 2026",
-    "link": "https://www.robota.ua/",
-    "matchScore": 93,
-    "status": "not_applied",
-    "appliedAt": null,
-    "tags": ["Mascot Design", "Silk Screen", "Acid-Wash", "Patterns", "Print Prep"],
-    "description": "Створення фірмових персонажів (маскотів), лекал для шовкодруку на худі та оверсайз футболках, дизайн упаковки та підготовка до виробництва.",
-    "matchAnalysis": {
-      "strengths": [
-        "Повний цикл створення фізичного мерчу Why Not? (Acid-Wash, шовкодрук, шопери, кераміка)",
-        "Авторська серія ілюстрацій фірмового маскота (єнот у худі)",
-        "Реальний досвід додрукарської підготовки та роботи з виробництвом"
+        "Створення клікабельних візуалів та нарізок"
       ],
       "gaps": []
     }

@@ -12,7 +12,7 @@ let filterState = {
   sortBy: 'match_desc'
 };
 
-const STORAGE_KEY = 'my_vacancies_data_v5';
+const STORAGE_KEY = 'my_vacancies_data_v6';
 
 document.addEventListener('DOMContentLoaded', async () => {
   await initVacanciesData();
