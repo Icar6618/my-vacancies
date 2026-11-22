@@ -1,5 +1,201 @@
 [
   {
+    "id": "vac-linkedin-4489446492",
+    "roleCategory": "ai-creative",
+    "roleName": "AI Creative Producer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote / Flexible)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B1",
+    "englishLabel": "B1+ (Комфортний рівень)",
+    "title": "AI Video Creator / AI Filmmaker",
+    "company": "HOLYWATER TECH",
+    "location": "Remote / Kyiv (Open Worldwide & Georgia)",
+    "salary": "Конкурентна (Tech compensation + hardware)",
+    "type": "Full-time (Remote)",
+    "postedDate": "Опубліковано на LinkedIn",
+    "link": "https://www.linkedin.com/jobs/view/4489446492/",
+    "matchScore": 98,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "AI Filmmaking",
+      "Runway AI Winner",
+      "Character Consistency",
+      "Generative AI Video",
+      "Sound Design & VFX",
+      "DaVinci Resolve"
+    ],
+    "description": "Holywater створює інноваційні AI-серіали та стрімінговий контент (переможці Runway AI Film Festival). Повний цикл виробництва: генерація відео, аудіо та візуалу за допомогою ШІ, утримання стилю персонажів та світів, монтаж та саунд-дизайн.",
+    "matchAnalysis": {
+      "strengths": [
+        "100% твій фокус: генеративний продакшн відео (Runway, Midjourney, Kling, Luma)",
+        "Збереження візуальної консистентності персонажів та сцен",
+        "Робота з темпом, монтажем та звуком; англійська B1+ повністю підходить"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-linkedin-4493123353",
+    "roleCategory": "video-motion",
+    "roleName": "Video & Motion Designer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (100% Remote Global)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Global Remote (підходить для Грузії)",
+    "englishLevel": "B2",
+    "englishLabel": "B2 (Вище середнього)",
+    "title": "Lead Video Editor & Motion Designer (Tech & AI Aesthetics)",
+    "company": "Joblet-AI (micro1)",
+    "location": "Remote (Global / UAE)",
+    "salary": "Конкурентна міжнародна ставка (USD)",
+    "type": "Full-time (Remote)",
+    "postedDate": "Опубліковано на LinkedIn",
+    "link": "https://www.linkedin.com/jobs/view/4493123353/",
+    "matchScore": 96,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "DaVinci Resolve",
+      "Figma",
+      "After Effects",
+      "UI Animation",
+      "Runway & Kling",
+      "Product Motion"
+    ],
+    "description": "Лідерство у створенні моушн та відеоконтенту для ШІ-платформ. Створення анімацій інтерфейсів та UI-продукту, поєднання Figma та After Effects з генеративними елементами (Runway, Kling, Midjourney).",
+    "matchAnalysis": {
+      "strengths": [
+        "Поєднання DaVinci Resolve, Figma та генеративного відео",
+        "Анімація цифрових продуктів та UI-інтерфейсів",
+        "100% віддалена робота по всьому світу"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-linkedin-4478427362",
+    "roleCategory": "video-motion",
+    "roleName": "Video & Motion Designer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (100% Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B2",
+    "englishLabel": "B2 (Вище середнього)",
+    "title": "Video Editor & Producer (AI & Performance Ads)",
+    "company": "PetLabCo.",
+    "location": "Remote (Global / Dubai HQ)",
+    "salary": "$5,000 – $5,800 / міс ($60k–$70k/рік)",
+    "type": "Full-time (Remote)",
+    "postedDate": "Опубліковано на LinkedIn",
+    "link": "https://www.linkedin.com/jobs/view/4478427362/",
+    "matchScore": 95,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "Runway & Kling",
+      "ElevenLabs",
+      "DaVinci Resolve",
+      "DTC E-commerce",
+      "Performance Ads",
+      "Viral Hooks"
+    ],
+    "description": "Виробництво конверсійних відеокреативів для Meta, TikTok та YouTube міжнародного DTC e-commerce бренду. Поєднання UGC-футажів із генерацією відео (Kling, Runway, Veo), аватарів та озвучки ElevenLabs.",
+    "matchAnalysis": {
+      "strengths": [
+        "Щоденний робочий пайплайн: Runway, Kling, ElevenLabs, DaVinci Resolve",
+        "Прямий фокус на e-commerce, тестування хуків та утримання уваги",
+        "Дуже висока винагорода ($5,000–$5,800/міс)"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-linkedin-4491703745",
+    "roleCategory": "product-design",
+    "roleName": "Product Designer (UI/UX)",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (100% Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B2",
+    "englishLabel": "B2 (Вище середнього)",
+    "title": "UX/UI Designer (Figma & Responsive Web Platforms)",
+    "company": "BairesDev",
+    "location": "Remote Worldwide",
+    "salary": "Конкурентна (USD + Home-office setup)",
+    "type": "Full-time (Remote)",
+    "postedDate": "Опубліковано на LinkedIn",
+    "link": "https://www.linkedin.com/jobs/view/4491703745/",
+    "matchScore": 92,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "Figma",
+      "Auto-layout",
+      "Design Systems",
+      "Responsive Web",
+      "Prototyping",
+      "UI/UX Design"
+    ],
+    "description": "Проєктування сучасних користувацьких інтерфейсів та адаптивних веб-платформ. Створення інтерактивних прототипів у Figma, розвиток дизайн-систем і робота з мульти-роздільною здатністю (Desktop/Mobile).",
+    "matchAnalysis": {
+      "strengths": [
+        "Глибоке володіння Figma (компоненти, AutoLayout, адаптивність)",
+        "Досвід розробки сучасних e-commerce та веб-сторінок",
+        "100% Remote у будь-якій точці світу"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-linkedin-4489551643",
+    "roleCategory": "ai-bots",
+    "roleName": "Campaign / Media Manager",
+    "workplaceType": "office",
+    "workplaceLabel": "Офіс / Гібрид (Дніпро)",
+    "candidateCountry": "ukraine",
+    "candidateCountryLabel": "Дніпро, Україна (офіс/гібрид)",
+    "englishLevel": "B2",
+    "englishLabel": "B1 – B2 (Intermediate)",
+    "title": "Campaign Manager (AI Brand Advertising & Performance)",
+    "company": "LoopMe",
+    "location": "Дніпро, Україна (Офіс/Гібрид)",
+    "salary": "За результатами співбесіди (+ Бонуси)",
+    "type": "Full-time (Hybrid / On-site)",
+    "postedDate": "З вашого посилання (LinkedIn)",
+    "link": "https://www.linkedin.com/jobs/view/4489551643/",
+    "matchScore": 68,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "Campaign Delivery",
+      "LoopMe AI Platform",
+      "Performance Metrics (CTR, VR)",
+      "Excel & Analytics",
+      "Ad Operations"
+    ],
+    "description": "LoopMe оптимізує бренд-рекламу за допомогою ШІ. Campaign Manager відповідає за налаштування реклами у внутрішніх системах, моніторинг запусків у реальному часі, аналітику CTR, VR та оптимізацію бюджетів.",
+    "matchAnalysis": {
+      "strengths": [
+        "ШІ-орієнтована AdTech платформа, робота з цифровою рекламою",
+        "Рівень англійської B1-B2 повністю відповідає вимогам"
+      ],
+      "gaps": [
+        "Формат роботи: вимагає присутності в офісі в Дніпрі (з Грузії неможливо без релокації)",
+        "Фокус на таблицях Excel та аналітиці замість креативного продакшну чи дизайну"
+      ]
+    }
+  },
+  {
     "id": "vac-djinni-859223",
     "roleCategory": "ai-creative",
     "roleName": "AI Creative Producer",
@@ -176,7 +372,7 @@
     "matchScore": 96,
     "status": "not_applied",
     "appliedAt": null,
-    "isSaved": false,
+    "isSaved": true,
     "tags": [
       "AI Video Generation",
       "Cinematic Direction",
@@ -529,7 +725,7 @@
     "matchScore": 91,
     "status": "not_applied",
     "appliedAt": null,
-    "isSaved": false,
+    "isSaved": true,
     "tags": [
       "Figma",
       "AI Design Workflows",
@@ -609,7 +805,7 @@
     "matchScore": 90,
     "status": "not_applied",
     "appliedAt": null,
-    "isSaved": false,
+    "isSaved": true,
     "tags": [
       "DaVinci Resolve",
       "AI Clipping Tools",
@@ -649,7 +845,7 @@
     "matchScore": 89,
     "status": "not_applied",
     "appliedAt": null,
-    "isSaved": false,
+    "isSaved": true,
     "tags": [
       "DaVinci Resolve",
       "AI Workflows",
@@ -730,7 +926,7 @@
     "matchScore": 76,
     "status": "not_applied",
     "appliedAt": null,
-    "isSaved": false,
+    "isSaved": true,
     "tags": [
       "Figma",
       "Design Systems",
@@ -770,7 +966,7 @@
     "matchScore": 74,
     "status": "not_applied",
     "appliedAt": null,
-    "isSaved": false,
+    "isSaved": true,
     "tags": [
       "AI Search (GEO)",
       "ChatGPT & Perplexity",
