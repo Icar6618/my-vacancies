@@ -1,5 +1,46 @@
 [
   {
+    "id": "vac-djinni-859223",
+    "roleCategory": "ai-creative",
+    "roleName": "AI Creative Producer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Європа та Україна (підходить для Грузії)",
+    "englishLevel": "B2",
+    "englishLabel": "B2 (Вище середнього)",
+    "title": "AI Video Creative Producer",
+    "company": "Pulse Digital LLC",
+    "location": "Remote (Європа / Україна / Worldwide)",
+    "salary": "$2,000 – $3,500+ / міс",
+    "type": "Full-time (Remote)",
+    "postedDate": "20 листопада (Djinni)",
+    "link": "https://djinni.co/jobs/859223-ai-video-creative-producer/",
+    "matchScore": 98,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "AI Video Generation",
+      "Higgsfield AI",
+      "Kling",
+      "Runway Gen-3",
+      "ElevenLabs",
+      "HeyGen",
+      "Midjourney",
+      "Character Consistency"
+    ],
+    "description": "Масштабне виробництво фотореалістичних AI UGC рекламних відео та синематик-серіалів для ринку США. Робота з консистентністю персонажів, хуками, кліфгенгерами у Higgsfield, Kling, Runway, Midjourney та ElevenLabs.",
+    "matchAnalysis": {
+      "strengths": [
+        "100% твій генеративний стек: Midjourney, Runway, Kling, ElevenLabs",
+        "Створення драматичних хуків та консистентних ШІ-персонажів",
+        "Висока ставка $2,000–$3,500+ з комфортною англійською B2"
+      ],
+      "gaps": []
+    }
+  },
+  {
     "id": "vac-djinni-856111",
     "roleCategory": "ai-creative",
     "roleName": "AI Creative Producer",
@@ -14,7 +55,7 @@
     "location": "Remote (Весь світ / Worldwide)",
     "salary": "до $3,000 / міс",
     "type": "Full-time (Remote)",
-    "postedDate": "Оновлено сьогодні (Djinni)",
+    "postedDate": "Оновлено нещодавно (Djinni)",
     "link": "https://djinni.co/jobs/856111-middle-ai-video-editor-performance-ads-dtc-he/",
     "matchScore": 98,
     "status": "applied",
@@ -91,7 +132,7 @@
     "location": "Remote (Весь світ / Worldwide)",
     "salary": "$1,200 – $2,000+ / міс",
     "type": "Full-time (Remote)",
-    "postedDate": "Оновлено сьогодні (Djinni)",
+    "postedDate": "Оновлено нещодавно (Djinni)",
     "link": "https://djinni.co/jobs/847027-rezhiser-montazhu-ai-director/",
     "matchScore": 97,
     "status": "not_applied",
@@ -194,6 +235,45 @@
     }
   },
   {
+    "id": "vac-djinni-859244",
+    "roleCategory": "video-motion",
+    "roleName": "Video & Motion Designer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote, ~4h/день)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Європа та Україна (підходить для Грузії)",
+    "englishLevel": "B2",
+    "englishLabel": "B2 (Вище середнього)",
+    "title": "Video Editor for Short-Form Social Content (Reels, TikTok)",
+    "company": "WDM Ltd.",
+    "location": "Remote (Worldwide / Europe)",
+    "salary": "$1,000 – $2,000 / міс",
+    "type": "Part-time / Remote (~4h/день)",
+    "postedDate": "21 листопада (Djinni)",
+    "link": "https://djinni.co/jobs/859244-video-editor-for-short-form-social-content-re/",
+    "matchScore": 95,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "DaVinci Resolve",
+      "Reels & TikTok",
+      "AI Personas",
+      "Sound Design",
+      "High-Retention Editing",
+      "Storytelling"
+    ],
+    "description": "Wolff Digital Marketing веде Instagram і TikTok акаунти навколо реалістичних AI-персон для аудиторії США. Завдання: перетворення футажу на вірусний контент з утриманням уваги, хуками, субтитрами та саунд-дизайном.",
+    "matchAnalysis": {
+      "strengths": [
+        "Пряме використання DaVinci Resolve для монтажу вертикальних відео",
+        "Робота з AI-персонами та високим утриманням уваги глядача",
+        "Ідеальний графік (~4 год/день) з вилкою $1,000–$2,000"
+      ],
+      "gaps": []
+    }
+  },
+  {
     "id": "vac-djinni-807016",
     "roleCategory": "product-design",
     "roleName": "Product Designer (UI/UX)",
@@ -271,6 +351,84 @@
     }
   },
   {
+    "id": "vac-djinni-859203",
+    "roleCategory": "product-design",
+    "roleName": "Product Designer (UI/UX)",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Європа та Україна (підходить для Грузії)",
+    "englishLevel": "B1",
+    "englishLabel": "B1 – B2 (курси англійської від компанії)",
+    "title": "Middle UX/UI Designer (Web & Mobile)",
+    "company": "Novoplex",
+    "location": "Remote (Europe / Worldwide)",
+    "salary": "$2,000 – $3,000+ / міс",
+    "type": "Full-time (Remote)",
+    "postedDate": "20 листопада (Djinni)",
+    "link": "https://djinni.co/jobs/859203-middle-ux-ui-designer/",
+    "matchScore": 94,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "Figma",
+      "UI/UX Design",
+      "Design Systems",
+      "Mobile & Web UI",
+      "Interactive Prototyping",
+      "AI Design Workflows"
+    ],
+    "description": "Проєктування мобільних та веб-інтерфейсів, розвиток Figma дизайн-систем і UI-китів. Створення клікабельних інтерактивних прототипів та впровадження ШІ-інструментів у дизайнерський пайплайн.",
+    "matchAnalysis": {
+      "strengths": [
+        "Глибоке практичне володіння Figma (компоненти, AutoLayout, прототипування)",
+        "Компанія надає розмовні уроки англійської з носіями, рівень B1-B2 повністю підходить",
+        "Приваблива заробітна плата $2,000–$3,000+"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-djinni-859130",
+    "roleCategory": "ai-creative",
+    "roleName": "AI Creative Producer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B2",
+    "englishLabel": "B2 (Вище середнього)",
+    "title": "Creative Producer & Content Strategist (AI Video Production)",
+    "company": "GRATIFII LTD",
+    "location": "Remote (Весь світ / Worldwide)",
+    "salary": "до $2,500 / міс",
+    "type": "Full-time (Remote)",
+    "postedDate": "20 листопада (Djinni)",
+    "link": "https://djinni.co/jobs/859130-creative-producer-content-strategist-scriptwr/",
+    "matchScore": 93,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "AI Video Production",
+      "Creative Direction",
+      "Scriptwriting",
+      "Viral Hooks",
+      "Reels / Shorts / TikTok",
+      "Storyboarding"
+    ],
+    "description": "Розробка 10–20 вірусних концептів та сценаріїв на тиждень для AI-відеопродакшну світових брендів. Керування хуками, сюжетними лініями, взаємодія з AI-креаторами та моушн-дизайнерами.",
+    "matchAnalysis": {
+      "strengths": [
+        "Креативне продюсування та промпт-дирекшн для генеративного відео",
+        "Розуміння вірусних хуків та розкадровок для соцмереж",
+        "Повний Remote Worldwide без обмежень по країні"
+      ],
+      "gaps": []
+    }
+  },
+  {
     "id": "vac-djinni-856614",
     "roleCategory": "ai-creative",
     "roleName": "AI Creative Producer",
@@ -310,6 +468,45 @@
       "gaps": [
         "Ніша iGaming має свою специфіку рекламних форматів"
       ]
+    }
+  },
+  {
+    "id": "vac-djinni-852995",
+    "roleCategory": "video-motion",
+    "roleName": "Video & Motion Designer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B2",
+    "englishLabel": "B2 (Вище середнього)",
+    "title": "E-commerce Video Editor (Direct-Response Social Ads)",
+    "company": "True Sea Moss",
+    "location": "Remote (Весь світ / Worldwide)",
+    "salary": "$1,500 – $2,500 / міс",
+    "type": "Full-time (Remote)",
+    "postedDate": "20 листопада (Djinni)",
+    "link": "https://djinni.co/jobs/852995-e-commerce-video-editor/",
+    "matchScore": 92,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "Video Editing",
+      "Direct Response Ads",
+      "Meta & TikTok Ads",
+      "E-commerce",
+      "Sound Design",
+      "Performance Creatives"
+    ],
+    "description": "Монтаж та тестування високоефективних рекламних відео для брендів у Meta, TikTok та YouTube. Створення варіацій хуків, робота з динамікою, саунд-дизайном та графічними плашками для зростання CTR і конверсії.",
+    "matchAnalysis": {
+      "strengths": [
+        "Досвід e-commerce брендів та візуального позиціонування (кейс Why Not?)",
+        "Створення динамічних хуків та ритмічного монтажу під біт",
+        "Remote по всьому світу без географічних фільтрів"
+      ],
+      "gaps": []
     }
   },
   {
@@ -469,6 +666,47 @@
       ],
       "gaps": [
         "Можливе обмеження по країні кандидатів на Djinni (Україна)"
+      ]
+    }
+  },
+  {
+    "id": "vac-djinni-859217",
+    "roleCategory": "ai-bots",
+    "roleName": "AI Growth & Automation",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Європа та Україна (підходить для Грузії)",
+    "englishLevel": "B2",
+    "englishLabel": "B2 (Вище середнього)",
+    "title": "AI Integration Engineer (Agentic AI & Generative Workflows)",
+    "company": "Kozak Agency",
+    "location": "Remote (Europe / Worldwide)",
+    "salary": "$2,500 – $4,000+ / міс",
+    "type": "Full-time (Remote)",
+    "postedDate": "20 листопада (Djinni)",
+    "link": "https://djinni.co/jobs/859217-ai-integration-engineer/",
+    "matchScore": 88,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "Generative AI",
+      "Prompt Engineering",
+      "AI Agents",
+      "LLM Architecture",
+      "MCP Protocol",
+      "Automations"
+    ],
+    "description": "Впровадження генеративного ШІ та автономних агентів у робочі процеси клієнтів. Проєктування промпт-архітектур, інтеграція LLM API (ChatGPT, Claude, Gemini), мультиагентні воркфлоу та автоматизація.",
+    "matchAnalysis": {
+      "strengths": [
+        "Розуміння пайплайнів сучасних LLM, промптингу та агентних архітектур",
+        "Досвід створення автоматизацій та Telegram-ботів",
+        "Топова вилка ($2,500–$4,000+) та повний Remote"
+      ],
+      "gaps": [
+        "Може знадобитися написання базового зв'язуючого коду на Python/Node"
       ]
     }
   },
