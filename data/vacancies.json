@@ -1,5 +1,205 @@
 [
   {
+    "id": "vac-dou-376713",
+    "roleCategory": "ai-creative",
+    "roleName": "AI Creative Producer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (100% Remote / Anywhere)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B2",
+    "englishLabel": "B1 – B2 (Комфортний рівень)",
+    "title": "AI Motion Designer (Hyperrealistic AI UGC & Meta Ads)",
+    "company": "Universe (Universe Group)",
+    "location": "Remote (Worldwide / Весь світ)",
+    "salary": "Висока контрактна ставка (USD)",
+    "type": "Full-time (Remote Contractor)",
+    "postedDate": "Опубліковано на DOU",
+    "link": "https://jobs.dou.ua/companies/universe/vacancies/376713/",
+    "matchScore": 98,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "AI Motion Design",
+      "Kling & Veo",
+      "ElevenLabs",
+      "Character Consistency",
+      "After Effects",
+      "Meta Ads",
+      "AI UGC"
+    ],
+    "description": "Universe (екосистема продуктових IT-компаній) шукає AI Motion Designer для цифрового продукту в ніші фітнесу та спорту. Повний цикл створення AI-відео: гіперреалістичні AI UGC ролики, мультисценні синематики зі збереженням \"паспорта\" зовнішності персонажів, ліпсінк, динамічні хуки та фінальний монтаж.",
+    "matchAnalysis": {
+      "strengths": [
+        "100% твій генеративний стек: Kling, ElevenLabs, збереження консистентності облич і персонажів",
+        "Динамічний монтаж під хуки, ліпсінк та саунд-дизайн",
+        "Контрактний формат з можливістю працювати віддалено з будь-якої точки світу"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-dou-379667",
+    "roleCategory": "video-motion",
+    "roleName": "Video & Motion Designer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B2",
+    "englishLabel": "Intermediate (B1/B2)",
+    "title": "Motion Designer (AI Education Product & Ad Creatives)",
+    "company": "Boosta",
+    "location": "Remote (Global / Україна)",
+    "salary": "Конкурентна (USD + Бенефіти)",
+    "type": "Full-time (Remote)",
+    "postedDate": "Опубліковано на DOU",
+    "link": "https://jobs.dou.ua/companies/boosta/vacancies/379667/",
+    "matchScore": 97,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "Motion Design",
+      "After Effects",
+      "Figma",
+      "AI Video (Kling/HeyGen)",
+      "Meta Ads",
+      "TikTok Ads",
+      "Performance Creatives"
+    ],
+    "description": "Boosta запускає новий бізнес-юніт: глобальний освітній продукт для навчання навичкам ШІ. Виробництво високоефективних рекламних відео для Meta, TikTok та Google. Створення анімацій та монтаж у Figma та After Effects у зв'язці з генеративними нейромережами (Kling, HeyGen, Higgsfield).",
+    "matchAnalysis": {
+      "strengths": [
+        "Поєднання Figma, відеомонтажу та генеративних ШІ-інструментів",
+        "Робота над продуктом про ШІ — глибоке розуміння теми",
+        "800+ спеціалістів по світу, дружня до віддаленої роботи культура"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-dou-380042",
+    "roleCategory": "video-motion",
+    "roleName": "Video & Motion Designer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (100% Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B1",
+    "englishLabel": "Intermediate (B1)",
+    "title": "Motion Designer (Video Streaming Apps & AI Tools)",
+    "company": "Genesis (Genesis Technology Partners)",
+    "location": "Remote (Повністю віддалено)",
+    "salary": "Конкурентна (Tech compensation + перегляди)",
+    "type": "Full-time (Remote)",
+    "postedDate": "Опубліковано на DOU",
+    "link": "https://jobs.dou.ua/companies/genesis-technology-partners/vacancies/380042/",
+    "matchScore": 96,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "Motion Design",
+      "After Effects",
+      "ElevenLabs",
+      "Higgsfield & Gemini",
+      "TikTok Ads",
+      "Meta Ads",
+      "Viral Dynamics"
+    ],
+    "description": "Genesis — один із найбільших глобальних розробників мобільних додатків. Позиція в команді стрімінгового відеододатку (10M+ завантажень). Створення коротких 15-30 сек рекламних відео для TikTok, Meta, Snapchat та Google. Робота з UGC-футажами, моушн-графікою, саунд-дизайном та ШІ-генераторами (ElevenLabs, Higgsfield).",
+    "matchAnalysis": {
+      "strengths": [
+        "Динамічний монтаж та моушн-дизайн під перформанс-метрики соцмереж",
+        "Синтез голосу в ElevenLabs та інтеграція нових нейромереж",
+        "Можливість працювати повністю віддалено, рівень англійської B1"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-dou-380737",
+    "roleCategory": "product-design",
+    "roleName": "Product Designer (UI/UX)",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B1",
+    "englishLabel": "B1 (Intermediate)",
+    "title": "Junior UX/UI Developer (Figma, Framer & Landing Pages)",
+    "company": "WhiteBIT",
+    "location": "Remote (Віддалено)",
+    "salary": "Ринкова ставка (USD / Crypto)",
+    "type": "Full-time (Remote)",
+    "postedDate": "Опубліковано на DOU",
+    "link": "https://jobs.dou.ua/companies/whitebit/vacancies/380737/",
+    "matchScore": 95,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "UI/UX Design",
+      "Figma",
+      "Landing Pages",
+      "Framer",
+      "Webflow",
+      "Responsive Web",
+      "Component Kits"
+    ],
+    "description": "WhiteBIT — одна з найбільших європейських криптобірж (5M+ користувачів). Позиція ідеально пасує під бекграунд у веб-дизайні: експорт та проєктування макетів у Figma, збірка адаптивних сторінок у Framer/Webflow, створення конверсійних лендингів та інтерактивних інтерфейсів.",
+    "matchAnalysis": {
+      "strengths": [
+        "Точний збіг по веб-дизайну в Figma та створенню інтерактивних веб-вітрин",
+        "Досвід розробки e-commerce платформи (Why Not?)",
+        "Повний Remote, англійська B1"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-dou-376714",
+    "roleCategory": "ai-creative",
+    "roleName": "AI Creative Producer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote Contractor)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B1",
+    "englishLabel": "B1 – B2 (Intermediate)",
+    "title": "Junior AI Motion Designer",
+    "company": "Universe (Universe Group)",
+    "location": "Remote (Worldwide / Весь світ)",
+    "salary": "Конкурентна контрактна ставка (USD)",
+    "type": "Full-time (Remote Contractor)",
+    "postedDate": "Опубліковано на DOU",
+    "link": "https://jobs.dou.ua/companies/universe/vacancies/376714/",
+    "matchScore": 94,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "Kling",
+      "Veo",
+      "ElevenLabs",
+      "Prompt Engineering",
+      "Meta Ads",
+      "Reels & Shorts",
+      "Motion Dynamics"
+    ],
+    "description": "Генерація відео та статичних образів для Meta Ads у зв'язці з нейромережами (Kling, Seedance, Veo). Перетворення маркетингових брифів на мультисценні промпти, збереження консистентності персонажів, монтаж динамічних роликів, накладання субтитрів та робота зі звуком у ElevenLabs.",
+    "matchAnalysis": {
+      "strengths": [
+        "Генерація відео з утриманням стилю та персонажів",
+        "Робота з промптами, звуком ElevenLabs та динамікою утримання уваги",
+        "Повний Remote для кандидатів у будь-якій локації"
+      ],
+      "gaps": []
+    }
+  },
+  {
     "id": "vac-dou-340146",
     "roleCategory": "ai-creative",
     "roleName": "AI Creative Producer",
