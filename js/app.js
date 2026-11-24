@@ -368,6 +368,7 @@ function getFilteredAndSortedVacancies() {
       if (filterState.source === 'linkedin' && !link.includes('linkedin.com')) return false;
       if (filterState.source === 'djinni' && !link.includes('djinni.co')) return false;
       if (filterState.source === 'dou' && !link.includes('dou.ua')) return false;
+      if (filterState.source === 'behance' && !link.includes('behance.net')) return false;
       if (filterState.source === 'workua' && !link.includes('work.ua') && !link.includes('robota.ua')) return false;
     }
 
@@ -468,6 +469,8 @@ function renderCardsGrid() {
       platformBadge = `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-bold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">Djinni</span>`;
     } else if (linkLower.includes('dou.ua')) {
       platformBadge = `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-bold bg-amber-500/15 text-amber-300 border border-amber-500/30">DOU</span>`;
+    } else if (linkLower.includes('behance.net')) {
+      platformBadge = `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-bold bg-[#0057ff]/15 text-[#5999ff] border border-[#0057ff]/30">Behance</span>`;
     }
 
     // Workplace badge
