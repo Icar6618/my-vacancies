@@ -1,5 +1,44 @@
 [
   {
+    "id": "vac-djinni-735932",
+    "roleCategory": "sound-music",
+    "roleName": "Sound Designer & Music Creator",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B1",
+    "englishLabel": "B1 (Intermediate)",
+    "title": "Sound Designer (Interactive Games Music & Sound Effects)",
+    "company": "Hraymo",
+    "location": "Remote (Worldwide / Bratislava HQ)",
+    "salary": "Ринкова ставка (USD)",
+    "type": "Full-time (Remote)",
+    "postedDate": "Опубліковано на Djinni",
+    "link": "https://djinni.co/jobs/735932-sound-designer/",
+    "matchScore": 95,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "Sound Design",
+      "Music Creation",
+      "Audio Synchronization",
+      "DAW",
+      "Game Audio",
+      "SFX"
+    ],
+    "description": "Створення оригінальних звукових ефектів та музичного супроводу для ігор: розробка звукової айдентики, синхронізація звуку з анімаціями та інтерфейсом, оптимізація аудіоасетів для вебу та мобільних пристроїв.",
+    "matchAnalysis": {
+      "strengths": [
+        "Поєднання створення музики зі звуковими ефектами та синхронізацією з рухом",
+        "Повний Remote, робота з міжнародними продуктами",
+        "Англійська B1"
+      ],
+      "gaps": []
+    }
+  },
+  {
     "id": "vac-dou-gamzix-360776",
     "roleCategory": "sound-music",
     "roleName": "Sound Designer & Composer",
