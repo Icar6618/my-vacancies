@@ -1,5 +1,242 @@
 [
   {
+    "id": "vac-djinni-859102",
+    "roleCategory": "ai-creative",
+    "roleName": "AI Creative Producer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B1",
+    "englishLabel": "B1 (Intermediate)",
+    "title": "AI Creator / AI Video Production Specialist",
+    "company": "GRATIFII LTD",
+    "location": "Remote (Worldwide / Весь світ)",
+    "salary": "$1,000 – $2,000+ / міс",
+    "type": "Full-time (Remote)",
+    "postedDate": "Опубліковано на Djinni",
+    "link": "https://djinni.co/jobs/859102-ai-creator-igaiming/",
+    "matchScore": 98,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "Runway",
+      "Kling",
+      "ElevenLabs",
+      "Midjourney",
+      "Character Consistency",
+      "Lip Sync",
+      "AI UGC",
+      "Shorts & Reels"
+    ],
+    "description": "Виробництво реалістичних комерційних AI-відео, AI UGC креативів та епізодичного контенту для TikTok, Reels і YouTube Shorts. Робота з ліпсінком, озвучкою в ElevenLabs, збереженням стилю персонажів у Runway, Kling, Veo та Midjourney.",
+    "matchAnalysis": {
+      "strengths": [
+        "100% твій стек: Runway, Kling, ElevenLabs, Midjourney",
+        "Створення серійного контенту з консистентними героями та ліпсінком",
+        "Повний Remote по всьому світу без обмежень"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-djinni-852785",
+    "roleCategory": "video-motion",
+    "roleName": "Video & Motion Designer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B1",
+    "englishLabel": "B1 (Intermediate)",
+    "title": "Motion Designer (Generative AI & Video Hooks)",
+    "company": "Zeely (Zeely AI)",
+    "location": "Remote (Worldwide / Весь світ)",
+    "salary": "$2,000 – $3,000+ / міс",
+    "type": "Full-time (Remote)",
+    "postedDate": "Опубліковано на Djinni",
+    "link": "https://djinni.co/jobs/852785-motion-designer/",
+    "matchScore": 98,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "Motion Design",
+      "AI Video",
+      "After Effects",
+      "Figma",
+      "Midjourney",
+      "AI Voiceovers",
+      "Video Hooks"
+    ],
+    "description": "Zeely AI — міжнародна AI-маркетингова платформа. Створення конверсійних рекламних відео, монтаж UGC-креативів, тестування хуків та експерименти з генеративними ШІ-інструментами (AI-аватари, AI-голоси, Midjourney) у поєднанні з After Effects та Figma.",
+    "matchAnalysis": {
+      "strengths": [
+        "Синтез дизайну у Figma, моушну та генеративного відео",
+        "Робота над продуктом у сфері Generative AI",
+        "Висока вилка $2,000–$3,000+ та комфортна англійська B1"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-djinni-846724",
+    "roleCategory": "video-motion",
+    "roleName": "Video & Motion Designer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B1",
+    "englishLabel": "B1 (Intermediate)",
+    "title": "Motion Designer (AI-Driven Creative Workflow)",
+    "company": "RedCore",
+    "location": "Remote (Worldwide / Весь світ)",
+    "salary": "$2,000 – $3,000+ / міс",
+    "type": "Full-time (Remote)",
+    "postedDate": "Опубліковано на Djinni",
+    "link": "https://djinni.co/jobs/846724-motion-designer/",
+    "matchScore": 97,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "Motion Design",
+      "Runway & Kling",
+      "Midjourney",
+      "Adobe After Effects",
+      "Figma",
+      "Digital Promo"
+    ],
+    "description": "Продуктова компанія шукає Motion Designer для створення цифрових промо-матеріалів та рекламних відеокреативів. Генеративний ШІ є щоденним ядром пайплайну (Runway, Kling, Midjourney) у зв'язці з After Effects та Figma.",
+    "matchAnalysis": {
+      "strengths": [
+        "ШІ як офіційна основа робочого процесу студії (Runway, Kling)",
+        "Робота з візуальним стилем у Figma та фінальна збірка анімацій",
+        "Повний Remote, англійська B1"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-djinni-856206",
+    "roleCategory": "video-motion",
+    "roleName": "Video & Motion Designer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote / Freelance to Full-time)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B1",
+    "englishLabel": "A2 – B1 (Українська рідна)",
+    "title": "Motion Designer (DaVinci Resolve & High-Impact Promo Videos)",
+    "company": "Arcade Studios",
+    "location": "Remote (Worldwide / Весь світ)",
+    "salary": "$1,500 – $2,500+ / міс",
+    "type": "Remote (Freelance / Full-time)",
+    "postedDate": "Опубліковано на Djinni",
+    "link": "https://djinni.co/jobs/856206-motion-designer-partt-slots-promo-videos/",
+    "matchScore": 96,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "DaVinci Resolve",
+      "Adobe After Effects",
+      "Motion Graphics",
+      "Promo Videos",
+      "Dynamic Pacing",
+      "Trailers"
+    ],
+    "description": "Arcade Studios шукає фахівця для виробництва динамічних 30-60 сек промо-роликів та трейлерів. Пряма вимога володіння DaVinci Resolve або Premiere Pro, робота з графікою в After Effects, ритмом, саунд-дизайном та сторітелінгом.",
+    "matchAnalysis": {
+      "strengths": [
+        "Пряма вимога практичного досвіду в DaVinci Resolve",
+        "Динамічний монтаж під біт та звукові ефекти",
+        "Гнучкий старт з переходом на повний день"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-djinni-859050",
+    "roleCategory": "product-design",
+    "roleName": "Product Designer (UI/UX)",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B1",
+    "englishLabel": "B1 (Intermediate)",
+    "title": "Web Designer & Developer (Figma, Landing Pages & E-commerce)",
+    "company": "Applace LTD (LNG365)",
+    "location": "Remote (US DTC Market / Global)",
+    "salary": "$1,500 – $2,500+ / міс",
+    "type": "Full-time (Remote)",
+    "postedDate": "Опубліковано на Djinni",
+    "link": "https://djinni.co/jobs/859050-web-developer-web-designer-shopify-landing-pa/",
+    "matchScore": 96,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "Figma",
+      "Web Design",
+      "Landing Pages",
+      "Responsive UI",
+      "E-commerce",
+      "Design Systems"
+    ],
+    "description": "Американська DTC-компанія шукає веб-дизайнера для ведення цифрової присутності брендів: від розробки концептів у Figma до створення адаптивних продуктових та рекламних лендингів з високою конверсією.",
+    "matchAnalysis": {
+      "strengths": [
+        "Точний збіг за кейсом редизайну e-commerce платформі (Why Not?)",
+        "Проєктування адаптивних макетів (Mobile + Desktop) у Figma",
+        "Повний Remote, ринок США, вилка $1,500–$2,500+"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-djinni-858781",
+    "roleCategory": "product-design",
+    "roleName": "Product Designer (UI/UX)",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B1",
+    "englishLabel": "B1 (Intermediate)",
+    "title": "Product UI/UX Designer (Web and Mobile Platforms)",
+    "company": "MarketZen",
+    "location": "Remote (Worldwide / Весь світ)",
+    "salary": "$2,000 – $3,000+ / міс",
+    "type": "Full-time (Remote)",
+    "postedDate": "Опубліковано на Djinni",
+    "link": "https://djinni.co/jobs/858781-product-ui-ux-designer-web-and-mobile/",
+    "matchScore": 94,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "UI/UX Design",
+      "Figma",
+      "Web & Mobile UI",
+      "Landing Pages",
+      "Design Systems",
+      "Prototyping"
+    ],
+    "description": "MarketZen розробляє цифрові продукти для ринків США та Європи. Проєктування зручних веб- та мобільних інтерфейсів, створення маркетингових лендингів, розвиток дизайн-системи у Figma та інтерактивне прототипування.",
+    "matchAnalysis": {
+      "strengths": [
+        "Глибоке володіння інструментами Figma (компоненти, адаптивність, прототипи)",
+        "Створення продуктових сторінок та лендингів",
+        "Повний Remote, заробітна плата $2,000–$3,000+"
+      ],
+      "gaps": []
+    }
+  },
+  {
     "id": "vac-dou-376713",
     "roleCategory": "ai-creative",
     "roleName": "AI Creative Producer",
