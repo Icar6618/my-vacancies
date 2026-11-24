@@ -1,5 +1,244 @@
 [
   {
+    "id": "vac-dou-340146",
+    "roleCategory": "ai-creative",
+    "roleName": "AI Creative Producer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote / Flexible)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B1",
+    "englishLabel": "B1+ (Комфортний рівень)",
+    "title": "AI Video Creator / AI Filmmaker",
+    "company": "HOLYWATER TECH",
+    "location": "Remote (Весь світ / Україна / з-за кордону)",
+    "salary": "Конкурентна (Tech compensation + Mac hardware)",
+    "type": "Full-time (Remote)",
+    "postedDate": "13 листопада (DOU)",
+    "link": "https://jobs.dou.ua/companies/holy-water/vacancies/340146/",
+    "matchScore": 98,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "AI Filmmaking",
+      "Runway AI Winner",
+      "Generative Video",
+      "Prompt Engineering",
+      "Sound Design",
+      "DaVinci Resolve"
+    ],
+    "description": "HOLYWATER TECH створює інноваційні AI-серіали та стрімінговий контент (My Drama, My Muse — переможці Runway AI Film Festival). Виробництво довгих та вертикальних відео з ШІ: генерація статичних образів, відео, аудіо, утримання стилю персонажів, монтаж та саунд-дизайн.",
+    "matchAnalysis": {
+      "strengths": [
+        "100% твій фокус: генеративний продакшн відео (Runway, Midjourney, Kling, Luma)",
+        "Збереження візуальної консистентності персонажів та світів у DaVinci Resolve",
+        "Робота з дому або з-за кордону (Грузія підходить без обмежень)"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-dou-377915",
+    "roleCategory": "ai-creative",
+    "roleName": "AI Creative Producer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (100% Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B1",
+    "englishLabel": "B1 – B2 (Комфортний рівень)",
+    "title": "AI Video Creator (Viral Content & UGC Pipelines)",
+    "company": "WorkHold.AI",
+    "location": "Remote (Весь світ / США ринок)",
+    "salary": "$1,000 – $1,700 / міс (+ $100+ ШІ-підписки)",
+    "type": "Full-time (Remote)",
+    "postedDate": "Опубліковано на DOU",
+    "link": "https://jobs.dou.ua/companies/workeron-ai/vacancies/377915/",
+    "matchScore": 97,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "Kling",
+      "ElevenLabs",
+      "Higgsfield",
+      "Figma Weavy",
+      "AI UGC",
+      "Shorts & Reels",
+      "AI Agents"
+    ],
+    "description": "Побудова автоматизованих AI-відеопайплайнів для залучення вірусного трафіку в TikTok, Instagram Reels, YouTube Shorts та X для клієнтів зі США. Генерація відео за допомогою агентів, виробництво AI UGC серій, створення AI-аватарів та тестування психології утримання глядачів.",
+    "matchAnalysis": {
+      "strengths": [
+        "Стек: Kling, ElevenLabs, Higgsfield, робота з хуками та утриманням уваги",
+        "Компанія додатково оплачує $100+ на преміум-підписки генеративних сервісів",
+        "Повний Remote без географічних бар'єрів, англійська B1/B2"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-dou-378120",
+    "roleCategory": "product-design",
+    "roleName": "Product Designer (UI/UX)",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B2",
+    "englishLabel": "B2 (Вище середнього)",
+    "title": "UI/UX Designer (Web Design & Figma Systems)",
+    "company": "Aston VIP",
+    "location": "Remote (Dubai HQ / Global)",
+    "salary": "$2,000 – $4,000 / міс",
+    "type": "Full-time (Remote)",
+    "postedDate": "Опубліковано на DOU",
+    "link": "https://jobs.dou.ua/companies/aston-vip/vacancies/378120/",
+    "matchScore": 96,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "Figma",
+      "UI/UX Design",
+      "Responsive Web",
+      "Landing Pages",
+      "Design Systems",
+      "Web Animations",
+      "AI Visual Generation"
+    ],
+    "description": "Dubai venture studio шукає дизайнера для створення та оптимізації адаптивних сайтів, високоефективних лендингів і цифрових продуктів. Розвиток дизайн-систем у Figma, інтерактивні анімації та інтеграція новітніх інструментів генеративного ШІ в дизайн-пайплайн.",
+    "matchAnalysis": {
+      "strengths": [
+        "Глибокий практичний стек Figma (AutoLayout, Variables, компоненти)",
+        "Досвід створення конверсійних лендингів та e-commerce (кейс Why Not?)",
+        "Висока ставка $2,000–$4,000, 100% Remote"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-dou-379892",
+    "roleCategory": "video-motion",
+    "roleName": "Video & Motion Designer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (100% Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B2",
+    "englishLabel": "B2 (Вище середнього)",
+    "title": "Video Editor & Motion Designer (YouTube & AI Tools)",
+    "company": "Dripify",
+    "location": "Remote (Global)",
+    "salary": "Конкурентна міжнародна ставка (USD)",
+    "type": "Full-time (Remote)",
+    "postedDate": "13 листопада (DOU)",
+    "link": "https://jobs.dou.ua/companies/dripify/vacancies/379892/",
+    "matchScore": 96,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "DaVinci Resolve",
+      "After Effects",
+      "Premiere Pro",
+      "AI Video & Audio",
+      "YouTube Production",
+      "Motion Graphics",
+      "Sound Design"
+    ],
+    "description": "Dripify — продуктова SaaS-платформа. Повне ведення відеопродакшну для YouTube, Shorts та соцмереж: огляди продукту, анімація інтерфейсів, After Effects моушн-дизайн, кольорокорекція в DaVinci Resolve та щоденне використання AI-інструментів для відео й аудіо.",
+    "matchAnalysis": {
+      "strengths": [
+        "Пряме використання DaVinci Resolve (кольорокорекція, зведення звуку)",
+        "Поєднання моушн-дизайну та інтерфейсних анімацій з генеративним ШІ",
+        "Повний Remote без територіальних обмежень"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-dou-378318",
+    "roleCategory": "video-motion",
+    "roleName": "Video & Motion Designer",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (Remote / Freelance)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B1",
+    "englishLabel": "B1 (Intermediate)",
+    "title": "AI Video Creator / AI Video Editor",
+    "company": "RetroStyle Games",
+    "location": "Remote (Весь світ / Україна)",
+    "salary": "Оплата з прив'язкою до USD (Гнучкий формат)",
+    "type": "Freelance / Remote",
+    "postedDate": "29 жовтня (DOU)",
+    "link": "https://jobs.dou.ua/companies/retrostyle-games/vacancies/378318/",
+    "matchScore": 94,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "Runway",
+      "Kling",
+      "Veo",
+      "Higgsfield",
+      "DaVinci Resolve",
+      "Vertical Shorts",
+      "Prompting"
+    ],
+    "description": "Геймдев-студія шукає спеціаліста для виробництва відео від ідеї до публікації. Створення вертикальних Shorts (9:16) для YouTube/Reels/TikTok, рекламних промо-роликів, трейлерів та генерація синематик-сцен і озвучки за допомогою нейромереж.",
+    "matchAnalysis": {
+      "strengths": [
+        "Генерація синематиків та промо: Runway, Kling, Veo, Higgsfield",
+        "Монтаж динамічних роликів під хуки в DaVinci Resolve",
+        "Гнучкий графік, B1 англійська"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "id": "vac-dou-379698",
+    "roleCategory": "product-design",
+    "roleName": "Product Designer (UI/UX)",
+    "workplaceType": "remote",
+    "workplaceLabel": "Дистанційно (100% Remote)",
+    "candidateCountry": "worldwide",
+    "candidateCountryLabel": "Весь світ / Worldwide (підходить для Грузії)",
+    "englishLevel": "B1",
+    "englishLabel": "B1+ (Intermediate)",
+    "title": "UI/UX (Web) Designer",
+    "company": "Goodface agency",
+    "location": "Remote Worldwide",
+    "salary": "Конкурентна погодинна ставка (Регулярні перегляди)",
+    "type": "Full-time (Remote)",
+    "postedDate": "11 листопада (DOU)",
+    "link": "https://jobs.dou.ua/companies/goodface/vacancies/379698/",
+    "matchScore": 94,
+    "status": "not_applied",
+    "appliedAt": null,
+    "isSaved": false,
+    "tags": [
+      "Figma",
+      "UI/UX Design",
+      "Responsive Web",
+      "Design Systems",
+      "Discovery & User Flows",
+      "AI Visual Generation",
+      "Prototyping"
+    ],
+    "description": "Агенція Goodface створює цифрові продукти для фінтех, health та tech-брендів. Дизайнер веде проєкти від Discovery до Delivery: wireframes, інтерактивні макети в Figma (AutoLayout, Variables), адаптивний дизайн та використання ШІ для генерації візуалів.",
+    "matchAnalysis": {
+      "strengths": [
+        "Глибокий фокус на адаптивному веб-дизайні в Figma",
+        "Інтеграція ШІ-інструментів у дизайнерський процес",
+        "100% Remote з гнучким графіком"
+      ],
+      "gaps": []
+    }
+  },
+  {
     "id": "vac-linkedin-4489446492",
     "roleCategory": "ai-creative",
     "roleName": "AI Creative Producer",
